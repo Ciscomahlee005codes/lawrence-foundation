@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width= , initial-scale=1.0">
+    <link rel="stylesheet" href="Css/donation.css">
+    <title>(Donation)-Lawrence Memorial Humanitarian Foundation</title>
+    <link rel="icon" href="Image/foundation-logo.png" type="image/png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <!-- Swiper Js -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+</head>
+<body>
+ <section class="donation">
+    <div class="donation-container">
+        <div class="logo-container"><img class="logo" src="Image/foundation-logo.png" width="45px" alt="">
+            <h5 class="logo-text">Lawrence Memorial Humanitarian Foundation</h5>
+         </div><br><br>
+        <form action="" method="post">
+            <label for="name">First Name</label>
+           <input type="text" name="name" id="" placeholder="First Name" required><br><br>
+           <label for="name">Last Name</label>
+           <input type="text" name="" id="" placeholder="Last Name" required><br><br>
+           <label for="email">Email Address</label>
+           <input type="email" name="email" id="" placeholder="Email Address" required><br><br>
+           <label for="phone">Phone Number</label>
+           <input type="tel" name="phone" id="" placeholder="Phone Number" required><br><br>
+           <label for="donation">Donation Type</label>
+           <select name="donation" id="" required>
+            <option value="padThegirl">Pad The Girl Child Program</option>
+            <option value="scholarship">Student Scholarship Program</option>
+            <option value="familysupport">Family Support Program</option>
+            <option value="foodbank">Food Pantry Program</option>
+            <option value="advocacy">Advocacy Program</option>
+            <option value="medOutreach">Free Medical Outreach Program</option>
+            <option value="quiz">Online Quiz Competition</option>
+            <option value="healthAwareness">Health Awareness Program</option>
+            </select><br><br>
+           <label for="amount">Donation Amount</label>
+           <input type="number" name="amount" id="" placeholder="Amount to Donate" required><br><br>
+           <label for="payment">Payment Method</label>
+           <select name="payment" id="" required>
+            <option value="PayPal"><a href="" class="pay-pal">Paypal</a></option>
+            <option value="Bank Transfer">Bank Transfer</option>
+            <option value="others">Others</option>
+            </select><br><br>
+             <p class="form-text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eos architecto quis minima.
+             </p><input type="checkbox" name="" id="" required><br><br>            
+             <a class="submit-btn" href="#" onclick="regOpenPopUp()">Submit</a><br>
+         </form>
+    </div>
+
+    <!-- POP UP BEGINS -->
+        
+    <div class="pop">
+      <div class="register-container">
+ <div class="reg-popup" id="reg-popup">
+   <img src="./Image/good-tick.png" alt="">
+   <h2 class="head-pop">Thank you for your Generosity!</h2>
+   <p class="pop-text">You'll be redirected for your donation</p><br>
+   <a class="ok-btn" type="button" onclick="regClosePopup()" href="">Ok</a>
+ </div>
+</div>
+    </div>
+    <!-- POP UP ENDS -->
+ </section>
+           <!-- Footer Section -->
+      <footer>
+      <div class="foot-container">
+        <div class="foot-1">
+          <!-- <h3 class="foot-head">Get In Touch</h3><br> -->
+          <div class="foot-logo-container"><img class="foot-logo" src="Image/foundation-logo.png" width="45px" alt="">
+            <h5 class="foot-logo-text">Lawrence Memorial Humanitarian Foundation</h5>
+         </div><br>
+          <p class="foot-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio consequuntur nihil rerum! Alias, aut?</p><br><br>
+
+            <div class="socials">
+                <li class="foot-list">
+                <a class="footer-links" href=""> <i class="fa-brands fa-facebook"></i></a>
+                </li>
+                <li class="foot-list">
+                 <a class="footer-links" href=""> <i class="fa-brands fa-x-twitter"></i></a>
+                </li>
+                <li class="foot-list">
+                  <a class="footer-links" href="">
+                    <i class="fa-brands fa-instagram"></i>
+                  </a>
+                </li>
+                <li class="foot-list">
+                  <a class="footer-links" href="">
+                    <i class="fa-brands fa-whatsapp"></i>
+                  </a>
+                </li>
+            </div>
+        </div>
+        <div class="foot-1">
+          <h4 class="foot-head">Quick Links</h4><br>
+          <ul class="foot-ul">
+            <li class="foot-list">
+             <a class="footer-links" href="index.html">Home</a>
+            </li>
+            <li class="foot-list">
+             <a class="footer-links" href="about.html">About Us</a>
+            </li>
+            <li class="foot-list">
+             <a class="footer-links" href="service.html">Our Services</a>
+            </li>
+            <li class="foot-list">
+             <a class="footer-links" href="upcoming.html">Upcoming Events</a>
+            </li>
+            <li class="foot-list">
+             <a class="footer-links" href="blog.html">Blog</a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="foot-1">
+          <h4 class="foot-head"> Extra Links</h4><br>
+          <ul class="foot-ul">
+            <li class="foot-list">
+             <a class="footer-links" href="service.html">Get Involved</a>
+            </li>
+            <li class="foot-list">
+               <a class="footer-links" href="service.html">Accomplished Programs</a>
+              </li>
+            <li class="foot-list">
+             <a class="footer-links" href="service.html">Donate</a>
+            </li>
+            <li class="foot-list">
+             <a class="footer-links" href="service.html">Testimonials</a>
+            </li>
+            <li class="foot-list">
+                <a class="footer-links" href="youth.html">Young and Youth</a>
+               </li>
+               <!-- <li class="foot-list">
+                <a class="footer-links" href="">Our Partners</a>
+               </li> -->
+               <li class="foot-list">
+                <a class="footer-links" href="contact.html">Contact Us</a>
+               </li>
+          </ul>
+        </div>
+
+        <div class="foot-1">
+          <h4 class="foot-head">Contact Us</h4><br>
+          <ul class="foot-ul">
+            <li class="foot-list">
+              <i class="fa-solid fa-phone-volume"></i>  <a class="footer-links" id="reduce" href="">+234 81 2126 9433</a>
+            </li>
+            <li class="foot-list">
+              <i class="fa-solid fa-phone-volume"></i> <a class="footer-links" id="reduce" href="">+234 81 2126 9433</a>
+            </li>
+            <li class="foot-list">
+              <i class="fa-solid fa-envelope"></i> <a class="footer-links" id="reduce" href="">ciscomahlee@gmail.com</a>
+            </li><br><br>
+
+            <a href="" class="join-us">Join Us Today</a>
+          </ul>
+        </div>
+      </div><br><br> <hr> <br>
+      <div class="copyright"> &copy; 2024 Lawrence Memorial Humanitarian Foundation. All rights reserved.</div>
+      <div class="programmer">Coded and Designed by Anthony Raphael(Cisco Mahlee)</div>
+   </footer>
+
+   <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="./Js/donation.js"></script>
+</body>
+</html>

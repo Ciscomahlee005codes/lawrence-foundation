@@ -40,7 +40,7 @@ html,body{
     top: 0;
     width: 100%;
     background-color: #008d8c;
-    /* border-bottom: 1.5px solid hsl(0, 0%, 100%,0.2); */
+    padding: 15px;
     z-index: 10;
 }
 .header .external-container{

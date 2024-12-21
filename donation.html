@@ -11,59 +11,78 @@
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
 </head>
 <body>
- <section class="donation">
+    <section class="donation">
     <div class="donation-container">
-        <div class="logo-container"><img class="logo" src="Image/foundation-logo.png" width="45px" alt="">
+        <div class="logo-container">
+            <img class="logo" src="Image/foundation-logo.png" width="45px" alt="">
             <h5 class="logo-text">Lawrence Memorial Humanitarian Foundation</h5>
-         </div><br><br>
-        <form action="" method="post">
+        </div><br><br>
+
+        <form id="donationForm" method="post">
             <label for="name">First Name</label>
-           <input type="text" name="name" id="" placeholder="First Name" required><br><br>
-           <label for="name">Last Name</label>
-           <input type="text" name="" id="" placeholder="Last Name" required><br><br>
-           <label for="email">Email Address</label>
-           <input type="email" name="email" id="" placeholder="Email Address" required><br><br>
-           <label for="phone">Phone Number</label>
-           <input type="tel" name="phone" id="" placeholder="Phone Number" required><br><br>
-           <label for="donation">Donation Type</label>
-           <select name="donation" id="" required>
-            <option value="padThegirl">Pad The Girl Child Program</option>
-            <option value="scholarship">Student Scholarship Program</option>
-            <option value="familysupport">Family Support Program</option>
-            <option value="foodbank">Food Pantry Program</option>
-            <option value="advocacy">Advocacy Program</option>
-            <option value="medOutreach">Free Medical Outreach Program</option>
-            <option value="quiz">Online Quiz Competition</option>
-            <option value="healthAwareness">Health Awareness Program</option>
-            </select><br><br>
-           <label for="amount">Donation Amount</label>
-           <input type="number" name="amount" id="" placeholder="Amount to Donate" required><br><br>
-           <label for="payment">Payment Method</label>
-           <select name="payment" id="" required>
-            <option value="PayPal"><a href="" class="pay-pal">Paypal</a></option>
-            <option value="Bank Transfer">Bank Transfer</option>
-            <option value="others">Others</option>
-            </select><br><br>
-             <p class="form-text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eos architecto quis minima.
-             </p><input type="checkbox" name="" id="" required><br><br>            
-             <a class="submit-btn" href="#" onclick="regOpenPopUp()">Submit</a><br>
-         </form>
+            <input type="text" name="name" id="name" placeholder="First Name">
+            <div class="error-message" id="nameError"></div><br><br>
+
+            <label for="lastName">Last Name</label>
+            <input type="text" name="lastName" id="lastName" placeholder="Last Name">
+            <div class="error-message" id="lastNameError"></div><br><br>
+
+            <label for="email">Email Address</label>
+            <input type="email" name="email" id="email" placeholder="Email Address">
+            <div class="error-message" id="emailError"></div><br><br>
+
+            <label for="phone">Phone Number</label>
+            <input type="tel" name="phone" id="phone" placeholder="Phone Number">
+            <div class="error-message" id="phoneError"></div><br><br>
+
+            <label for="donation">Donation Type</label>
+            <select name="donation" id="donation" required>
+                <option value="padThegirl">Pad The Girl Child Program</option>
+                <option value="scholarship">Student Scholarship Program</option>
+                <option value="familysupport">Family Support Program</option>
+                <option value="foodbank">Food Pantry Program</option>
+                <option value="advocacy">Advocacy Program</option>
+                <option value="medOutreach">Free Medical Outreach Program</option>
+                <option value="quiz">Online Quiz Competition</option>
+                <option value="healthAwareness">Health Awareness Program</option>
+            </select>
+            <div class="error-message" id="donationError"></div><br><br>
+
+            <label for="amount">Donation Amount</label>
+            <input type="number" name="amount" id="amount" placeholder="Amount to Donate">
+            <div class="error-message" id="amountError"></div><br><br>
+
+            <h4 class="our-office" id="account-details">Our Account Details</h4>
+            <ul class="contact-ul">
+                <li class="contact-list"><span class="contact-bold">Account Number:</span>1013346765</li>
+                <li class="contact-list"><span class="contact-bold">Account Name:</span>Lawrence Memorial Humanitarian Foundation</li>
+                <li class="contact-list"><span class="contact-bold">Bank:</span>Keystone</li><br><br>
+                <li class="contact-list"><span class="contact-bold">Account Number:</span>665550631</li>
+                <li class="contact-list"><span class="contact-bold">Account Name:</span>Lawrence Memorial Humanitarian Foundation</li>
+                <li class="contact-list"><span class="contact-bold">Bank:</span>Chase</li>
+            </ul><br>
+            <p class="form-text">We do not share your information with any third party.
+              You'll be redirected for payment processing after submitting this form. Please ensure you have a valid email address and phone number to receive payment instructions.</p><br>
+            <input type="checkbox" name="terms" id="terms" required><br><br>
+            
+            <!-- Use a button instead of an <a> tag -->
+            <button type="button" class="submit-btn" id="myButton" onclick="validateForm()">Submit</button><br>
+        </form>
     </div>
 
     <!-- POP UP BEGINS -->
-        
-    <div class="pop">
-      <div class="register-container">
- <div class="reg-popup" id="reg-popup">
-   <img src="./Image/good-tick.png" alt="">
-   <h2 class="head-pop">Thank you for your Generosity!</h2>
-   <p class="pop-text">You'll be redirected for your donation</p><br>
-   <a class="ok-btn" type="button" onclick="regClosePopup()" href="">Ok</a>
- </div>
-</div>
-    </div>
+    <!-- <div class="pop">
+        <div class="register-container">
+            <div class="reg-popup" id="reg-popup">
+                <img src="./Image/good-tick.png" alt="">
+                <h2 class="head-pop">Thank you for your Generosity!</h2>
+                <p class="pop-text">You'll be redirected for your donation</p><br>
+                <a class="ok-btn" type="button" onclick="regClosePopup()" href="">Ok</a>
+            </div>
+        </div>
+    </div> -->
     <!-- POP UP ENDS -->
- </section>
+</section>
            <!-- Footer Section -->
       <footer>
       <div class="foot-container">

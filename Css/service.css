@@ -18,16 +18,16 @@ html,body{
 /* Logo Designs Here */
 .logo-container{
     transform: translate(-20%,2%);
+    /* display: flex; */
 }
 .logo{
     width: 65px;
-     margin-left: 8rem;
+    
 }
 .logo-text{
-    font-family: "Lobster Two", sans-serif;
-    text-align: left;
-    color: rgb(253, 253, 253);
-    font-size: 22px;
+  font-family: "Lato", sans-serif;
+  transform: translate(-10%, 5%);
+  color: #ffffff;
 }
 /* Header Designs */
 .external-container{
@@ -41,7 +41,7 @@ html,body{
     top: 0;
     width: 100%;
     background-color: #008d8c;
-    /* border-bottom: 1.5px solid hsl(0, 0%, 100%,0.2); */
+    padding: 15px;
     z-index: 10;
 }
 .header .external-container{
@@ -62,13 +62,13 @@ html,body{
    display: inline-block;
 }
 .header .menu-bar > ul > li:not(:last-child){
-    margin-right: 40px;
+    margin-right: 10px;
 }
 .header .menu-bar a{
     text-decoration: none;
     text-transform: capitalize;
     font-size: 19px;
-    color: gainsboro;
+    color: rgb(255, 255, 255);
     font-family: "Josefin Sans", sans-serif;
     font-weight: 600;
     line-height: 1.5;
@@ -84,7 +84,7 @@ html,body{
     font-size: 20px;
  }
  .header .menu-bar > ul > li > a{
-   padding: 24px 0;
+   padding: 20px 15px;
 }
 /* Dropdown Links */
 .header .menu-bar #dropdown{
@@ -108,15 +108,16 @@ html,body{
     position: absolute;
     top: 100%;
     left: 0;
-    width: 230px;
-    padding: 1px 0;
-    background-color: hsl(229, 71%, 45%);
+    width: 250px;
+    padding: -10px;
+    background-color: hsl(228, 3%, 29%);
     box-shadow: 0 0 5px hsl(0, 0%, 100%,0.2);
     z-index: 1;
     transform-origin: top;
     transform: scaleY(0);
     visibility: hidden;
     opacity: 0;
+    
 }
 .header .menu-bar .sub-menu a{
   padding: 6px 24px;
@@ -609,10 +610,10 @@ html,body{
     top: 0;
     left: 0;
     transform: translate(-50%, -50%);
-    width: 75%;
+    width: 70%;
     aspect-ratio: 1;
     border-radius: 100%;
-    background-color: #0ac0c0;
+    background-color: #303131;
     z-index: -1;
     transition: 0.5s;
 }
@@ -679,7 +680,7 @@ footer{
     width: 100px;
 }
 .foot-logo-text{
-    font-family: "Lobster Two", sans-serif;
+    font-family: "Lato", sans-serif;
     text-align: left;
     color: rgb(253, 253, 253);
     font-size: 22px;
@@ -770,19 +771,19 @@ hr{
         padding-top: 17rem;
     }
     /* Logo Designs Here */
-.logo-container{
-    transform: translate(-10%,2%);
-}
-.logo{
-    width: 65px;
-     margin-left: 5rem;
-}
-.logo-text{
-    font-family: "Lobster Two", sans-serif;
-    text-align: left;
-    color: rgb(253, 253, 253);
-    font-size: 22px;
-}
+    .logo-container{
+        transform: translate(-20%,2%);
+        /* display: flex; */
+    }
+    .logo{
+        width: 65px;
+        transform: translate(100%,2%);
+    }
+    .logo-text{
+      font-family: "Lato", sans-serif;
+      transform: translate(5%, 5%);
+      color: #ffffff;
+    }
 .activity-card{
     background-color: #191970;
     box-shadow: 3px 10px 15px rgba(0, 0, 0, 0.3);
@@ -809,11 +810,11 @@ hr{
     width: 100px;
 }
 .foot-logo-text{
-    font-family: "Lobster Two", sans-serif;
+    font-family: "Lato", sans-serif;
     text-align: left;
     color: rgb(253, 253, 253);
     font-size: 22px;
-    width: 70%;
+    width: 85%;
 }
 .foot-text{
     font-family: "Lato", sans-serif;
@@ -827,17 +828,19 @@ hr{
 }
     /* Logo Designs Here */
 .logo-container{
-    transform: translate(1%,2%);
-}
-.logo{
-    width: 65px;
-     margin-left: 5rem;
-}
-.logo-text{
-    font-family: "Lobster Two", sans-serif;
-    text-align: left;
-    color: rgb(253, 253, 253);
-    font-size: 22px;
+    .logo-container{
+        transform: translate(-20%,2%);
+        /* display: flex; */
+    }
+    .logo{
+        width: 65px;
+        transform: translate(100%,2%);
+    }
+    .logo-text{
+      font-family: "Lato", sans-serif;
+      transform: translate(15%, 5%);
+      color: #ffffff;
+    }
 }
 .activity-card{
     background-color: #191970;
@@ -865,7 +868,7 @@ hr{
     width: 100px;
 }
 .foot-logo-text{
-    font-family: "Lobster Two", sans-serif;
+    font-family: "Lato", sans-serif;
     text-align: left;
     color: rgb(253, 253, 253);
     font-size: 22px;
@@ -878,16 +881,19 @@ hr{
 }
 }
 @media (max-width:912px) {
+    .logo-container{
+        transform: translate(-20%,2%);
+        /* display: flex; */
+    }
     .logo{
         width: 65px;
-         margin-left: 2rem;
+        transform: translate(100%,2%);
     }
     .logo-text{
-        font-family: "Lobster Two", sans-serif;
-        text-align: left;
-        color: rgb(253, 253, 253);
-        font-size: 22px;
-        width: 75%;
+      font-family: "Lato", sans-serif;
+      transform: translate(15%, 5%);
+      font-size: 20px;
+      color: #ffffff;
     }
     .intro-section{
         background-position: center;
@@ -1047,7 +1053,7 @@ hr{
       color: aquamarine;
       transition: 450ms ease;
     } */
-
+  
     .sub-menu{
         list-style: none; 
         padding: 0;
@@ -1067,7 +1073,7 @@ hr{
     transition: transform 0.3s ease, color 0.3s ease; /* Smooth hover effect */
   }
   /* Styling for the bullet */
-.sub-menu, #dropdown::before {
+  .sub-menu, #dropdown::before {
     content: "•";
     position: absolute;
     left: -20px; 
@@ -1161,7 +1167,20 @@ hr{
      .header-list{
         line-height: 2rem;
     }
-
+    .logo-container{
+        transform: translate(-5%,2%);
+        /* display: flex; */
+    }
+    .logo{
+        transform: translate(170%, 5%);   
+    }
+    .logo-text{
+        font-family: "Lato", sans-serif;
+        transform: translate(30%, 5%);
+        font-size: 22px;
+        color: #ffffff;
+        width: 65%;
+      }
     .intro-section{
         background-position: center;
         background-size: cover;
@@ -1185,6 +1204,7 @@ hr{
         gap: 20px;
     }
 }
+
 @media (max-width:820px) {
     .team-card-container{
         display: grid;
@@ -1225,7 +1245,7 @@ hr{
         width: 35%;
         aspect-ratio: 1;
         border-radius: 100%;
-        background-color: #0ac0c0;
+        background-color: #303131;
         z-index: -1;
         transition: 0.5s;
     }
@@ -1238,6 +1258,23 @@ hr{
         display: grid;
         grid-template-columns: auto;
         gap: 20px;
+    }
+}
+@media (max-width:800px) {
+    .count-num{
+        font-size: 22px;
+        color: rgb(7, 7, 7);
+        font-family: "Lato", sans-serif;
+        font-weight: 800;
+        text-align: center;
+        padding-left: 1.5rem;
+    }
+    .count-cap{
+        font-size: 16px;
+        color: rgb(0, 0, 0);
+        font-weight: 600;
+        font-family: "Lato", sans-serif;
+        /* text-align: center; */
     }
 }
 
@@ -1262,6 +1299,13 @@ hr{
     }  
 }
 @media (max-width:430px) {
+    .logo-text{
+        font-family: "Lato", sans-serif;
+        transform: translate(30%, 5%);
+        font-size: 22px;
+        color: #ffffff;
+        width: 75%;
+      }
     .activity-card-container{
         display: grid;
         grid-template-columns: auto;
@@ -1304,10 +1348,10 @@ hr{
         top: 0;
         left: 0;
         transform: translate(-50%, -50%);
-        width: 60%;
+        width: 80%;
         aspect-ratio: 1;
         border-radius: 100%;
-        background-color: #0ac0c0;
+        background-color: #303131;
         z-index: -1;
         transition: 0.5s;
     }
@@ -1321,7 +1365,7 @@ hr{
         gap: 1.5rem;
     }
     .foot-logo-text{
-        font-family: "Lobster Two", sans-serif;
+        font-family: "Lato", sans-serif;
         text-align: left;
         color: rgb(253, 253, 253);
         font-size: 20px;
@@ -1341,15 +1385,22 @@ hr{
         top: 0;
         left: 0;
         transform: translate(-50%, -50%);
-        width: 40%;
-        aspect-ratio: 0.5;
+        width: 80%;
+        aspect-ratio: 1;
         border-radius: 100%;
-        background-color: #0ac0c0;
+        background-color: #303131;
         z-index: -1;
         transition: 0.5s;
     }
 }
 @media (max-width:414px) {
+    .logo-text{
+        font-family: "Lato", sans-serif;
+        transform: translate(30%, 5%);
+        font-size: 22px;
+        color: #ffffff;
+        width: 85%;
+      }
     .donate-text-content {
         flex: 1; 
         font-size: 28px;
@@ -1362,23 +1413,43 @@ hr{
         letter-spacing: 2px;
         font-size: 28px;
     }
+  
 }
 @media (max-width:393px) {
     .logo-text{
-        font-family: "Lobster Two", sans-serif;
+        font-family: "Lato", sans-serif;
         text-align: left;
         color: rgb(253, 253, 253);
         font-size: 20px;
         width: 80%;
     }
+    .participate-link{
+        text-decoration: none;
+        font-size: 16px;
+        color: #001a2e;
+        font-family: "Lato", sans-serif;
+    }
+    .testimonial-box-content::before{
+        position: absolute;
+        content: "";
+        top: 0;
+        left: 0;
+        transform: translate(-50%, -50%);
+        width: 60%;
+        aspect-ratio: 1;
+        border-radius: 100%;
+        background-color: #303131;
+        z-index: -1;
+        transition: 0.5s;
+    }
 }
 @media (max-width:375px) {
     .logo-text{
-        font-family: "Lobster Two", sans-serif;
+        font-family: "Lato", sans-serif;
         text-align: left;
         color: rgb(253, 253, 253);
         font-size: 20px;
-        width: 80%;
+        width: 90%;
     }
     .participate-head{
         text-align: center;
@@ -1417,19 +1488,38 @@ hr{
 }
 @media (max-width:360px) {
     .logo-text{
-        font-family: "Lobster Two", sans-serif;
+        font-family: "Lato", sans-serif;
         text-align: left;
         color: rgb(253, 253, 253);
         font-size: 20px;
-        width: 85%;
+        width: 90%;
+    }
+    .participate-link{
+        text-decoration: none;
+        font-size: 14px;
+        color: #001a2e;
+        font-family: "Lato", sans-serif;
+    }
+    .testimonial-box-content::before{
+        position: absolute;
+        content: "";
+        top: 0;
+        left: 0;
+        transform: translate(-50%, -50%);
+        width: 80%;
+        aspect-ratio: 1;
+        border-radius: 10%;
+        background-color: #303131;
+        z-index: -1;
+        transition: 0.5s;
     }
 }
 @media (max-width:320px) {
     .logo-text{
-        font-family: "Lobster Two", sans-serif;
+        font-family: "Lato", sans-serif;
         text-align: left;
         color: rgb(253, 253, 253);
-        font-size: 20px;
+        font-size: 18px;
         width: 95%;
     }
     .intro-text-1 {
@@ -1450,6 +1540,19 @@ hr{
         font-size: 14px;
         color: #097070;
         font-family: "Lato", sans-serif;
+    }
+    .testimonial-box-content::before{
+        position: absolute;
+        content: "";
+        top: 0;
+        left: 0;
+        transform: translate(-50%, -50%);
+        width: 100%;
+        aspect-ratio: 1;
+        border-radius: 100%;
+        background-color: #303131;
+        z-index: -1;
+        transition: 0.5s;
     }
     .donate-link{
         text-decoration: none;

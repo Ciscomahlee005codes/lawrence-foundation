@@ -13,11 +13,13 @@
      <script src="https://unpkg.com/scrollreveal"></script>
 </head>
 <body>
-   <header class="header">
+  <header class="header">
     <div class="external-container">
-        <div class="logo-container"><img class="logo" src="Image/foundation-logo.png" width="45px" alt="">
-         <h5 class="logo-text">Lawrence Memorial Humanitarian Foundation</h5>
-      </div>
+          <div class="logo-container">
+            <img class="logo" src="Image/foundation-logo.png" width="45px" alt="">
+            <h5 class="logo-text">Lawrence Memorial Humanitarian Foundation</h5>
+         </div>
+       
         <nav class="menu-bar">
             <div class="head">
                 <div class="logo-container"><img src="Image/foundation-logo.png" width="45px" alt=""></div>
@@ -25,38 +27,66 @@
                </div>
                <ul>
                 <li class="header-list"><a class="header-link" href="index.html" id="down-hover">Home</a></li>
-                <li class="header-list"><a class="header-link" id="down-hover" href="about.html">About Us</a></li>
+                <li class="header-list"><a class="header-link" id="down-hover" href="about.html">About LAMEHF</a></li>
                 <li class="header-list" id="dropdown">
-                   <a class="header-link" id="down-hover" href="service.html">Our Services</a><i class="fa-solid fa-chevron-down"></i>
+                   <a class="header-link" id="down-hover" href="service.html">Services</a><i class="fa-solid fa-chevron-down"></i>
                    <ul class="sub-menu">
                       <li id="dropdown">
                          <a href="service.html" id="down-hover2"><span>Get Involved</span></a><i class="fa-solid fa-chevron-down"></i>
                          <ul class="sub-menu sub-menu-right" >
-                          <li><a href="service.html "><span>Accomplished Programs</span></a></li>
-                            <li><a href="service.html"><span>Donate</span></a></li>
+                          <li><a href="service.html"><span>Accomplished Programs</span></a></li>
                             <!-- <li><a href=""><span>Advocate</span></a></li>  -->
                             <li><a href="service.html"><span>Testimonials</span></a></li>
                          </ul>
                       </li>
-                     
+                      <li id="dropdown">
+                        <a href="youth.html" id="down-hover2"><span>Youth & Young Adults</span></a><i class="fa-solid fa-chevron-down"></i>
+                        <ul class="sub-menu sub-menu-right" >
+                         <li><a href="empowerment.html"><span>Youth Empowerment</span></a></li>
+                           <li><a href="acquisition.html"><span>Skill Acquisition</span></a></li>
+                           <!-- <li><a href=""><span>Advocate</span></a></li>  -->
+                           <li><a href="scholarship.html"><span>Student Support & Scholarship</span></a></li>
+                           <li><a href="padThegirl.html"><span>Pad The Girl Child</span></a></li>
+                           <li><a href="quiz.html"><span>Quiz Competition</span></a></li>
+                        </ul>
+                     </li>
+                     <li id="dropdown">
+                      <a href="medOutreach.html" id="down-hover2"><span>Free Medical Health Outreach</span></a><i class="fa-solid fa-chevron-down"></i>
+                      <ul class="sub-menu sub-menu-right" >
+                         <li><a href="healthAwareness.html"><span>Health Awareness</span></a></li>
+                         <!-- <li><a href=""><span>Advocate</span></a></li>  -->
+                         <li><a href="mentalHealth.html"><span>Mental Health Outreach</span></a></li>
+                         <li><a href="counseling.html"><span>Counseling & Rehaibilitation</span></a></li>
+                      </ul>
+                   </li>
+                     <li id="dropdown">
+                      <a href="communityDev.html" id="down-hover2"><span>Community Development</span></a><i class="fa-solid fa-chevron-down"></i>
+                      <ul class="sub-menu sub-menu-right" >
+                         <li><a href="foodPantry.html"><span>Food Pantry Program</span></a></li>
+                         <!-- <li><a href=""><span>Advocate</span></a></li>  -->
+                         <li><a href="borehole.html"><span>Borehole Water Project</span></a></li>
+                      </ul>
+                   </li>
+                     <li id="dropdown"><a href="familysupport.html"><span>Family Support</span></a></li>
                    </ul>
                  
                 </li>
                 <li class="header-list" id="dropdown">
-                   <a class="header-link" id="active-link" href="#" >Upcoming Events</a><i class="fa-solid fa-chevron-down"></i>
+                   <a class="header-link" id="active-link" href="#" >News & Events</a><i class="fa-solid fa-chevron-down"></i>
                    <ul class="sub-menu" id="adjust-ul">
-                      <li id="dropdown"><a href="youth.html"><span id="youth">Youth And Young Adult</span></a></li>
+                    <li id="dropdown">
+                      <a href="#program"><span>Our Programs</span></a><i class="fa-solid fa-chevron-down" id="left-btn"></i>
+                      <ul class="sub-menu sub-menu-left" >
+                         <li><a href="#program"><span>Ongoing Programs</span></a></li>
+                         <li><a href="#program"><span>Upcoming Programs</span></a></li> 
+                      </ul>
+                   </li>
+                      <li id="dropdown"><a href="blog.html"><span>Blog</span></a></li>
                       <!-- <li id="dropdown"><a href=""><span>Our Partners</span></a></li> -->
-                      <li id="dropdown">
-                         <a href="contact.html"><span>Contact Us</span></a><i class="fa-solid fa-chevron-down" id="left-btn"></i>
-                         <ul class="sub-menu sub-menu-left" >
-                            <li><a href="contact.html"><span>Address</span></a></li>
-                            <li><a href="contact.html"><span>Account Details</span></a></li> 
-                         </ul>
-                      </li>
                    </ul>
                 </li>
-                <li class="header-list"><a class="header-link" id="down-hover" href="blog.html">Blog</a></li>
+                <li class="header-list"><a class="header-link" id="down-hover" href="contact.html">Contact Us</a></li>
+                <li class="header-list4"><a class="header-link4" target="_blank" href="donation.html" id="down-hover">Donate</a></li>
                </ul>   
         </nav>
         <div class="header-right">
@@ -82,16 +112,53 @@
              <a href="index.html" class="text-link">Home<i class="fa-solid fa-chevron-right"></i></a>
             </li>
             <li class="text-list">
-                <a href="#" class="text-link colored">Upcoming Events<i class="fa-solid fa-chevron-right"></i></a>
+                <a href="#" class="text-link colored">News & Events<i class="fa-solid fa-chevron-right"></i></a>
                </li>
           </div><br>
-            <h4 class="intro-text-1">Upcoming Events</h4>
+            <h4 class="intro-text-1">News & Events</h4>
         </div>
     </section>
 
-    <section class="feature-section">
+    <!-- News Section -->
+
+    <section class="sectioned-link">
+      <div class="sectioned-container">
+          <div class="sectioned-head-link">
+              <li class="sectioned-list"><a href="index.html" class="sectioned-link">Home:</a></li>
+              <li class="sectioned-list"><a href="#" class="sectioned-link">/</a></li>
+              <li class="sectioned-list"><a href="#" class="sectioned-link make-bold">News & Events </a></li>
+           </div><br>
+      </div>
+   </section>
+
+   <!-- Program Section -->
+    <section class="program-section">
+      <div class="program-container">
+          <h3 class="program-main-head">Our News & Events</h3><br>
+          <h4 class="program-sub-title">Stay Informed: News, Events, and Updates from Lawrence Memorial Humanitarian Foundation</h4><br>
+
+          <p class="program-text"> 
+            Welcome to our News & Events section, where you can stay up to date with the latest developments, initiatives, and opportunities to get involved with our work. Here, we share stories of impact, upcoming events, and exciting milestones that showcase how, together, we are creating lasting change. Whether it's a new campaign, an inspiring testimonial, or a call for volunteers, we invite you to explore how you can contribute and be part of our mission.
+
+            From updates on our fundraising efforts to partnerships that are helping us expand our reach, this section is dedicated to keeping you connected with the heart of our organization. Every story shared here is a testament to the tireless efforts of our team, supporters, and the communities we serve.
+            
+            Thank you for supporting us as we continue to make a difference in the lives of those who need it most. Your involvement, whether through volunteering, donations, or simply spreading the word, plays a vital role in the work we do. Stay tuned for regular updates, and find out how you can take action and make an impact today!
+          </p>
+      </div>
+    </section>
+
+    <section class="feature-section" id="program">
       <div class="feature-container">
-        <h3 class="feature-head"> Featured Events</h3><br><hr><br>
+        <section class="sectioned-link">
+          <div class="sectioned-container">
+              <div class="sectioned-head-link">
+                  <li class="sectioned-list"><a href="index.html" class="sectioned-link">Home:</a></li>
+                  <li class="sectioned-list"><a href="#" class="sectioned-link">News & Events /</a></li>
+                  <li class="sectioned-list"><a href="#program" class="sectioned-link make-bold">Our Programs</a></li>
+               </div><br>
+          </div>
+       </section>
+        <h3 class="feature-head"> Our Programs</h3><br><hr><br>
         <h4 class="sub-title">Join us in making a difference—here's what's next!</h4><br>
         <div class="feature-card-container">
           <a href="medOutreach.html" class="feature-card-content"id="context-1">
@@ -126,6 +193,19 @@
             </figure>
             <div class="card-context" >
               <h5 class="card-title">CLOSE THE DAY Program</h5><br>
+              <div class="card-date">
+                <li class="date-list"><i class="fa-solid fa-calendar-days"></i><em>Upcoming</em> </li>
+                <li class="date-list"><i class="fa-solid fa-location-dot"></i> Enugu, Nigeria</li>
+              </div>
+            </div>
+          </a>
+
+          <a href="scholarship.html" class="feature-card-content" id="context-3">
+            <figure>
+              <img class="fig-img" src="./Gallery-images/WhatsApp Image 2024-12-03 at 11.57.52 AM.jpeg" alt="">
+            </figure>
+            <div class="card-context" >
+              <h5 class="card-title">Student Support & Scholarship Program</h5><br>
               <div class="card-date">
                 <li class="date-list"><i class="fa-solid fa-calendar-days"></i><em>Upcoming</em> </li>
                 <li class="date-list"><i class="fa-solid fa-location-dot"></i> Enugu, Nigeria</li>
@@ -205,17 +285,20 @@
                    <a class="footer-links" href="index.html">Home</a>
                   </li>
                   <li class="foot-list">
-                   <a class="footer-links" href="about.html">About Us</a>
+                   <a class="footer-links" href="about.html">About LAMEHF</a>
                   </li>
                   <li class="foot-list">
-                   <a class="footer-links" href="service.html">Our Services</a>
+                   <a class="footer-links" href="service.html">Services</a>
                   </li>
                   <li class="foot-list">
-                   <a class="footer-links" href="#">Upcoming Events</a>
+                   <a class="footer-links" href="#">News & Events</a>
                   </li>
                   <li class="foot-list">
-                   <a class="footer-links" href="blog.html">Blog</a>
+                   <a class="footer-links" href="contact.html">Contact Us</a>
                   </li>
+                  <li class="foot-list">
+                    <a class="footer-links" target="_blank" href="donation.html">Donate</a>
+                   </li>
                 </ul>
               </div>
       
@@ -226,22 +309,22 @@
                    <a class="footer-links" href="service.html">Get Involved</a>
                   </li>
                   <li class="foot-list">
-                    <a class="footer-links" href="service.html">Accomplished Programs</a>
+                    <a class="footer-links" href="youth.html">Youth & Young Adults</a>
                    </li>
                   <li class="foot-list">
-                   <a class="footer-links" href="service.html">Donate</a>
+                   <a class="footer-links" href="medOutreach.html">Free Medical Health Outreach</a>
                   </li>
                   <li class="foot-list">
-                   <a class="footer-links" href="service.html">Testimonials</a>
+                   <a class="footer-links" href="communityDev.html">Community Development</a>
                   </li>
                   <li class="foot-list">
-                      <a class="footer-links" href="youth.html">Youth And Young Adult</a>
+                      <a class="footer-links" href="familysupport.html">Family Support</a>
                      </li>
-                     <!-- <li class="foot-list">
-                      <a class="footer-links" href="">Our Partners</a>
-                     </li> -->
                      <li class="foot-list">
-                      <a class="footer-links" href="contact.html">Contact Us</a>
+                      <a class="footer-links" href="blog.html">Blog</a>
+                     </li>
+                     <li class="foot-list">
+                      <a class="footer-links" href="#program">Our Program</a>
                      </li>
                 </ul>
               </div>

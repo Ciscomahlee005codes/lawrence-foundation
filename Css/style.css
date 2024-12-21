@@ -17,16 +17,16 @@ html,body{
 /* Logo Designs Here */
 .logo-container{
     transform: translate(-20%,2%);
+    /* display: flex; */
 }
 .logo{
     width: 65px;
-     margin-left: 8rem;
+    
 }
 .logo-text{
-    font-family: "Lobster Two", sans-serif;
-    text-align: left;
-    color: rgb(253, 253, 253);
-    font-size: 22px;
+  font-family: "Lato", sans-serif;
+  transform: translate(-10%, 5%);
+  color: #ffffff;
 }
 /* Header Designs */
 .external-container{
@@ -40,7 +40,7 @@ html,body{
     top: 0;
     width: 100%;
     background-color: #008d8c;
-    /* border-bottom: 1.5px solid hsl(0, 0%, 100%,0.2); */
+    padding: 15px;
     z-index: 10;
 }
 .header .external-container{
@@ -61,13 +61,13 @@ html,body{
    display: inline-block;
 }
 .header .menu-bar > ul > li:not(:last-child){
-    margin-right: 40px;
+    margin-right: 10px;
 }
 .header .menu-bar a{
     text-decoration: none;
     text-transform: capitalize;
     font-size: 19px;
-    color: gainsboro;
+    color: rgb(255, 255, 255);
     font-family: "Josefin Sans", sans-serif;
     font-weight: 600;
     line-height: 1.5;
@@ -83,7 +83,7 @@ html,body{
     font-size: 20px;
  }
  .header .menu-bar > ul > li > a{
-   padding: 24px 0;
+   padding: 20px 15px;
 }
 /* Dropdown Links */
 .header .menu-bar #dropdown{
@@ -107,15 +107,16 @@ html,body{
     position: absolute;
     top: 100%;
     left: 0;
-    width: 230px;
-    padding: 1px 0;
-    background-color: hsl(229, 71%, 45%);
+    width: 250px;
+    padding: -10px;
+    background-color: hsl(228, 3%, 29%);
     box-shadow: 0 0 5px hsl(0, 0%, 100%,0.2);
     z-index: 1;
     transform-origin: top;
     transform: scaleY(0);
     visibility: hidden;
     opacity: 0;
+    
 }
 .header .menu-bar .sub-menu a{
   padding: 6px 24px;
@@ -551,10 +552,10 @@ footer{
     width: 100px;
 }
 .foot-logo-text{
-    font-family: "Lobster Two", sans-serif;
+    font-family: "Lato", sans-serif;
     text-align: left;
     color: rgb(253, 253, 253);
-    font-size: 22px;
+    font-size: 20px;
 }
 .foot-text{
     font-family: "Lato", sans-serif;
@@ -642,19 +643,19 @@ hr{
         padding-left: 4rem;
     }
     /* Logo Designs Here */
-.logo-container{
-    transform: translate(-10%,2%);
-}
-.logo{
-    width: 65px;
-     margin-left: 5rem;
-}
-.logo-text{
-    font-family: "Lobster Two", sans-serif;
-    text-align: left;
-    color: rgb(253, 253, 253);
-    font-size: 22px;
-}
+    .logo-container{
+        transform: translate(-20%,2%);
+        /* display: flex; */
+    }
+    .logo{
+        width: 65px;
+        transform: translate(100%,2%);
+    }
+    .logo-text{
+      font-family: "Lato", sans-serif;
+      transform: translate(5%, 5%);
+      color: #ffffff;
+    }
 .foot-container{
     display: grid;
     grid-template-columns: auto auto auto auto;
@@ -671,11 +672,11 @@ hr{
     width: 100px;
 }
 .foot-logo-text{
-    font-family: "Lobster Two", sans-serif;
+    font-family: "Lato", sans-serif;
     text-align: left;
     color: rgb(253, 253, 253);
     font-size: 22px;
-    width: 70%;
+    width: 85%;
 }
 .foot-text{
     font-family: "Lato", sans-serif;
@@ -694,19 +695,19 @@ hr{
         padding-left: 4rem;
     }
     /* Logo Designs Here */
-.logo-container{
-    transform: translate(1%,2%);
-}
-.logo{
-    width: 65px;
-     margin-left: 5rem;
-}
-.logo-text{
-    font-family: "Lobster Two", sans-serif;
-    text-align: left;
-    color: rgb(253, 253, 253);
-    font-size: 22px;
-}
+    .logo-container{
+        transform: translate(-20%,2%);
+        /* display: flex; */
+    }
+    .logo{
+        width: 65px;
+        transform: translate(100%,2%);
+    }
+    .logo-text{
+      font-family: "Lato", sans-serif;
+      transform: translate(15%, 5%);
+      color: #ffffff;
+    }
 .impact-container{
     padding: 45px;
     display: grid;
@@ -723,7 +724,7 @@ hr{
     text-decoration: none;
     border: 2px whitesmoke solid;
     padding: 15px;
-    width: 40%;
+    width: 45%;
     /* margin-left: 4.5rem; */
     background-color: #008d8c;   
 }
@@ -759,7 +760,6 @@ hr{
     width: 100px;
 }
 .foot-logo-text{
-    font-family: "Lobster Two", sans-serif;
     text-align: left;
     color: rgb(253, 253, 253);
     font-size: 22px;
@@ -773,16 +773,19 @@ hr{
  }
 
 @media (max-width:912px) {
+    .logo-container{
+        transform: translate(-20%,2%);
+        /* display: flex; */
+    }
     .logo{
         width: 65px;
-         margin-left: 2rem;
+        transform: translate(100%,2%);
     }
     .logo-text{
-        font-family: "Lobster Two", sans-serif;
-        text-align: left;
-        color: rgb(253, 253, 253);
-        font-size: 22px;
-        width: 75%;
+      font-family: "Lato", sans-serif;
+      transform: translate(15%, 5%);
+      font-size: 20px;
+      color: #ffffff;
     }
     .intro-section{
         background-image: url(..//Image/abubakar-balogun-OlJk99PX0Os-unsplash.jpg);
@@ -827,6 +830,11 @@ hr{
         border: 2px rgb(17, 17, 17) solid;
         color: rgb(0, 0, 0) ;
         transition: 700ms ease;
+    }
+    .activity-card-container{
+        display: grid;
+        grid-template-columns:auto auto;
+        gap: 20px;
     }
     .foot-container{
         display: grid;
@@ -1069,7 +1077,16 @@ hr{
      .header-list{
         line-height: 2rem;
     }
-
+    .logo{
+        transform: translate(170%, 5%);   
+    }
+    .logo-text{
+        font-family: "Lato", sans-serif;
+        transform: translate(30%, 5%);
+        font-size: 22px;
+        color: #ffffff;
+        width: 65%;
+      }
     .intro-section{
         background-image: url(..//Image/abubakar-balogun-OlJk99PX0Os-unsplash.jpg);
         background-position: center;
@@ -1349,7 +1366,6 @@ hr{
         font-size: 20px;
     }
     .foot-logo-text{
-        font-family: "Lobster Two", sans-serif;
         text-align: left;
         color: rgb(253, 253, 253);
         font-size: 20px;
@@ -1357,6 +1373,13 @@ hr{
     }
 }
 @media (max-width:430px) {
+    .logo-text{
+        font-family: "Lato", sans-serif;
+        transform: translate(30%, 5%);
+        font-size: 22px;
+        color: #ffffff;
+        width: 75%;
+      }
     .intro-section{
         background-image: url(..//Image/abubakar-balogun-OlJk99PX0Os-unsplash.jpg);
         background-position: center;
@@ -1510,7 +1533,6 @@ hr{
         font-size: 20px;
     }
     .foot-logo-text{
-        font-family: "Lobster Two", sans-serif;
         text-align: left;
         color: rgb(253, 253, 253);
         font-size: 20px;
@@ -1539,6 +1561,13 @@ hr{
     }
 }
 @media (max-width:414px) {
+    .logo-text{
+        font-family: "Lato", sans-serif;
+        transform: translate(30%, 5%);
+        font-size: 22px;
+        color: #ffffff;
+        width: 80%;
+      }
     .intro-text-2 {
         font-family: "Josefin Sans", sans-serif;
         color: honeydew;
@@ -1555,7 +1584,6 @@ hr{
 }
 @media (max-width:393px) {
     .logo-text{
-        font-family: "Lobster Two", sans-serif;
         text-align: left;
         color: rgb(253, 253, 253);
         font-size: 20px;
@@ -1582,11 +1610,10 @@ hr{
 }
 @media (max-width:375px) {
     .logo-text{
-        font-family: "Lobster Two", sans-serif;
         text-align: left;
         color: rgb(253, 253, 253);
         font-size: 20px;
-        width: 80%;
+        width: 85%;
     }
     .impact-head-text{
         font-family: "Lato", sans-serif;
@@ -1630,11 +1657,10 @@ hr{
 
 @media (max-width:360px) {
     .logo-text{
-        font-family: "Lobster Two", sans-serif;
         text-align: left;
         color: rgb(253, 253, 253);
-        font-size: 20px;
-        width: 85%;
+        font-size: 18px;
+        width: 90%;
     }
     .impact-head-text{
         font-family: "Lato", sans-serif;
@@ -1687,11 +1713,10 @@ hr{
 }
 @media (max-width:320px) {
     .logo-text{
-        font-family: "Lobster Two", sans-serif;
         text-align: left;
         color: rgb(253, 253, 253);
-        font-size: 20px;
-        width: 95%;
+        font-size: 17px;
+        width: 100%;
     }
     .intro-section{
         background-image: url(..//Image/abubakar-balogun-OlJk99PX0Os-unsplash.jpg);

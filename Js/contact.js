@@ -37,3 +37,68 @@ menu.querySelectorAll('#dropdown > i').forEach((arrow)=>{
 
 window.onscroll = calcScrollValue;
   window.onload = calcScrollValue;
+
+  // Contact Form
+  document.getElementById("messageForm").addEventListener("submit", function(event) {
+    event.preventDefault();  // Prevent form submission
+    
+    // Clear any previous error messages
+    const errorElements = document.querySelectorAll('.error-message');
+    errorElements.forEach(element => element.textContent = '');
+
+    let isValid = true;
+
+    // Check for empty fields
+    const fName = document.getElementById("fName");
+    const lName = document.getElementById("lName");
+    const mailAddress = document.getElementById("mailAddress");
+    const subject = document.getElementById("subject");
+    const messageJs = document.getElementById("messageJs");
+
+    if (fName.value.trim() === "") {
+      isValid = false;
+      // document.getElementById("fNameError").textContent = "This field is required";
+      fName.style.borderColor = "red";
+    } else {
+      fName.style.borderColor = "";
+    }
+
+    if (lName.value.trim() === "") {
+      isValid = false;
+      // document.getElementById("lNameError").textContent = "This field is required";
+      lName.style.borderColor = "red";
+    } else {
+      lName.style.borderColor = "";
+    }
+
+    if (mailAddress.value.trim() === "") {
+      isValid = false;
+      // document.getElementById("mailAddressError").textContent = "This field is required";
+      mailAddress.style.borderColor = "red";
+    } else {
+      mailAddress.style.borderColor = "";
+    }
+
+    if (subject.value.trim() === "") {
+      isValid = false;
+      // document.getElementById("subjectError").textContent = "This field is required";
+      subject.style.borderColor = "red";
+    } else {
+      subject.style.borderColor = "";
+    }
+
+    if (messageJs.value.trim() === "") {
+      isValid = false;
+      // document.getElementById("messageError").textContent = "This field is required";
+      messageJs.style.borderColor = "red";
+    } else {
+      messageJs.style.borderColor = "";
+    }
+
+    // If all fields are valid, allow form submission
+    if (isValid) {
+      // For example, if form submission needs to send an email:
+      window.location.href = "mailto:lamehf2020@gmail.com"; 
+      alert("Form Submitted Successfully!");
+    }
+  });

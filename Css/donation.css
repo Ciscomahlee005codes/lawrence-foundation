@@ -134,6 +134,79 @@ input{
     background-color: #ffffff;
     color: #0ac05c;
  }
+ .our-office{
+    font-size: 20px;
+    font-family: "Josefin Sans", sans-serif; 
+    color: #068888;
+    letter-spacing: 2px;
+}
+.contact-list{
+    list-style: none;
+    font-family: "Josefin Sans", sans-serif;
+    font-size: 17px;
+}
+.contact-bold{
+    font-weight: 600;
+}
+/* Error Message */
+.error-message {
+    color: red;
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+input, select, textarea {
+    border: 1px solid #ccc;
+    padding: 10px;
+    width: 100%;
+    margin: 5px 0;
+}
+
+input:focus, select:focus, textarea:focus {
+    outline: none;
+    border-color: #5b9bd5;
+}
+
+.submit-btn {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.submit-btn:hover {
+    background-color: #45a049;
+}
+
+.pop {
+    display: none;
+    background: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    justify-content: center;
+    align-items: center;
+}
+
+.register-container {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.ok-btn {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+}
 /* Footer Section */
 footer{
     background-image: url(..//Image/bg_4.jpg);

@@ -18,16 +18,16 @@ html,body{
 /* Logo Designs Here */
 .logo-container{
     transform: translate(-20%,2%);
+    /* display: flex; */
 }
 .logo{
     width: 65px;
-     margin-left: 8rem;
+    
 }
 .logo-text{
-    font-family: "Lobster Two", sans-serif;
-    text-align: left;
-    color: rgb(253, 253, 253);
-    font-size: 22px;
+  font-family: "Lato", sans-serif;
+  transform: translate(-10%, 5%);
+  color: #ffffff;
 }
 /* Header Designs */
 .external-container{
@@ -41,7 +41,7 @@ html,body{
     top: 0;
     width: 100%;
     background-color: #008d8c;
-    /* border-bottom: 1.5px solid hsl(0, 0%, 100%,0.2); */
+    padding: 15px;
     z-index: 10;
 }
 .header .external-container{
@@ -62,13 +62,13 @@ html,body{
    display: inline-block;
 }
 .header .menu-bar > ul > li:not(:last-child){
-    margin-right: 40px;
+    margin-right: 10px;
 }
 .header .menu-bar a{
     text-decoration: none;
     text-transform: capitalize;
     font-size: 19px;
-    color: gainsboro;
+    color: rgb(255, 255, 255);
     font-family: "Josefin Sans", sans-serif;
     font-weight: 600;
     line-height: 1.5;
@@ -84,7 +84,7 @@ html,body{
     font-size: 20px;
  }
  .header .menu-bar > ul > li > a{
-   padding: 24px 0;
+   padding: 20px 15px;
 }
 /* Dropdown Links */
 .header .menu-bar #dropdown{
@@ -108,15 +108,16 @@ html,body{
     position: absolute;
     top: 100%;
     left: 0;
-    width: 230px;
-    padding: 1px 0;
-    background-color: hsl(229, 71%, 45%);
+    width: 250px;
+    padding: -10px;
+    background-color: hsl(228, 3%, 29%);
     box-shadow: 0 0 5px hsl(0, 0%, 100%,0.2);
     z-index: 1;
     transform-origin: top;
     transform: scaleY(0);
     visibility: hidden;
     opacity: 0;
+    
 }
 .header .menu-bar .sub-menu a{
   padding: 6px 24px;
@@ -470,19 +471,19 @@ hr{
 /* Respomsive Design */
 @media (max-width: 1280px) {
     /* Logo Designs Here */
-.logo-container{
-    transform: translate(-10%,2%);
-}
-.logo{
-    width: 65px;
-     margin-left: 5rem;
-}
-.logo-text{
-    font-family: "Lobster Two", sans-serif;
-    text-align: left;
-    color: rgb(253, 253, 253);
-    font-size: 22px;
-}
+    .logo-container{
+        transform: translate(-20%,2%);
+        /* display: flex; */
+    }
+    .logo{
+        width: 65px;
+        transform: translate(100%,2%);
+    }
+    .logo-text{
+      font-family: "Lato", sans-serif;
+      transform: translate(5%, 5%);
+      color: #ffffff;
+    }
 .intro-section{
     background-position: center;
     background-size: cover;
@@ -504,19 +505,19 @@ hr{
 }
 @media (max-width:1114px) {
     /* Logo Designs Here */
-.logo-container{
-   transform: translate(1%,2%);
-}
-.logo{
-   width: 65px;
-    margin-left: 5rem;
-}
-.logo-text{
-   font-family: "Lobster Two", sans-serif;
-   text-align: left;
-   color: rgb(253, 253, 253);
-   font-size: 22px;
-}
+    .logo-container{
+        transform: translate(-20%,2%);
+        /* display: flex; */
+    }
+    .logo{
+        width: 65px;
+        transform: translate(100%,2%);
+    }
+    .logo-text{
+      font-family: "Lato", sans-serif;
+      transform: translate(15%, 5%);
+      color: #ffffff;
+    }
 
 .foot-container{
    display: grid;
@@ -534,7 +535,6 @@ hr{
    width: 100px;
 }
 .foot-logo-text{
-   font-family: "Lobster Two", sans-serif;
    text-align: left;
    color: rgb(253, 253, 253);
    font-size: 22px;
@@ -547,16 +547,19 @@ hr{
 }
 }
 @media (max-width:912px) {
+    .logo-container{
+        transform: translate(-20%,2%);
+        /* display: flex; */
+    }
     .logo{
         width: 65px;
-         margin-left: 2rem;
+        transform: translate(100%,2%);
     }
     .logo-text{
-        font-family: "Lobster Two", sans-serif;
-        text-align: left;
-        color: rgb(253, 253, 253);
-        font-size: 22px;
-        width: 75%;
+      font-family: "Lato", sans-serif;
+      transform: translate(15%, 5%);
+      font-size: 20px;
+      color: #ffffff;
     }
     .intro-section{
         background-position: center;
@@ -818,6 +821,16 @@ hr{
      .header-list{
         line-height: 2rem;
     }
+    .logo{
+        transform: translate(170%, 5%);   
+    }
+    .logo-text{
+        font-family: "Lato", sans-serif;
+        transform: translate(30%, 5%);
+        font-size: 22px;
+        color: #ffffff;
+        width: 65%;
+      }
     .intro-section{
         background-position: center;
         background-size: cover;
@@ -924,8 +937,44 @@ hr{
         min-height: 30vh;
         transform: translate(0%,200%);
     }
+    .donate-content-container{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-direction: column-reverse;
+        gap: 20px; 
+        padding: 20px;
+      }
 }
 @media (max-width:540px) {
+    .intro-text-1{
+        font-size: 32px;
+    }
+    .scholarship-head{
+        font-size: 26px;
+        color: #008d8c;
+        font-family: "Josefin Sans", sans-serif;
+        text-align: center;
+    }
+    .scholarship-subtitle{
+        font-size: 20px;
+        color: #008d8c;
+        font-family: "Josefin Sans", sans-serif;
+        text-align: center;
+    }
+    .sectioned-head-link{
+        display: flex;
+        gap: 5px;
+        padding: 15px;
+        border-bottom: 1.5px black solid;
+        box-shadow: 10px 10px 40px rgba(36, 35, 35, 0.1);
+    }
+    .sectioned-link{
+        text-decoration: none;
+        font-size: 16px;
+        color: #045c5c;
+        font-family: "Lato", sans-serif;
+    }
     .donate-content-container{
         display: flex;
         align-items: center;
@@ -948,11 +997,6 @@ hr{
         place-content: center;
         place-items: center;
     }
-    .pantry-card-container{
-        display: grid;
-        grid-template-columns:auto;
-        gap: 10px;
-    }
     #address{
         word-wrap: break-word;
         overflow-wrap: break-word;
@@ -963,341 +1007,301 @@ hr{
         gap: 10px;
     }
      .foot-logo-text{
-            font-family: "Lobster Two", sans-serif;
             text-align: left;
             color: rgb(253, 253, 253);
             font-size: 20px;
             width: 90%;
         }
-}
-@media (max-width:430px) {
-    .intro-text-1{
-        font-size: 32px;
     }
-    .sectioned-head-link{
-        display: flex;
-        gap: 5px;
-        padding: 15px;
-        border-bottom: 1.5px black solid;
-        box-shadow: 10px 10px 40px rgba(36, 35, 35, 0.1);
+    @media (max-width:430px) {
+        .logo-text{
+            font-family: "Lato", sans-serif;
+            transform: translate(30%, 5%);
+            font-size: 22px;
+            color: #ffffff;
+            width: 80%;
+          }
+        .intro-text-1{
+            font-size: 28px;
+        }
+        .sectioned-head-link{
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            padding: 15px;
+            border-bottom: 1.5px black solid;
+            box-shadow: 10px 10px 40px rgba(36, 35, 35, 0.1);
+        }
+        .sectioned-link{
+            text-decoration: none;
+            font-size: 16px;
+            color: #045c5c;
+            font-family: "Lato", sans-serif;
+        }
+        .donate-head{
+            color: aliceblue;
+            font-family: "Josefin Sans", sans-serif;
+            font-size: 24px;
+            text-align: center;
+        }
+        .donate-sub-title{
+            font-size: 20px;
+            text-align: center;
+            color: aliceblue;
+            font-family: "Josefin Sans", sans-serif;
+        }
+        .make-bold{
+            font-weight: 800;
+        }
+        .donate-text-content {
+            flex: 1; 
+            font-size: 32px;
+            line-height: 1.5;
+            font-family: "Oswald", sans-serif;
+            color: #f0f5f5;
+        }
+        .passage{
+            font-size: 18px;
+        }
+        .donate-head-link{
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+        .socials{
+            display: flex;
+            gap: 10px;
+        }
+        .foot-container{
+            display: grid;
+            grid-template-columns: auto;
+            gap: 1.5rem;
+        }
+        .foot-logo-text{
+            text-align: left;
+            color: rgb(253, 253, 253);
+            font-size: 20px;
+            width: 90%;
+        }
+        .programmer{
+            font-family: "Josefin Sans", sans-serif;
+            width: 90%;
+            color: #008d8c;
+            text-align: center; 
+        }
+        .join-us{
+            font-size: 18px;
+            color: azure;
+            font-family: "Josefin Sans", sans-serif;
+            text-decoration: none;
+            border: 2px whitesmoke solid;
+            padding: 10px;
+            background-color: #008d8c;  
+           
+        }
+        .join-us:hover{
+            background-color: transparent;
+            color: aliceblue;
+            transition: 700ms ease;
+        }
     }
-    .sectioned-link{
-        text-decoration: none;
-        font-size: 16px;
-        color: #045c5c;
-        font-family: "Lato", sans-serif;
+    @media (max-width:428px) {
+        .intro-section{
+            background-position: center;
+            background-size: cover;
+            background-attachment: fixed;
+            /* height: 620px; */
+            min-height: 60vh;
+        }
+        .intro-container{
+            position: relative;
+            top: 0;
+            left: 0;
+            width: 100%;
+            /* height: 620px; */
+            min-height: 20vh;
+            transform: translate(0%,200%);
+        }
+        
+        .intro-text-1 {
+            font-size: 26px;
+            font-weight: 900;
+            color: rgb(255, 255, 255);
+            font-family: "Josefin Sans", sans-serif;
+            text-align: left;
+            padding-top: 3rem;
+            padding-left: 2.5rem;
+        }
+        .sectioned-head-link{
+            display: flex;
+            gap: 5px;
+            padding: 5px;
+            border-bottom: 1.5px black solid;
+            box-shadow: 10px 10px 40px rgba(36, 35, 35, 0.1);
+        }
+        .sectioned-link{
+            text-decoration: none;
+            font-size: 18px;
+            color: #045c5c;
+            font-family: "Lato", sans-serif;
+        }
+        .socials{
+            display: flex;
+            gap: 10px;
+        }
+        .foot-container{
+            display: grid;
+            grid-template-columns: auto;
+            gap: 1.5rem;
+        }
+        .foot-logo-text{
+            text-align: left;
+            color: rgb(253, 253, 253);
+            font-size: 20px;
+            width: 90%;
+        }
+        .programmer{
+            font-family: "Josefin Sans", sans-serif;
+            width: 90%;
+            color: #008d8c;
+            text-align: center; 
+        }
+        .join-us{
+            font-size: 18px;
+            color: azure;
+            font-family: "Josefin Sans", sans-serif;
+            text-decoration: none;
+            border: 2px whitesmoke solid;
+            padding: 10px;
+            background-color: #008d8c;  
+           
+        }
+        .join-us:hover{
+            background-color: transparent;
+            color: aliceblue;
+            transition: 700ms ease;
+        }
     }
-    .pantry-head{
-        font-size: 26px;
-        color: #008d8c;
-        text-align: center;
-        font-family: "Josefin Sans", sans-serif;
+    @media (max-width:414px) {
+        .logo-text{
+            font-family: "Lato", sans-serif;
+            transform: translate(30%, 5%);
+            font-size: 22px;
+            color: #ffffff;
+            width: 85%;
+          }
+        .intro-text-1{
+            font-size: 26px;
+        }
+        .sectioned-head-link{
+            display: flex;
+            gap: 10px;
+            padding: 5px;
+            border-bottom: 1.5px black solid;
+            box-shadow: 10px 10px 40px rgba(36, 35, 35, 0.1);
+        }
+        .sectioned-link{
+            text-decoration: none;
+            font-size: 18px;
+            color: #045c5c;
+            font-family: "Lato", sans-serif;
+        }
+        .make-bold{
+            font-weight: 800;
+        }
+        .donate-text-content {
+            flex: 1; 
+            font-size: 26px;
+            line-height: 1.5;
+            font-family: "Oswald", sans-serif;
+            color: #f0f5f5;
+        }
+        .passage{
+            font-size: 18px;
+        }
     }
-    .pantry-text{
-        font-family: "Lato ", sans-serif;
+    @media (max-width:393px) {
+        .logo-text{
+           
+            text-align: left;
+            color: rgb(253, 253, 253);
+            font-size: 20px;
+            width: 80%;
+        }
+        .intro-text-1{
+            font-size: 24px;
+        } 
+        .sectioned-head-link{
+            display: flex;
+            gap: 10px;
+            padding: 5px;
+            border-bottom: 1.5px black solid;
+            box-shadow: 10px 10px 40px rgba(36, 35, 35, 0.1);
+        }
+        .sectioned-link{
+            text-decoration: none;
+            font-size: 16px;
+            /* color: #045c5c; */
+            font-family: "Lato", sans-serif;
+        }
     }
-    .card-head{
-        text-align: left;
-        font-size: 22px;
-        color: #008d8c;
-        font-family: "Josefin Sans", sans-serif;
-    }
-    .donate-head{
-        color: aliceblue;
-        font-family: "Josefin Sans", sans-serif;
-        font-size: 24px;
-        text-align: center;
-    }
-    .donate-sub-title{
-        font-size: 20px;
-        text-align: center;
-        color: aliceblue;
-        font-family: "Josefin Sans", sans-serif;
-    }
-    .make-bold{
-        font-weight: 800;
-    }
-    .donate-text-content {
-        flex: 1; 
-        font-size: 32px;
-        line-height: 1.5;
-        font-family: "Oswald", sans-serif;
-        color: #f0f5f5;
-    }
-    .passage{
-        font-size: 18px;
-    }
-    .socials{
-        display: flex;
-        gap: 10px;
-    }
-    .foot-container{
-        display: grid;
-        grid-template-columns: auto;
-        gap: 1.5rem;
-    }
-    .foot-logo-text{
-        font-family: "Lobster Two", sans-serif;
-        text-align: left;
-        color: rgb(253, 253, 253);
-        font-size: 20px;
-        width: 90%;
-    }
-    .programmer{
-        font-family: "Josefin Sans", sans-serif;
-        width: 90%;
-        color: #008d8c;
-        text-align: center; 
-    }
-    .join-us{
-        font-size: 18px;
-        color: azure;
-        font-family: "Josefin Sans", sans-serif;
-        text-decoration: none;
-        border: 2px whitesmoke solid;
-        padding: 10px;
-        background-color: #008d8c;  
-       
-    }
-    .join-us:hover{
-        background-color: transparent;
-        color: aliceblue;
-        transition: 700ms ease;
-    }
-}
-@media (max-width:428px) {
-    .intro-section{
-        background-position: center;
-        background-size: cover;
-        background-attachment: fixed;
-        /* height: 620px; */
-        min-height: 60vh;
-    }
-    .intro-container{
-        position: relative;
-        top: 0;
-        left: 0;
-        width: 100%;
-        /* height: 620px; */
-        min-height: 20vh;
-        transform: translate(0%,200%);
-    }
-    
-    .intro-text-1 {
-        font-size: 26px;
-        font-weight: 900;
-        color: rgb(255, 255, 255);
-        font-family: "Josefin Sans", sans-serif;
-        text-align: left;
-        padding-top: 3rem;
-        padding-left: 2.5rem;
-    }
-    .sectioned-head-link{
-        display: flex;
-        gap: 5px;
-        padding: 5px;
-        border-bottom: 1.5px black solid;
-        box-shadow: 10px 10px 40px rgba(36, 35, 35, 0.1);
-    }
-    .sectioned-link{
-        text-decoration: none;
-        font-size: 16px;
-        color: #045c5c;
-        font-family: "Lato", sans-serif;
-    }
-    .pantry-head{
-        font-size: 24px;
-        color: #008d8c;
-        text-align: center;
-        font-family: "Josefin Sans", sans-serif;
-    }
-    .pantry-text{
-        font-family: "Lato ", sans-serif;
-    }
-    .card-head{
-        text-align: left;
-        font-size: 20px;
-        color: #008d8c;
-        font-family: "Josefin Sans", sans-serif;
-    }
-    .socials{
-        display: flex;
-        gap: 10px;
-    }
-    .foot-container{
-        display: grid;
-        grid-template-columns: auto;
-        gap: 1.5rem;
-    }
-    .foot-logo-text{
-        font-family: "Lobster Two", sans-serif;
-        text-align: left;
-        color: rgb(253, 253, 253);
-        font-size: 20px;
-        width: 90%;
-    }
-    .programmer{
-        font-family: "Josefin Sans", sans-serif;
-        width: 90%;
-        color: #008d8c;
-        text-align: center; 
-    }
-    .join-us{
-        font-size: 18px;
-        color: azure;
-        font-family: "Josefin Sans", sans-serif;
-        text-decoration: none;
-        border: 2px whitesmoke solid;
-        padding: 10px;
-        background-color: #008d8c;  
-       
-    }
-    .join-us:hover{
-        background-color: transparent;
-        color: aliceblue;
-        transition: 700ms ease;
-    }
-}
-@media (max-width:414px) {
-    .intro-text-1{
-        font-size: 26px;
-    }
-    .sectioned-head-link{
-        display: flex;
-        gap: 10px;
-        padding: 5px;
-        border-bottom: 1.5px black solid;
-        box-shadow: 10px 10px 40px rgba(36, 35, 35, 0.1);
-    }
-    .sectioned-link{
-        text-decoration: none;
-        font-size: 14px;
-        color: #045c5c;
-        font-family: "Lato", sans-serif;
-    }
-    .pantry-head{
-        font-size: 22px;
-        color: #008d8c;
-        text-align: center;
-        font-family: "Josefin Sans", sans-serif;
-    }
-    .pantry-text{
-        font-family: "Lato ", sans-serif;
-    }
-    .card-head{
-        text-align: left;
-        font-size: 20px;
-        color: #008d8c;
-        font-family: "Josefin Sans", sans-serif;
-    }
-    .make-bold{
-        font-weight: 800;
-    }
-    .donate-text-content {
-        flex: 1; 
-        font-size: 26px;
-        line-height: 1.5;
-        font-family: "Oswald", sans-serif;
-        color: #f0f5f5;
-    }
-    .passage{
-        font-size: 18px;
-    }
-}
-@media (max-width:393px) {
-    .logo-text{
-        font-family: "Lobster Two", sans-serif;
-        text-align: left;
-        color: rgb(253, 253, 253);
-        font-size: 20px;
-        width: 80%;
-    }
-    .intro-text-1{
-        font-size: 24px;
-    } 
-    .sectioned-head-link{
-        display: flex;
-        gap: 10px;
-        padding: 5px;
-        border-bottom: 1.5px black solid;
-        box-shadow: 10px 10px 40px rgba(36, 35, 35, 0.1);
-    }
-    .sectioned-link{
-        text-decoration: none;
-        font-size: 12px;
-        /* color: #045c5c; */
-        font-family: "Lato", sans-serif;
-    }
-}
 @media (max-width:375px) {
-    .pantry-head{
-        font-size: 22px;
-        color: #008d8c;
-        text-align: center;
-        font-family: "Josefin Sans", sans-serif;
-    }
-    .pantry-text{
-        font-family: "Lato ", sans-serif;
-    }
-    .card-head{
+    .logo-text{
         text-align: left;
-        font-size: 19px;
-        color: #008d8c;
-        font-family: "Josefin Sans", sans-serif;
+        color: rgb(253, 253, 253);
+        font-size: 20px;
+        width: 90%;
     }
 }
-
-@media (max-width:360px) {
-    .logo-text{
-        font-family: "Lobster Two", sans-serif;
-        text-align: left;
-        color: rgb(253, 253, 253);
-        font-size: 20px;
-        width: 85%;
-    }
-    .sectioned-head-link{
-        display: flex;
-        gap: 5px;
-        padding: 5px;
-        border-bottom: 1.5px black solid;
-        box-shadow: 10px 10px 40px rgba(36, 35, 35, 0.1);
-    }
-    .sectioned-link{
-        text-decoration: none;
-        font-size: 12px;
-        color: #045c5c;
-        font-family: "Lato", sans-serif;
-    }
-}  
-@media (max-width:320px) {
-    .logo-text{
-        font-family: "Lobster Two", sans-serif;
-        text-align: left;
-        color: rgb(253, 253, 253);
-        font-size: 20px;
-        width: 95%;
-    }
-    .intro-text-1{
-        font-size: 20px;
-    } 
-    .sectioned-head-link{
-        display: flex;
-        gap: 5px;
-        padding: 5px;
-        border-bottom: 1.5px black solid;
-        box-shadow: 10px 10px 40px rgba(36, 35, 35, 0.1);
-    }
-    .sectioned-link{
-        text-decoration: none;
-        font-size: 10px;
-        color: #045c5c;
-        font-family: "Lato", sans-serif;
-    }
-    .donate-link{
-        text-decoration: none;
-        font-size: 15px;
-        color: #fcfdfd;
-        font-family: "Lato", sans-serif;
-    }
-}      
+    @media (max-width:360px) {
+        .logo-text{
+            text-align: left;
+            color: rgb(253, 253, 253);
+            font-size: 18px;
+            width: 90%;
+        }
+        .sectioned-head-link{
+            display: flex;
+            gap: 5px;
+            padding: 5px;
+            border-bottom: 1.5px black solid;
+            box-shadow: 10px 10px 40px rgba(36, 35, 35, 0.1);
+        }
+        .sectioned-link{
+            text-decoration: none;
+            font-size: 12px;
+            color: #045c5c;
+            font-family: "Lato", sans-serif;
+        }
+    }  
+    @media (max-width:320px) {
+        .logo-text{
+            text-align: left;
+            color: rgb(253, 253, 253);
+            font-size: 17px;
+            width: 100%;
+        }
+        .intro-text-1{
+            font-size: 20px;
+        } 
+        .sectioned-head-link{
+            display: flex;
+            gap: 5px;
+            padding: 5px;
+            border-bottom: 1.5px black solid;
+            box-shadow: 10px 10px 40px rgba(36, 35, 35, 0.1);
+        }
+        .sectioned-link{
+            text-decoration: none;
+            font-size: 14px;
+            color: #045c5c;
+            font-family: "Lato", sans-serif;
+        }
+        .donate-link{
+            text-decoration: none;
+            font-size: 15px;
+            color: #fcfdfd;
+            font-family: "Lato", sans-serif;
+        }
+    }      
 

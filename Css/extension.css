@@ -1,405 +1,591 @@
-@media (max-width: 1280px) {
-  /* Logo Designs Here */
-.logo-container{
-  transform: translate(-10%,2%);
+@import url('https://fonts.googleapis.com/css2?family=Lobster+Two:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Lobster+Two:ital,wght@0,400;0,700;1,400;1,700&family=Oswald:wght@200..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Lobster+Two:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Lobster+Two:ital,wght@0,400;0,700;1,400;1,700&family=Oswald:wght@200..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Lobster+Two:ital,wght@0,400;0,700;1,400;1,700&family=Oswald:wght@200..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
 }
-.logo{
-  width: 65px;
-   margin-left: 5rem;
+html,body{
+    /* overflow: hidden; */
+   scroll-behavior: smooth;
+   overflow-x: hidden;
+}
+/* Donation */
+.donation{
+    background-image: url(..//Image/abubakar-balogun-OlJk99PX0Os-unsplash.jpg);
+    background-position: left;
+    background-size: cover;
+    background-attachment: fixed;
+    /* height: 620px; */
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 40px;
+}
+.donation-container{
+    background-color: aliceblue;
+    border-radius: 8px;
+    width: 50%;
+    padding: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.logo-container{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
 }
 .logo-text{
-  font-family: "Lobster Two", sans-serif;
-  text-align: left;
-  color: rgb(253, 253, 253);
-  font-size: 22px;
+    font-family: "Lobster Two", sans-serif;
+    font-size: 24px;
 }
-.intro-section{
-  background-image: url(..//Image/topsphere-media-jLbmY5Zp7UQ-unsplash.jpg);
-  background-position: center;
-  background-size: cover;
-  background-attachment: fixed;
-  /* height: 620px; */
-  min-height: 60vh;
+label{
+    font-size: 18px;
+    font-family: "Josefin Sans", sans-serif;
 }
-.intro-container{
-  position: absolute;
-  top: 15rem;
-  left: 0;
-  width: 100%;
-  /* height: 620px; */
-  min-height: 30vh;
-  background: rgba(0, 51, 75, 0.5);
+input{
+    padding: 10px 30px;
+    font-size: 18px;
+    font-family: "Josefin Sans", sans-serif;
 }
+::placeholder{
+    font-family: "Josefin Sans", sans-serif;
 }
-@media (max-width:1114px) {
-   /* Logo Designs Here */
-.logo-container{
-  transform: translate(1%,2%);
+.form-text{
+    font-family: "Lato", sans-serif;
+    display: inline;
 }
-.logo{
-  width: 65px;
-   margin-left: 5rem;
+.submit-btn{
+    text-decoration: none;
+    color: #ffffff;
+    background-color: #008d8c;
+    padding: 10px 30px;
+    display: grid;
+    place-self: center;
+    place-content: center;
+    font-family: "Josefin Sans", sans-serif;
 }
-.logo-text{
-  font-family: "Lobster Two", sans-serif;
-  text-align: left;
-  color: rgb(253, 253, 253);
-  font-size: 22px;
+/* Pop Up Section */
+.register-container{
+    width: 100%;
+ }
+ .reg-popup {
+     width: 400px;
+     background-color: #fdfdfd;
+     border-radius: 6px;
+     position: absolute;
+     top: 0;
+     left: 50%;
+     transform: translate(-40%, -40%) scale(0.1);
+     text-align: center;
+     padding: 0 30px 30px;
+     color: #333;
+     visibility: hidden;
+     transition: transform 0.4s, top 0.4s;
+ }
+
+ .reg-openpopup {
+     top: 60%;
+     visibility: visible;
+     transform: translate(-50%, -50%) scale(1);
+ }
+
+ .reg-popup img {
+     width: 100px;
+     border-radius: 50px;
+     margin-top: 50px;
+     box-shadow: 2px 3px 2px 3px #555;
+ }
+
+ .reg-popup .head-pop {
+    color: #000000;
+     font-size: 34px;
+     margin: 30px 0 10px;
+ }
+.pop-text{
+    font-family: "Lato" sans-serif;
+    font-weight: 600;
 }
-.intro-section{
-  background-image: url(..//Image/topsphere-media-jLbmY5Zp7UQ-unsplash.jpg);
-  background-position: center;
-  background-size: cover;
-  background-attachment: fixed;
-  /* height: 620px; */
-  min-height: 60vh;
+ .reg-popup .ok-btn {
+     width: 15vmin;
+     height: 20px;
+     text-decoration: none;
+    margin: auto;
+     padding: 15px;
+     display: grid;
+     place-content: center;
+     background-color: #0ac05c;
+     color: whitesmoke;
+     border: 0;
+     outline: none;
+     font-size: 18px;
+     border-radius: 5px;
+     cursor: pointer;
+     box-shadow: 1px 2px 1px 2px #555;
+ }
+ .ok-btn:hover{
+    background-color: #ffffff;
+    color: #0ac05c;
+ }
+ .our-office{
+    font-size: 20px;
+    font-family: "Josefin Sans", sans-serif; 
+    color: #068888;
+    letter-spacing: 2px;
 }
-.intro-container{
-  position: absolute;
-  top: 12.1rem;
-  left: 0;
-  width: 100%;
-  /* height: 620px; */
-  min-height: 30vh;
-  background: rgba(0, 51, 75, 0.5);
+.contact-list{
+    list-style: none;
+    font-family: "Josefin Sans", sans-serif;
+    font-size: 17px;
+}
+.contact-bold{
+    font-weight: 600;
+}
+/* Error Message */
+.error-message {
+    color: red;
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+input, select, textarea {
+    border: 1px solid #ccc;
+    padding: 10px;
+    width: 100%;
+    margin: 5px 0;
+}
+
+input:focus, select:focus, textarea:focus {
+    outline: none;
+    border-color: #5b9bd5;
+}
+
+.submit-btn {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.submit-btn:hover {
+    background-color: #45a049;
+}
+
+.pop {
+    /* display: none; */
+    background: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    justify-content: center;
+    align-items: center;
+}
+
+.register-container {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.ok-btn {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+}
+/* Footer Section */
+footer{
+    background-image: url(..//Image/bg_4.jpg);
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    padding: 30px;
 }
 .foot-container{
-  display: grid;
-  grid-template-columns: auto auto auto auto;
-  gap: 2rem;
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    gap: 7rem;
+}
+.foot-head{
+    font-family: "Josefin Sans", sans-serif;
+    color: rgb(117, 185, 245);
+    font-size: 24px;
+    font-weight: 600;
+}
+.foot-logo{
+    width: 100px;
+}
+.foot-logo-text{
+    font-family: "Lobster Two", sans-serif;
+    text-align: left;
+    color: rgb(253, 253, 253);
+    font-size: 22px;
+}
+.foot-text{
+    font-family: "Lato", sans-serif;
+    color: gainsboro;
+    width: 80%;
+}
+.socials{
+    display: flex;
+    gap: 30px;
+}
+.footer-links .fa-facebook{
+    background-color: dodgerblue;
+    padding: 10px 10px;
+    border-radius: 50%;
+}
+.footer-links .fa-x-twitter{
+    background-color: rgb(0, 0, 0);
+    padding: 10px 10px;
+    border-radius: 50%;
+}
+.footer-links .fa-instagram{
+    background-color: rgb(187, 17, 130);
+    padding: 10px 10px;
+    border-radius: 50%;
+}
+.footer-links .fa-whatsapp{
+    background-color: rgb(14, 179, 63);
+    padding: 10px 10px;
+    border-radius: 50%;
+}
+.fa-facebook, .fa-x-twitter, .fa-instagram, .fa-whatsapp{
+    color: gainsboro;
+    font-size: 20px;
+}
+.foot-ul{
+   line-height: 2rem;
+}
+.footer-links{
+    font-size: 19px;
+    font-family: "Josefin Sans", sans-serif;
+    text-decoration: none;
+    color: gainsboro;
+}
+.footer-links:hover{
+    margin-left: 3.5px;
+    color: #0ac0c0;
+    transition: 500ms ease;
+}
+.fa-phone-volume, .fa-envelope{
+    color: gray;
+}
+.join-us{
+    font-size: 18px;
+    color: azure;
+    font-family: "Josefin Sans", sans-serif;
+    text-decoration: none;
+    border: 2px whitesmoke solid;
+    padding: 10px;
+    background-color: #008d8c;   
+}
+.join-us:hover{
+    background-color: transparent;
+    color: aliceblue;
+    transition: 700ms ease;
+}
+hr{
+    width: 50%;
+   margin: auto;
+}
+.copyright{
+    font-family: "Josefin Sans", sans-serif;
+    color: #ffffff;
+    text-align: center;
+}
+.programmer{
+    font-family: "Josefin Sans", sans-serif;
+    color: #008d8c;
+    text-align: center; 
+}
+/* Responsive Design */
+@media (max-width:1280px) {
+.foot-container{
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    gap: 6rem;
 }
 
 .foot-head{
-  font-family: "Josefin Sans", sans-serif;
-  color: rgb(117, 185, 245);
-  font-size: 24px;
-  font-weight: 600;
+    font-family: "Josefin Sans", sans-serif;
+    color: rgb(117, 185, 245);
+    font-size: 24px;
+    font-weight: 600;
 }
 .foot-logo{
-  width: 100px;
+    width: 100px;
 }
 .foot-logo-text{
-  font-family: "Lobster Two", sans-serif;
-  text-align: left;
-  color: rgb(253, 253, 253);
-  font-size: 22px;
-  width: 70%;
+    font-family: "Lobster Two", sans-serif;
+    text-align: left;
+    color: rgb(253, 253, 253);
+    font-size: 22px;
+    width: 70%;
 }
 .foot-text{
-  font-family: "Lato", sans-serif;
-  color: gainsboro;
-  width: 70%;
+    font-family: "Lato", sans-serif;
+    color: gainsboro;
+    width: 70%;
 }
+ }
+
+ @media (max-width:1114px) {
+
+.foot-container{
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    gap: 2rem;
 }
-@media (max-width:1024px) {
-  .logo-text{
-      font-family: "Lobster Two", sans-serif;
-      text-align: left;
-      color: rgb(253, 253, 253);
-      font-size: 22px;
-      width: 75%;
-  }
- 
-  .intro-section{
-      background-image: url(..//Image/topsphere-media-jLbmY5Zp7UQ-unsplash.jpg);
-      background-position: center;
-      background-size: cover;
-      background-attachment: fixed;
-      /* height: 620px; */
-      min-height: 70vh;
-  }
-  .intro-container{
-      position: absolute;
-      top: 15rem;
-      left: 0;
-      width: 100%;
-      /* height: 620px; */
-      min-height: 30vh;
-      background: rgba(0, 51, 75, 0.5);
-  }
-  .foot-container{
-      display: grid;
-      grid-template-columns: auto auto auto auto;
-      gap: 1.5rem;
-  }
+
+.foot-head{
+    font-family: "Josefin Sans", sans-serif;
+    color: rgb(117, 185, 245);
+    font-size: 24px;
+    font-weight: 600;
+}
+.foot-logo{
+    width: 100px;
+}
+.foot-logo-text{
+    font-family: "Lobster Two", sans-serif;
+    text-align: left;
+    color: rgb(253, 253, 253);
+    font-size: 22px;
+    width: 70%;
+}
+.foot-text{
+    font-family: "Lato", sans-serif;
+    color: gainsboro;
+    width: 70%;
+}
+ }
+ @media (max-width:1024px) {
+    .donation-container{
+        background-color: aliceblue;
+        border-radius: 8px;
+        width: 70%;
+        padding: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    .footer-links{
+        font-size: 16px;
+        font-family: "Josefin Sans", sans-serif;
+        text-decoration: none;
+        color: gainsboro;
+    }
+    .footer-links:hover{
+        margin-left: 3.5px;
+        color: #0ac0c0;
+        transition: 500ms ease;
+    }
 }
 @media (max-width:912px) {
-  .logo{
-      width: 65px;
-       margin-left: 2rem;
-  }
+    .donation{
+        background-image: url(..//Image/abubakar-balogun-OlJk99PX0Os-unsplash.jpg);
+        background-position: left;
+        background-size: cover;
+        background-attachment: fixed;
+        /* height: 620px; */
+        min-height: 70vh;
+        display: flex;
+        align-items: center;
+        padding: 40px;
+    }
+    .foot-container{
+        display: grid;
+        grid-template-columns: auto auto;
+        gap: 1rem;
+    }
+    .footer-links{
+        font-size: 19px;
+        font-family: "Josefin Sans", sans-serif;
+        text-decoration: none;
+        color: gainsboro;
+    }
+    .footer-links:hover{
+        margin-left: 3.5px;
+        color: #0ac0c0;
+        transition: 500ms ease;
+    }
+}
+@media (max-width:768px) {
+    .donation-container{
+        background-color: aliceblue;
+        border-radius: 8px;
+        width: 90%;
+        padding: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+}
+@media (max-width:540px) {
+    .donation-container{
+        background-color: aliceblue;
+        border-radius: 8px;
+        width: 100%;
+        padding: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    .logo-text{
+        font-family: "Lobster Two", sans-serif;
+        font-size: 20px;
+    }
+    .foot-logo-text{
+        font-family: "Lobster Two", sans-serif;
+        text-align: left;
+        color: rgb(253, 253, 253);
+        font-size: 20px;
+        width: 90%;
+    }
+}
+@media (max-width:430px) {
+    .donation-container{
+        background-color: aliceblue;
+        border-radius: 8px;
+        width: 105%;
+        padding: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    .logo-text{
+        font-family: "Lobster Two", sans-serif;
+        font-size: 15.5px;
+    }
+    .socials{
+        display: flex;
+        gap: 10px;
+    }
+    .foot-container{
+        display: grid;
+        grid-template-columns: auto;
+        gap: 1.5rem;
+    }
+    .footer-links .fa-facebook{
+        background-color: dodgerblue;
+        padding: 10px 10px;
+        border-radius: 50%;
+    }
+    .footer-links .fa-x-twitter{
+        background-color: rgb(0, 0, 0);
+        padding: 10px 10px;
+        border-radius: 50%;
+    }
+    .footer-links .fa-instagram{
+        background-color: rgb(187, 17, 130);
+        padding: 10px 10px;
+        border-radius: 50%;
+    }
+    .footer-links .fa-whatsapp{
+        background-color: rgb(14, 179, 63);
+        padding: 10px 10px;
+        border-radius: 50%;
+    }
+    .fa-facebook, .fa-x-twitter, .fa-instagram, .fa-whatsapp{
+        color: gainsboro;
+        font-size: 20px;
+    }
+    .foot-logo-text{
+        font-family: "Lobster Two", sans-serif;
+        text-align: left;
+        color: rgb(253, 253, 253);
+        font-size: 20px;
+        width: 90%;
+    }
+    .programmer{
+        font-family: "Josefin Sans", sans-serif;
+        width: 90%;
+        color: #008d8c;
+        text-align: center; 
+    }
+    .join-us{
+        font-size: 18px;
+        color: azure;
+        font-family: "Josefin Sans", sans-serif;
+        text-decoration: none;
+        border: 2px whitesmoke solid;
+        padding: 10px;
+        background-color: #008d8c;  
+       
+    }
+    .join-us:hover{
+        background-color: transparent;
+        color: aliceblue;
+        transition: 700ms ease;
+    }
+}
+@media (max-width:414px) {
+    .logo-text{
+        font-family: "Lobster Two", sans-serif;
+        font-size: 14px;
+    }
+    .reg-popup{
+        width: 85%;
+       }
+}
+@media (max-width:393px) {
   .logo-text{
-      font-family: "Lobster Two", sans-serif;
-      text-align: left;
-      color: rgb(253, 253, 253);
-      font-size: 22px;
-      width: 75%;
+    font-family: "Lobster Two", sans-serif;
+    font-size: 12px;
   }
-  .intro-section{
-      background-image: url(..//Image/topsphere-media-jLbmY5Zp7UQ-unsplash.jpg);
-      background-position: center;
-      background-size: cover;
-      background-attachment: fixed;
-      /* height: 620px; */
-      min-height: 50vh;
-  }
-  .intro-container{
-      position: absolute;
-      top: 17.1rem;
-      left: 0;
-      width: 100%;
-      /* height: 620px; */
-      min-height: 30vh;
-      background: rgba(0, 51, 75, 0.5);
-  }
- 
-  .contact-container{
-      display: grid;
-      grid-template-columns: auto;
-      gap: 30px;
-  }
-  .foot-container{
-      display: grid;
-      grid-template-columns: auto auto;
-      gap: 1rem;
-  }
+  label{
+    font-size: 16px;
+    font-family: "Josefin Sans", sans-serif;
 }
-@media (max-width:884px) {
-  .header{
-      padding: 12px 0;
-  }
-  .header .menu-bar{
-      position: fixed;
-      right: 0;
-      top: 0;
-      width: 320px;
-      height: 100%;
-      background-color: hsl(180, 2%, 12%);
-      padding: 15px 30px 30px;
-      overflow-y: auto;
-      z-index: 1;
-      transform: translateX(100%);
-  }
-  .header .menu-bar .sub-menu{
-      position: absolute;
-      top: 100%;
-      left: 0;
-      width: 230px;
-      padding: 1px 0;
-      background-color: hsl(180, 1%, 12%);
-      box-shadow: 0 0 5px hsl(0, 0%, 100%,0.2);
-      z-index: 1;
-      transform-origin: top;
-      transform: scaleY(0);
-      visibility: hidden;
-      opacity: 0;
-  }
-  .header .menu-bar.open{
-      transform: none;
-  }
-  .header .menu-bar .head{
-      display: flex;
-      align-content: center;
-      justify-content: space-between;
-      margin-bottom: 25px;
-  }
-  .header .menu-bar .close-menu-btn{
-      height: 35px;
-      width: 35px;
-      position: relative;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      background-color: transparent;
-      cursor: pointer;
-      border: none;
-  }
-  .header .menu-bar .close-menu-btn::before,
-  .header .menu-bar .close-menu-btn::after{
-   content: '';
-   position: absolute;
-   width: 80%;
-   height: 2px;
-   background-color: gainsboro;
-  }
-  .header .menu-bar .close-menu-btn::before{
-      transform: rotate(45deg);
-  }
-  .header .menu-bar .close-menu-btn::after{
-      transform: rotate(-45deg);
-  }
-  .header .menu-bar > ul > li{
-      display: block;
-  }
-  .header .menu-bar > ul > li:not(:last-child){
-      display: block;
-      margin-right: 0;
-  }
-  .header .menu-bar  li{
-     border-bottom: 1px solid gray;
-     padding: 5px;
-  }
-  .header .menu-bar  li:first-child{
-      border-top: 1px solid gray;
-   }
-   .header .menu-bar > ul > li > a{
-      padding: 12px 0;
-  }
-  .header .menu-bar > ul > #dropdown > a{
-      padding-right: 24px;
-  } 
-  .header .menu-bar a :hover{
-      text-decoration: none;
-      transition: 600ms ease;
-      color: #0ac0c0;
-      transition: 700ms ease;
-   }
-   #active-link{
-      color: #0ac0c0;
-      font-size: 20px;
-   }
-  .header .menu-bar i{
-      height: 34px;
-      width: 34px;
-      /* border: 1px solid gray; */
-      color: aqua;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      pointer-events: auto;
-      cursor: pointer;
-      top: 7px;
-  }
-  .header .menu-bar #dropdown.active > i{
-   /* background-color: gray; */
-   transform: rotate(180deg);
-  }
-  /* #dropdown, #down-hover::marker{
-      list-style: disc;
-      font-weight: 900;
-      font-size: 30px;
-      position: relative;
-      left: 5px;
-  }
-  #dropdown, #down-hover::marker{
-    color: aquamarine;
-    transition: 450ms ease;
-  } */
-
-  .sub-menu{
-      list-style: none; 
-      padding: 0;
-      margin: 0;
-  }
-  .sub-menu, #dropdown{
-      position: relative;
-      margin: 10px 0; 
-  }
-  /* Styling for the bullet */
- .sub-menu #dropdown::before {
-  content: "•"; /* Custom bullet point */
-  position: absolute;
-  left: -20px; /* Position the bullet to the left of the text */
-  font-size: 20px; /* Adjust size */
-  color: #008d8c; /* Initial color matching the background */
-  transition: transform 0.3s ease, color 0.3s ease; /* Smooth hover effect */
+input{
+    padding: 10px 30px;
+    font-size: 16px;
+    font-family: "Josefin Sans", sans-serif;
 }
-/* Styling for the bullet */
-.sub-menu, #dropdown::before {
-  content: "•";
-  position: absolute;
-  left: -20px; 
-  font-size: 20px; 
-  color: #008d8c;
-  transition: transform 0.3s ease, color 0.3s ease; 
+::placeholder{
+    font-family: "Josefin Sans", sans-serif;
 }
-
-/* Styling the link */
-.sub-menu, #dropdown a {
-  text-decoration: none;
-  color: gainsboro; 
-  transition: color 0.3s ease;
 }
-
-/* Hover effect: bullet point expands and changes color */
-.sub-menu, #dropdown:hover::before {
-  transform: scale(1.5); /* Enlarge bullet point */
-  color: #ff7f50; /* Change bullet color to coral */
+@media (max-width:375px) {
+    .reg-popup .head-pop {
+        color: #000000;
+         font-size: 28px;
+         margin: 30px 0 10px;
+     }
 }
-
-/* Hover effect: link changes color */
-.sub-menu:hover #down-hover {
-  color: #008d8c; 
-}
-#down-hover:hover{
-  color: #008d8c;
-  transition: color 0.3s ease;
-}
-  #left-btn{
-      transform: none;
-      right: 0;
-  }
-  .header .menu-bar .sub-menu{
-      position: static;
-      opacity: 1;
-      transform: none;
-      visibility: visible;
-      padding: 0;
-      transition: none;
-      box-shadow: none;
-      width: 100%;
-      display: none;
-  }
-  .header .menu-bar #dropdown.active > .sub-menu{
-    display: block;
-  }
-  .header .menu-bar .sub-menu li:last-child{
-      border: none;
-  }
-  .header .menu-bar .sub-menu a{
-      padding: 12px 0px 12px 15px;
-  }
-  .header .menu-bar .sub-menu .sub-menu a{
-      padding-left: 30px;
-  }
-  .header .menu-bar .sub-menu .sub-menu .sub-menu a{
-      padding-left: 45px;
-  }
-  .header .menu-bar .sub-menu span{
-    background-image: none;
-  }
-  .header .menu-bar .sub-menu i{
-      transform: none;
-      right: 0;
-  }
-  .header-right .open-menu-btn{
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      height: 40px;
-      width: 44px;
-      cursor: pointer;
-      position: relative;
-      top: 2rem;
-      background-color: transparent;
-      border: none;
-  }
-  .header-right .open-menu-btn .line{
-      height: 2px;
-      width: 30px;
-      background-color: rgb(19, 18, 17);
-      position: absolute;
-  }
-  .header-right .open-menu-btn .line-1{
-      transform: translateY(-8px);
-  }
-  .header-right .open-menu-btn .line-3{
-      transform: translateY(8px);
-  }
-   .header-list{
-      line-height: 2rem;
-  }
- .pad-youth{
-  letter-spacing: 5px;
- }
+@media (max-width:320px) {
+    input{
+        padding: 10px 10px;
+        font-size: 16px;
+        font-family: "Josefin Sans", sans-serif;
+    }
+    .donation-container{
+        background-color: aliceblue;
+        border-radius: 8px;
+        width: 115%;
+        padding: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
 }

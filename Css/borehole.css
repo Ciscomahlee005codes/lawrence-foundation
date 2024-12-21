@@ -199,7 +199,7 @@ html,body{
 }
 /* Introduction Section */
 .intro-section{
-    background-image: url(..//Gallery-images/ben-white-83tkHLPgg2Q-unsplash.jpg);
+    background-image: url(..//Gallery-images/tap-water-2.jpg);
     background-position: center;
     background-size: cover;
     background-attachment: fixed;
@@ -357,7 +357,7 @@ footer{
     width: 100px;
 }
 .foot-logo-text{
-    font-family: "Lobster Two", sans-serif;
+    font-family: "Lato", sans-serif;
     text-align: left;
     color: rgb(253, 253, 253);
     font-size: 22px;

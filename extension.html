@@ -7,72 +7,12 @@
   <link rel="stylesheet" href="Css/extension.css">
 </head>
 <body>
-  <section class="donation">
-    <div class="donation-container">
-        <div class="logo-container"><img class="logo" src="Image/foundation-logo.png" width="45px" alt="">
-            <h5 class="logo-text">Lawrence Memorial Humanitarian Foundation</h5>
-         </div><br><br>
-        <form action="" method="post">
-            <label for="name">First Name</label>
-           <input type="text" name="name" id="" placeholder="First Name" required><br><br>
-           <label for="name">Last Name</label>
-           <input type="text" name="" id="" placeholder="Last Name" required><br><br>
-           <label for="email">Email Address</label>
-           <input type="email" name="email" id="" placeholder="Email Address" required><br><br>
-           <label for="phone">Phone Number</label>
-           <input type="tel" name="phone" id="" placeholder="Phone Number" required><br><br>
-           <label for="donation">Donation Type</label>
-           <select name="donation" id="" required>
-            <option value="padThegirl">Pad The Girl Child Program</option>
-            <option value="scholarship">Student Scholarship Program</option>
-            <option value="familysupport">Family Support Program</option>
-            <option value="foodbank">Food Pantry Program</option>
-            <option value="advocacy">Advocacy Program</option>
-            <option value="medOutreach">Free Medical Outreach Program</option>
-            <option value="quiz">Online Quiz Competition</option>
-            <option value="healthAwareness">Health Awareness Program</option>
-            </select><br><br>
-           <label for="amount">Donation Amount</label>
-           <input type="number" name="amount" id="" placeholder="Amount to Donate" required><br><br>
-           <h4 class="our-office" id="account-details">Our Account Details</h4>
-           <ul class="contact-ul">
-            <li class="contact-list"><span class="contact-bold">Account Number:</span>1013346765</li>
-            <li class="contact-list"><span class="contact-bold">Account Name:</span>Lawrence Memorial Humanitarian Foundation</li>
-            <li class="contact-list"><span class="contact-bold">Bank:</span>Keystone</li><br><br>
-            <li class="contact-list"><span class="contact-bold">Account Number:</span>665550631</li>
-            <li class="contact-list"><span class="contact-bold">Account Name:</span>Lawrence Memorial Humanitarian Foundation</li>
-            <li class="contact-list"><span class="contact-bold">Bank:</span>Chase</li>
-          </ul><br>
-             <p class="form-text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eos architecto quis minima.
-             </p><input type="checkbox" name="" id="" required><br><br>            
-             <a class="submit-btn" href="#" onclick="regOpenPopUp()">Submit</a><br>
-         </form>
-    </div>
+  <div class="slideshow">
+    <div class="text">Text 1</div>
+    <div class="text">Text 2</div>
+    <div class="text">Text 3</div>
+    <div class="text">Text 4</div>
+  </div>
   
-    <!-- POP UP BEGINS -->
-        
-    <div class="pop">
-      <div class="register-container">
-  <div class="reg-popup" id="reg-popup">
-   <img src="./Image/good-tick.png" alt="">
-   <h2 class="head-pop">Thank you for your Generosity!</h2>
-   <p class="pop-text">You'll be redirected for your donation</p><br>
-   <a class="ok-btn" type="button" onclick="regClosePopup()" href="">Ok</a>
-  </div>
-  </div>
-    </div>
-    <!-- POP UP ENDS -->
-  </section>
-
-  <script>
-    // Pop up Section
-let poppedUp = document.getElementById("reg-popup");
-function regOpenPopUp() {
-   poppedUp.classList.add("reg-openpopup");
-}
-function regClosePopup() {
-   poppedUp.classList.remove("reg-openpopup")
-};
-  </script>
 </body>
 </html>

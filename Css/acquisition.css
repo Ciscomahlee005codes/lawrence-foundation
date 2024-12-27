@@ -265,6 +265,14 @@ html,body{
 .scholarship-text{
     font-family: "Lato ", sans-serif;
 }
+.cinema-content{
+    display: grid;
+    grid-template-columns: auto auto auto;
+    gap: 20px;
+}
+.cinema-img{
+    width: 100%;
+}
  /* Donate Section */
  .donate-section{
     background-color: #001a2e;
@@ -919,6 +927,11 @@ hr{
         gap: 20px; 
         padding: 20px;
       }
+      .cinema-content{
+        display: grid;
+        grid-template-columns: auto auto;
+        gap: 20px;
+    }
 }
 @media (max-width:540px) {
     .intro-text-1{
@@ -1011,6 +1024,11 @@ hr{
             font-size: 16px;
             color: #045c5c;
             font-family: "Lato", sans-serif;
+        }
+        .cinema-content{
+            display: grid;
+            grid-template-columns: auto;
+            gap: 20px;
         }
         .donate-head{
             color: aliceblue;

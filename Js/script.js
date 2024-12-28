@@ -16,6 +16,38 @@
       this.closest("#dropdown").classList.toggle("active");
      })
    })
+
+  //  Intro Section Carosuel
+  let currentSlide = 0;
+  const slides = document.querySelectorAll('.carousel-slide .text-container-1, .carousel-slide .text-container-2, .carousel-slide .text-container-3, .carousel-slide .text-container-4');
+  const totalSlides = slides.length;
+  const prevButton = document.querySelector('.prev-btn');
+  const nextButton = document.querySelector('.next-btn');
+  
+  // Function to change slide
+  function changeSlide() {
+    const offset = -currentSlide * 100;
+    document.querySelector('.carousel-slide').style.transform = `translateX(${offset}%)`;
+  }
+  
+  // Go to the next slide
+  nextButton.addEventListener('click', function() {
+    currentSlide = (currentSlide + 1) % totalSlides;
+    changeSlide();
+  });
+  
+  // Go to the previous slide
+  prevButton.addEventListener('click', function() {
+    currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+    changeSlide();
+  });
+  
+  // Optional: Automatically transition every 5 seconds
+  setInterval(function() {
+    currentSlide = (currentSlide + 1) % totalSlides;
+    changeSlide();
+  }, 5000); // 5000 ms = 5 seconds
+  
    // Scroll Reveal Section
    ScrollReveal({
     reset: true,
@@ -23,8 +55,8 @@
     duration:2500,
     delay:200
    });
-       ScrollReveal().reveal('.text-container, .about-head, #activity-1, #activity-3', { delay: 50, origin: 'top' });
-       ScrollReveal().reveal('.journals, .product-link, #count-1, #count-2, .customer-1, .customer-4, .copyright', { delay: 50, origin: 'left' });
+       ScrollReveal().reveal('.about-head, #activity-1, #activity-3', { delay: 50, origin: 'top' });
+       ScrollReveal().reveal('.journals,  #count-1, #count-2, .customer-1, .customer-4, .copyright', { delay: 50, origin: 'left' });
        ScrollReveal().reveal('.programmer, .impact-container-img, #count-3, #count-4', { delay: 50, origin: 'right' });
        ScrollReveal().reveal('.abt-link-container, #activity-2, #activity-4', { delay: 50, origin: 'bottom' });
 

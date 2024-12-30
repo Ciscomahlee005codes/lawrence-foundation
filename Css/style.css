@@ -168,6 +168,10 @@ html,body{
 .header-right .open-menu-btn{
     display: none;
 }
+.donor-link{
+    background-color: #ff7f50;
+    border-radius: 20px;   
+}
 /* SCROLL TO TOP */
 
 #progress {
@@ -1133,6 +1137,10 @@ hr{
         color: #ffffff;
         width: 65%;
       }
+      .donor-link{
+        background-color: transparent;
+        border-radius: none;
+    }
     .intro-section{
         background-image: url(..//Image/abubakar-balogun-OlJk99PX0Os-unsplash.jpg);
         background-position: center;

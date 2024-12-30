@@ -168,6 +168,10 @@ html,body{
 }
 .header-right .open-menu-btn{
     display: none;
+} 
+.donor-link{
+    background-color: #ff7f50;
+    border-radius: 20px;   
 }
 /* SCROLL TO TOP */
 
@@ -271,6 +275,11 @@ html,body{
 .pantry-card-container{
     display: grid;
     grid-template-columns: auto auto;
+    gap: 10px;
+}
+.pantry-card-container-2{
+    display: grid;
+    grid-template-columns: auto auto auto auto;
     gap: 10px;
 }
 .sponsor-container{
@@ -883,6 +892,11 @@ hr{
         min-height: 30vh;
         transform: translate(0%,200%);
     }
+    .pantry-card-container-2{
+        display: grid;
+        grid-template-columns:  auto auto;
+        gap: 10px;
+    }
 }
 @media (max-width:820px) {
     .intro-section{
@@ -1067,6 +1081,16 @@ hr{
             display: flex;
             flex-direction: column;
             gap: 5px;
+        }
+        .pantry-card-container{
+            display: grid;
+            grid-template-columns: auto;
+            gap: 10px;
+        }
+        .pantry-card-container-2{
+            display: grid;
+            grid-template-columns: auto;
+            gap: 10px;
         }
         .socials{
             display: flex;

@@ -169,6 +169,10 @@ html,body{
 .header-right .open-menu-btn{
     display: none;
 }
+.donor-link{
+    background-color: #ff7f50;
+    border-radius: 20px;   
+}
 /* SCROLL TO TOP */
 
 #progress {
@@ -561,6 +565,10 @@ hr{
     }
 }
 @media (max-width:884px) {
+    .donor-link{
+        background-color: transparent;
+        border-radius: none;
+    }
     .header{
         padding: 12px 0;
     }

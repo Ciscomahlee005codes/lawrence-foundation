@@ -168,6 +168,10 @@ html,body{
 .header-right .open-menu-btn{
     display: none;
 }
+.donor-link{
+    background-color: #ff7f50;
+    border-radius: 20px;   
+}
 /* SCROLL TO TOP */
 
 #progress {
@@ -780,6 +784,10 @@ hr{
     }
      .header-list{
         line-height: 2rem;
+    }
+    .donor-link{
+        background-color: transparent;
+        border-radius: none;
     }
     .logo{
         transform: translate(170%, 5%);   

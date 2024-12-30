@@ -172,6 +172,9 @@ html,body{
     background-color: #ff7f50;
     border-radius: 20px;   
 }
+#out-link{
+    background-color: #ff7f50;   
+}
 /* SCROLL TO TOP */
 
 #progress {

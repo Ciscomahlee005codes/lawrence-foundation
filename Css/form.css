@@ -1106,6 +1106,13 @@ hr{
         align-items: center;
         gap: 30px;
     }
+    .pdfs{
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        justify-content: center;
+        align-items: center;
+    }
     .intro-text-1{
         font-size: 32px;
     }

@@ -9,6 +9,17 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
     <!-- Swiper Js -->
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <!-- Email Js -->
+    <script type="text/javascript"
+    src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+ </script>
+  <script type="text/javascript">
+  (function(){
+      emailjs.init({
+        publicKey: "NIpsHdMn7KEHwXGoo",
+      });
+  })();
+  </script>
 </head>
 <body>
   <header class="header">
@@ -80,11 +91,17 @@
                       </ul>
                    </li>
                       <li id="dropdown"><a href="blog.html"><span>Blog</span></a></li>
-                      <!-- <li id="dropdown"><a href=""><span>Our Partners</span></a></li> -->
+                      <li id="dropdown"><a href="culture.html"><span>Kebeisi Radio Program</span></a></li>
                    </ul>
                 </li>
                 <li class="header-list"><a class="header-link" id="active-link" href="#">Contact Us</a></li>
-                <li class="header-list4"><a class="header-link4" target="_blank" href="donation.html" id="down-hover">Donate</a></li>
+                <li class="header-list" id="dropdown">
+                  <a class="header-link" id="down-hover" href="donation.html" >Donate</a><i class="fa-solid fa-chevron-down"></i>
+                  <ul class="sub-menu" id="adjust-ul">
+                   <li id="dropdown">
+                     <a href="forms.html"><span>Our Forms</span></a>
+                  </li>
+               </li>
                </ul>   
         </nav>
         <div class="header-right">
@@ -284,37 +301,30 @@
                 </ul>
               </div>
             </div><br><br> <hr> <br>
-            <div class="copyright"> &copy; 2024 Lawrence Memorial Humanitarian Foundation. All rights reserved.</div>
+            <div class="copyright"> &copy; 2025 Lawrence Memorial Humanitarian Foundation. All rights reserved.</div>
             <a class="programmer" href="https://www.linkedin.com/in/cisco-mahlee-16b4a4267?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app">Coded and Designed by Anthony Raphael(Cisco Mahlee)</a>
          </footer>
 
    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script src="./Js/contact.js"></script>
-    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
-<script>
-    (function(){
-        emailjs.init('your_user_id'); // Replace with your EmailJS user ID
-    })();
+    <script>
+      // Email Js
+      function sendMail(event) {
+    event.preventDefault();  // Prevent the form from reloading the page
+    
+    
+    // Send the email using EmailJS service
+    emailjs.send("service_0qleh7p", "template_t6cw1eb", parms)
+      .then(response => {
+        alert("Email Sent!!");
+      })
+      .catch(error => {
+        alert("Email Sending Failed: " + error.text);
+      });
+  }
+  
+     </script>
 
-    document.getElementById('contact-form').addEventListener('submit', function(event) {
-        event.preventDefault();
-
-        var templateParams = {
-            first_name: document.getElementById('fName').value,
-            last_name: document.getElementById('lName').value,
-            email: document.getElementById('mailAdress').value,
-            subject: document.getElementById('subject').value,
-            message: document.getElementById('messageJs').value
-        };
-
-        emailjs.send('your_service_id', 'your_template_id', templateParams)
-            .then(function(response) {
-                alert('Message sent successfully!');
-            }, function(error) {
-                alert('Failed to send message, please try again later.');
-            });
-    });
-</script>
 
 </body>
 </html>

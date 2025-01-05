@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width= , initial-scale=1.0">
+    <link rel="stylesheet" href="Css/form.css">
+    <title>Lawrence Memorial Humanitarian Foundation(Home)</title>
+    <link rel="icon" href="Image/foundation-logo.png" type="image/png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <!-- Swiper Js -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <!-- Scroll Reveal -->
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <!-- Email Js -->
+    <script type="text/javascript"
+    src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+ </script>
+  <script type="text/javascript">
+  (function(){
+      emailjs.init({
+        publicKey: "NIpsHdMn7KEHwXGoo",
+      });
+  })();
+  </script>
+</head>
+<body>
+   <header class="header">
+    <div class="external-container">
+          <div class="logo-container">
+            <img class="logo" src="Image/foundation-logo.png" width="45px" alt="">
+            <h5 class="logo-text">Lawrence Memorial Humanitarian Foundation</h5>
+         </div>
+       
+        <nav class="menu-bar">
+            <div class="head">
+                <div class="logo-container"><img src="Image/foundation-logo.png" width="45px" alt=""></div>
+                <button type="button" class="close-menu-btn"></button>
+               </div>
+               <ul>
+                <li class="header-list"><a class="header-link" href="index.html" id="down-hover">Home</a></li>
+                <li class="header-list"><a class="header-link" id="down-hover" href="about.html">About LAMEHF</a></li>
+                <li class="header-list" id="dropdown">
+                   <a class="header-link" id="down-hover" href="service.html">Services</a><i class="fa-solid fa-chevron-down"></i>
+                   <ul class="sub-menu">
+                      <li id="dropdown">
+                         <a href="involved.html" id="down-hover2"><span>Get Involved</span></a><i class="fa-solid fa-chevron-down"></i>
+                         <ul class="sub-menu sub-menu-right" >
+                          <li><a href="involved.html"><span>Accomplished Programs</span></a></li>
+                            <!-- <li><a href=""><span>Advocate</span></a></li>  -->
+                            <li><a href="involved.html"><span>Testimonials</span></a></li>
+                         </ul>
+                      </li>
+                      <li id="dropdown">
+                        <a href="youth.html" id="down-hover2"><span>Youth & Young Adults</span></a><i class="fa-solid fa-chevron-down"></i>
+                        <ul class="sub-menu sub-menu-right" >
+                         <li><a href="empowerment.html"><span>Youth Empowerment</span></a></li>
+                           <li><a href="acquisition.html"><span>Skill Acquisition</span></a></li>
+                           <!-- <li><a href=""><span>Advocate</span></a></li>  -->
+                           <li><a href="scholarship.html"><span>Student Support & Scholarship</span></a></li>
+                           <li><a href="padThegirl.html"><span>Pad The Girl Child</span></a></li>
+                           <li><a href="quiz.html"><span>Quiz Competition</span></a></li>
+                           <li><a href="mentalHealth.html"><span>Mental Health Outreach</span></a></li>
+                             <li><a href="counseling.html"><span>Counseling & Rehaibilitation</span></a></li>
+                        </ul>
+                     </li>
+                     <li id="dropdown">
+                      <a href="medOutreach.html" id="down-hover2"><span>Free Medical Health Outreach</span></a><i class="fa-solid fa-chevron-down"></i>
+                      <ul class="sub-menu sub-menu-right" >
+                         <li><a href="healthAwareness.html"><span>Health Awareness</span></a></li>
+                         <!-- <li><a href=""><span>Advocate</span></a></li>  -->
+                      </ul>
+                   </li>
+                     <li id="dropdown">
+                      <a href="communityDev.html" id="down-hover2"><span>Community Development</span></a><i class="fa-solid fa-chevron-down"></i>
+                      <ul class="sub-menu sub-menu-right" >
+                         <li><a href="foodPantry.html"><span>Food Pantry Program</span></a></li>
+                         <!-- <li><a href=""><span>Advocate</span></a></li>  -->
+                         <li><a href="borehole.html"><span>Borehole Water Project</span></a></li>
+                      </ul>
+                   </li>
+                     <li id="dropdown"><a href="familysupport.html"><span>Family Support</span></a></li>
+                   </ul>
+                 
+                </li>
+                <li class="header-list" id="dropdown">
+                   <a class="header-link" id="down-hover" href="upcoming.html" >News & Events</a><i class="fa-solid fa-chevron-down"></i>
+                   <ul class="sub-menu" id="adjust-ul">
+                    <li id="dropdown">
+                      <a href="upcoming.html"><span>Our Programs</span></a><i class="fa-solid fa-chevron-down" id="left-btn"></i>
+                      <ul class="sub-menu sub-menu-left" >
+                         <li><a href="upcoming.html"><span>Ongoing Programs</span></a></li>
+                         <li><a href="upcoming.html"><span>Upcoming Programs</span></a></li> 
+                      </ul>
+                   </li>
+                      <li id="dropdown"><a href="blog.html"><span>Blog</span></a></li>
+                      <li id="dropdown"><a href="culture.html"><span>Kebeisi Radio Program</span></a></li>
+                   </ul>
+                </li>
+                <li class="header-list"><a class="header-link" id="down-hover" href="contact.html">Contact Us</a></li>
+                <li class="header-list" id="dropdown">
+                  <a class="header-link" id="active-link" href="donation.html" >Donate</a><i class="fa-solid fa-chevron-down"></i>
+                  <ul class="sub-menu" id="adjust-ul">
+                   <li id="dropdown">
+                     <a href="#"><span>Our Forms</span></a>
+                  </li>
+               </li>
+               </ul>   
+        </nav>
+        <div class="header-right">
+            <!-- <button type="button" class="search-btn icon-btn"><i  class="fa-solid fa-search"></i></button> -->
+            <button type="button" class="open-menu-btn">
+               <span class="line line-1"></span>
+               <span class="line line-2"></span>
+               <span class="line line-3"></span>
+            </button>
+         </div>
+    </div>
+   </header><br><br><br><br><br><br>
+    <!-- Back to Top Scroll Button -->
+    <div id="progress">
+      <span id="progress-value">&#x1F815;</span>
+    </div>
+
+             <!-- Form Section -->
+              <section class="form-section">
+                <div class="form-container">
+                  <h3 class="form-head">Online Registration</h3><br>
+                  <div class="form-link">
+                    <a class="form-btn" href="forms.html" id="active-btn">Student Registration</a>
+                    <a class="form-btn" href="forms2.html">Parental Consent Form</a>
+                    <a class="form-btn" href="offline.html">Offline Registration</a>
+                  </div><br>
+                  <!-- First Form -->
+                   <div id="first-form">
+                    <h4 class="form-sub-head">Student Bio-Data Form</h4><br>
+                    <p class="form-text">Please Note: To apply for the scholarship, you are to fill in the (Student Bio Data) Form for Candidate's Info. and the parents or guardians are to fill in the next for that is the (Parent Consent Form) Please do this accurately.</p><br>
+                    <span class="age-check">(You must be 18 years old or above to be eligible)</span><br>
+                    <span class="form-label" id="Personal">Personal Information:</span><br><br>
+                    <form action="" method="post">
+                      <label for="firstName">First Name</label>
+                      <input type="text" name="firstName" id="firstName" placeholder="First Name" required><br><br>
+                  
+                      <label for="middleName">Middle Name</label>
+                      <input type="text" name="middleName" id="middleName" placeholder="Middle Name" required><br><br>
+                  
+                      <label for="lastName">Last Name</label>
+                      <input type="text" name="lastName" id="lastName" placeholder="Last Name" required><br><br>
+                  
+                      <label for="dob">Date of Birth</label>
+                      <input type="date" name="dob" id="dob" placeholder="Date of Birth" required><br><br>
+                  
+                      <label for="gender">Gender</label>
+                      <select name="gender" id="gender" required>
+                          <option value="male">Male</option>
+                          <option value="female">Female</option>
+                      </select><br><br>
+                  
+                      <label for="resAddress">Residential Address</label>
+                      <input type="text" name="resAddress" id="resAddress" placeholder="Residential Address" required><br><br>
+                  
+                      <label for="nation">Nationality</label>
+                      <input type="text" name="nation" id="nation" placeholder="Nationality" required><br><br>
+                  
+                      <label for="state">State Of Origin</label>
+                      <input type="text" name="state" id="state" placeholder="State Of Origin" required><br><br>
+                  
+                      <label for="localGovernment">L.G.A</label>
+                      <input type="text" name="localGovernment" id="localGovernment" placeholder="L.G.A" required><br><br>
+                  
+                      <label for="email">Email Address</label>
+                      <input type="email" name="email" id="emailAdd" placeholder="Email Address" required><br><br>
+                  
+                      <label for="phone">Phone Number</label>
+                      <input type="tel" name="phone" id="phone" placeholder="Phone Number" required><br><br>
+                  
+                      <label for="educationBg">Educational Background/Qualification</label>
+                      <input type="text" name="educationBg" id="educationBg" placeholder="Educational Background/Qualification" required><br><br>
+                  
+                  
+                      <span class="form-label">Parent/Guardian Information:</span><br><br>
+                      <label for="fatherName">Father's Name</label>
+                      <input type="text" name="fatherName" id="fatherName" placeholder="Father's Name" required><br><br>
+                  
+                      <label for="motherName">Mother's Name</label>
+                      <input type="text" name="motherName" id="motherName" placeholder="Mother's Name" required><br><br>
+                  
+                      <label for="guardianName">Guardian's Name</label>
+                      <input type="text" name="guardianName" id="guardianName" placeholder="Guardian's Name" required><br><br>
+                  
+                      <label for="guardianResAddress">Guardian's Residential Address</label>
+                      <input type="text" name="guardianResAddress" id="guardianResAddress" placeholder="Guardian's Residential Address" required><br><br>
+                  
+                      <label for="guardianEmail">Guardian's Email Address</label>
+                      <input type="email" name="guardianEmail" id="guardianEmail" placeholder="Guardian's Email Address" required><br><br>
+                  
+                      <label for="guardianPhone">Guardian's Phone Number</label>
+                      <input type="tel" name="guardianPhone" id="guardianPhone" placeholder="Guardian's Phone Number" required><br><br>
+                  
+                      <!-- References Section -->
+                      <p class="reference">
+                          <span class="make-bold">References:</span><br><br>
+                          (Note: You must have 3 references which include your parent/guardian, religious leader and school teacher/government official. Please fill in the details below)<br><br>
+                      </p>
+                      <ol>
+                          <li>
+                              <label for="ref1Name">Reference 1 Name</label>
+                              <input type="text" name="ref1Name" id="ref1Name" placeholder="Name " required><br><br>
+                              <label for="ref1Email">Reference 1 Email Address</label>
+                              <input type="email" name="ref1Email" id="ref1Email" placeholder="Email Address" required><br><br>
+                              <label for="ref1Phone">Reference 1 Phone Number</label>
+                              <input type="tel" name="ref1Phone" id="ref1Phone" placeholder="Phone Number" required><br><br>
+                              <label for="ref1Job">Reference 1 Job Title</label>
+                              <input type="text" name="ref1Job" id="ref1Job" placeholder="Job Title " required><br><br>
+                              <label for="ref1Remark">Reference 1 Remark</label>
+                              <textarea name="ref1Remark" id="ref1Remark" placeholder="Remark about beneficiary" required></textarea>
+                          </li><br><br>
+
+                          <li>
+                            <label for="ref2Name">Reference 2 Name</label>
+                            <input type="text" name="ref2Name" id="ref2Name" placeholder="Name" required><br><br>
+                            <label for="ref2Email">Reference 2 Email Address</label>
+                            <input type="email" name="ref2Email" id="ref2Email" placeholder="Email" required><br><br>
+                            <label for="ref2Phone">Reference 2 Phone Number</label>
+                            <input type="tel" name="ref2Phone" id="ref2Phone" placeholder="Phone Number" required><br><br>
+                            <label for="ref2Job">Reference 2 Job Title</label>
+                            <input type="text" name="ref2Job" id="ref2Job" placeholder="Job Title" required><br><br>
+                            <label for="ref2Remark">Reference 2 Remark</label>
+                            <textarea name="ref2Remark" id="ref2Remark" placeholder="Remark about beneficiary" required></textarea>
+                        </li><br><br>
+
+                        <li>
+                          <label for="ref3Name">Reference 3 Name</label>
+                          <input type="text" name="ref3Name" id="ref3Name" placeholder="Name" required><br><br>
+                          <label for="ref3Email">Reference 3 Email Address</label>
+                          <input type="email" name="ref3Email" id="ref3Email" placeholder="Email Address" required><br><br>
+                          <label for="ref2Phone">Reference 3 Phone Number</label>
+                          <input type="tel" name="ref3Phone" id="ref3Phone" placeholder="Phone Number" required><br><br>
+                          <label for="ref3Job">Reference 3 Job Title</label>
+                          <input type="text" name="ref3Job" id="ref3Job" placeholder="Job Title" required><br><br>
+                          <label for="ref3Remark">Reference 3 Remark</label>
+                          <textarea name="ref3Remark" id="ref3Remark" placeholder="Remark about beneficiary" required></textarea>
+                      </li><br>
+                  
+                          <!-- Repeat for other references with unique IDs -->
+                      </ol><br><br>
+                  
+             <button type="button" class="submit-btn" id="myButton" onclick="sendMail(event)">Submit</button>
+
+                  </form>
+                   </div>
+
+        
+                  
+                </div>
+              </section>
+           <!-- Footer Section -->
+      <footer>
+      <div class="foot-container">
+        <div class="foot-1">
+          <!-- <h3 class="foot-head">Get In Touch</h3><br> -->
+          <div class="foot-logo-container"><img class="foot-logo" src="Image/foundation-logo.png" width="45px" alt="">
+            <h5 class="foot-logo-text">Lawrence Memorial Humanitarian Foundation</h5>
+         </div><br>
+          <p class="foot-text">Proverbs 19:17 <br>
+            "Whoever is kind to the poor lends to the Lord, and he will reward them for what they have done."</p><br><br>
+
+            <div class="socials">
+                <li class="foot-list">
+                <a class="footer-links-1" href="https://web.facebook.com/profile.php?id=61552204889202"><i class="fa-brands fa-facebook"></i></a>
+                </li>
+                <li class="foot-list">
+                    <a class="footer-links-1" href="mailto:lamehf2020@gmail.com"><i class="fa-solid fa-envelope" id="e-icon"></i></a>
+                  </a>
+                </li>
+                <li class="foot-list">
+                  <a class="footer-links-1" href="https://wa.link/ycvn5j">
+                    <i class="fa-brands fa-whatsapp"></i>
+                  </a>
+                </li>
+            </div>
+        </div>
+        <div class="foot-1">
+          <h4 class="foot-head">Quick Links</h4><br>
+          <ul class="foot-ul">
+            <li class="foot-list">
+             <a class="footer-links" href="#">Home</a>
+            </li>
+            <li class="foot-list">
+             <a class="footer-links" href="about.html">About LAMEHF</a>
+            </li>
+            <li class="foot-list">
+             <a class="footer-links" href="service.html">Services</a>
+            </li>
+            <li class="foot-list">
+             <a class="footer-links" href="upcoming.html">News & Events</a>
+            </li>
+            <li class="foot-list">
+             <a class="footer-links" href="contact.html">Contact Us</a>
+            </li>
+            <li class="foot-list">
+              <a class="footer-links" target="_blank" href="donation.html">Donate</a>
+             </li>
+          </ul>
+        </div>
+
+        <div class="foot-1">
+          <h4 class="foot-head"> Extra Links</h4><br>
+          <ul class="foot-ul">
+            <li class="foot-list">
+             <a class="footer-links" href="involved.html">Get Involved</a>
+            </li>
+            <li class="foot-list">
+              <a class="footer-links" href="youth.html">Youth & Young Adults</a>
+             </li>
+            <li class="foot-list">
+             <a class="footer-links" href="medOutreach.html">Free Medical Health Outreach</a>
+            </li>
+            <li class="foot-list">
+             <a class="footer-links" href="communityDev.html">Community Development</a>
+            </li>
+            <li class="foot-list">
+                <a class="footer-links" href="familysupport.html">Family Support</a>
+               </li>
+               <li class="foot-list">
+                <a class="footer-links" href="blog.html">Blog</a>
+               </li>
+               <li class="foot-list">
+                <a class="footer-links" href="upcoming.html">Our Program</a>
+               </li>
+          </ul>
+        </div>
+
+        <div class="foot-1">
+          <h4 class="foot-head">Contact Us</h4><br>
+          <ul class="foot-ul">
+            <li class="foot-list">
+              <i class="fa-solid fa-phone-volume"></i>  <a class="footer-links" id="reduce" href="tel:+2349134927297">+234 913 4927 297</a>
+              
+            </li>
+            <li class="foot-list">
+              <i class="fa-solid fa-phone-volume"></i> <a class="footer-links" id="reduce" href="tel:+2348142713144">+234 814 2713 144</a>
+            </li>
+            <li class="foot-list">
+              <i class="fa-solid fa-envelope"></i> <a class="footer-links" id="reduce" href="mailto:lamehf2020@gmail.com">lamehf2020@gmail.com</a>
+            </li><br><br>
+
+            <a href="https://wa.link/ycvn5j" class="join-us">Join Us Today</a>
+          </ul>
+        </div>
+      </div><br><br> <hr> <br>
+      <div class="copyright"> &copy; 2025 Lawrence Memorial Humanitarian Foundation. All rights reserved.</div>
+      <a class="programmer" href="https://www.linkedin.com/in/cisco-mahlee-16b4a4267?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app">Coded and Designed by Anthony Raphael(Cisco Mahlee)</a>
+   </footer>
+
+   <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="./Js/form.js"></script>
+   <script>
+    // Email Js
+    function sendMail(event) {
+  event.preventDefault();  // Prevent the form from reloading the page
+  
+  let parms ={
+    firstName:  document.getElementById('firstName').value,
+    middleName:  document.getElementById('middleName').value,
+    lastName:  document.getElementById('lastName').value,
+    dateOfBith:  document.getElementById('dob').value,
+    sexGender:  document.getElementById('gender').value,
+    residential:  document.getElementById('resAddress').value,
+    nationality:  document.getElementById('nation').value,
+    stateOfOrigin:  document.getElementById('state').value,
+    lga:  document.getElementById('localGovernment').value,
+    email:  document.getElementById('emailAdd').value,
+    phoneNumber:  document.getElementById('phone').value,
+    education:  document.getElementById('educationBg').value,
+    dadName:  document.getElementById('fatherName').value,
+    mumName:  document.getElementById('motherName').value,
+    guardianName:  document.getElementById('guardianName').value,
+    guardianAddress:  document.getElementById('guardianResAddress').value,
+    guardianEmail:  document.getElementById('guardianEmail').value,
+    guardianPhone:  document.getElementById('guardianPhone').value,
+    referenceName1:  document.getElementById('ref1Name').value,
+    referenceEmail1:  document.getElementById('ref1Email').value,
+    referencePhone1:  document.getElementById('ref1Phone').value,
+    referenceJob1:  document.getElementById('ref1Job').value,
+    referenceRemark1:  document.getElementById('ref1Remark').value,
+    referenceName2:  document.getElementById('ref2Name').value,
+    referenceEmail2:  document.getElementById('ref2Email').value,
+    referencePhone2:  document.getElementById('ref2Phone').value,
+    referenceJob2:  document.getElementById('ref2Job').value,
+    referenceRemark2:  document.getElementById('ref2Remark').value,
+    referenceName3:  document.getElementById('ref3Name').value,
+    referenceEmail3:  document.getElementById('ref3Email').value,
+    referencePhone3:  document.getElementById('ref3Phone').value,
+    referenceJob3:  document.getElementById('ref3Job').value,
+    referenceRemark3:  document.getElementById('ref3Remark').value,
+  }
+  
+  // Send the email using EmailJS service
+  emailjs.send("service_0qleh7p", "template_t6cw1eb", parms)
+    .then(response => {
+      alert("Email Sent!!");
+    })
+    .catch(error => {
+      alert("Email Sending Failed: " + error.text);
+    });
+}
+
+
+ function showParentForm() {
+       let studentForm = document.getElementById('first-form');
+      let parentForm = document.getElementById('second-form-container');
+
+      let parentBtn = document.getElementById('parent-btn')
+      parentBtn.style.backgroundColor ="#008d8c";
+      parentBtn.style.color="white"
+
+      let studentBtn = document.getElementById('student-btn')
+      studentBtn.style.backgroundColor ="transparent";
+      studentBtn.style.color="black"
+
+      studentForm.style.display ="none"
+      parentForm.style.display ="block"
+    }
+
+    function showStudentForm() {
+       let studentForm = document.getElementById('first-form');
+      let parentForm = document.getElementById('second-form-container');
+
+      let studentBtn = document.getElementById('student-btn')
+      studentBtn.style.backgroundColor ="#008d8c";
+      studentBtn.style.color="white"
+
+      let parentBtn = document.getElementById('parent-btn')
+      parentBtn.style.backgroundColor ="transparent";
+      parentBtn.style.color="black"
+
+      studentForm.style.display ="block"
+      parentForm.style.display ="none"
+    }
+   </script>
+    
+</body>
+</html>

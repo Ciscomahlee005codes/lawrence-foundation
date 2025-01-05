@@ -1,106 +1,333 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <link rel="stylesheet" href="Css/extension.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Form with EmailJS</title>
+    <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <style>
+        .form-container {
+            display: block;
+        }
+        .second-form {
+            display: none;
+        }
+    </style>
 </head>
 <body>
-  <section class="intro-section">
-    <div class="intro-container">
-        <!-- Carousel Wrapper -->
-        <div class="carousel-wrapper">
-            <div class="carousel-slide">
-                <!-- Slide 1 -->
-                <div class="text-container-1" style="background-image: url('./Image/doug-linstedt-jEEYZsaxbH4-unsplash.jpg');">
-                    <div class="overlay">
-                        <h5 class="intro-text-1">Give a helping hand to those who need it!</h5><br>
-                        <h3 class="intro-text-2">Together, We can build a world where everyone is safe and happy</h3><br><br>
-                        <div class="intro-link">
-                            <a href="about.html" class="product-link">About LAMEHF</a>
-                            <a href="service.html" class="product-link">Our Services</a>
-                        </div>
-                    </div>
-                </div>
 
-                <!-- Slide 2 -->
-                <div class="text-container-2" style="background-image: url('./Image/ayano-tosin-65P-kcAC03g-unsplash.jpg');">
-                    <div class="overlay">
-                        <h5 class="intro-text-1">Catch the Latest Updates: Exciting News and Upcoming Events</h5><br>
-                        <h3 class="intro-text-2">Stay informed with the latest news and events from LAMEHF.</h3><br><br>
-                        <div class="intro-link">
-                            <a href="upcoming.html" class="product-link">News & Events</a>
-                            <a href="blog.html" class="product-link">Our Blogs</a>
-                        </div>
-                    </div>
-                </div>
+    <!-- First Form: Basic Information -->
+    <div class="form-container" id="first-form-container">
+        <form id="first-form">
+            <label for="firstName">First Name</label>
+            <input type="text" name="firstName" id="firstName" placeholder="First Name" required><br><br>
 
-                <!-- Slide 3 -->
-                <div class="text-container-3" style="background-image: url('./Image/abubakar-balogun-OlJk99PX0Os-unsplash.jpg');">
-                    <div class="overlay">
-                        <h5 class="intro-text-1">Make an Impact: Volunteer, Donate, or Partner with Us</h5><br>
-                        <h3 class="intro-text-2">Your time, skills, and support can create real change.</h3><br><br>
-                        <div class="intro-link">
-                            <a href="involved.html" class="product-link">Get Involved</a>
-                            <a href="donation.html" class="product-link">Donate</a>
-                        </div>
-                    </div>
-                </div>
+            <label for="middleName">Middle Name</label>
+            <input type="text" name="middleName" id="middleName" placeholder="Middle Name" required><br><br>
 
-                <!-- Slide 4 -->
-                <div class="text-container-4" style="background-image: url('./Image/abdulai-sayni-KhP5h6yyOAM-unsplash.jpg');">
-                    <div class="overlay">
-                        <h5 class="intro-text-1">Get in Touch: We’re Here to Connect and Support You</h5><br>
-                        <h3 class="intro-text-2">We’d love to hear from you! Whether you have questions, feedback, or want to learn more about our work, reach out today.</h3><br><br>
-                        <div class="intro-link">
-                            <a href="contact.html" class="product-link">Contact Us</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Pagination Buttons -->
-            <div class="carousel-pagination">
-                <button class="prev-btn">&#10094;</button>
-                <button class="next-btn">&#10095;</button>
-            </div>
-        </div>
+            <label for="lastName">Last Name</label>
+            <input type="text" name="lastName" id="lastName" placeholder="Last Name" required><br><br>
+
+            <label for="dob">Date of Birth</label>
+            <input type="date" name="dob" id="dob" placeholder="Date of Birth" required><br><br>
+
+            <label for="gender">Gender</label>
+            <select name="gender" id="gender" required>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+            </select><br><br>
+
+            <label for="resAddress">Residential Address</label>
+            <input type="text" name="resAddress" id="resAddress" placeholder="Residential Address" required><br><br>
+
+            <label for="nation">Nationality</label>
+            <input type="text" name="nation" id="nation" placeholder="Nationality" required><br><br>
+
+            <label for="state">State Of Origin</label>
+            <input type="text" name="state" id="state" placeholder="State Of Origin" required><br><br>
+
+            <label for="localGovernment">L.G.A</label>
+            <input type="text" name="localGovernment" id="localGovernment" placeholder="L.G.A" required><br><br>
+
+            <label for="email">Email Address</label>
+            <input type="email" name="email" id="email" placeholder="Email Address" required><br><br>
+
+            <label for="phone">Phone Number</label>
+            <input type="tel" name="phone" id="phone" placeholder="Phone Number" required><br><br>
+
+            <button type="submit" id="submit-first-form">Submit</button>
+        </form> 
     </div>
-</section>
 
-  
-<script>
-  let currentSlide = 0;
-  const slides = document.querySelectorAll('.carousel-slide .text-container-1, .carousel-slide .text-container-2, .carousel-slide .text-container-3, .carousel-slide .text-container-4');
-  const totalSlides = slides.length;
-  const prevButton = document.querySelector('.prev-btn');
-  const nextButton = document.querySelector('.next-btn');
-  
-  // Function to change slide
-  function changeSlide() {
-    const offset = -currentSlide * 100;
-    document.querySelector('.carousel-slide').style.transform = `translateX(${offset}%)`;
-  }
-  
-  // Go to the next slide
-  nextButton.addEventListener('click', function() {
-    currentSlide = (currentSlide + 1) % totalSlides;
-    changeSlide();
-  });
-  
-  // Go to the previous slide
-  prevButton.addEventListener('click', function() {
-    currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
-    changeSlide();
-  });
-  
-  // Optional: Automatically transition every 5 seconds
-  setInterval(function() {
-    currentSlide = (currentSlide + 1) % totalSlides;
-    changeSlide();
-  }, 5000); // 5000 ms = 5 seconds
-</script>
+    <!-- Second Form: Parental Consent Form -->
+    <div class="form-container second-form" id="second-form-container">
+        <span class="form-label" id="Personal">Parental Consent Form</span><br><br>
+        <span class="age-check">(To be filled by the parent/guardian of the beneficiary below 18 years of age)</span><br><br>
+
+        <h5 class="student-info">Student's Information</h5><br><br>
+        <label for="parentFirstName">First Name</label>
+        <input type="text" name="parentFirstName" id="parentFirstName" placeholder="First Name" required><br><br>
+
+        <label for="parentMiddleName">Middle Name</label>
+        <input type="text" name="parentMiddleName" id="parentMiddleName" placeholder="Middle Name" required><br><br>
+
+        <label for="parentLastName">Last Name</label>
+        <input type="text" name="parentLastName" id="parentLastName" placeholder="Last Name" required><br><br>
+
+        <label for="parentDOB">Date of Birth</label>
+        <input type="date" name="parentDOB" id="parentDOB" placeholder="Date of Birth" required><br><br>
+
+        <label for="parentGender">Gender</label>
+        <select name="parentGender" id="parentGender" required>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+        </select><br><br>
+
+        <label for="parentResAddress">Residential Address</label>
+        <input type="text" name="parentResAddress" id="parentResAddress" placeholder="Residential Address" required><br><br>
+
+        <label for="parentPhone">Phone Number</label>
+        <input type="tel" name="parentPhone" id="parentPhone" placeholder="Phone Number" required><br><br>
+
+        <label for="parentEmail">Email Address</label>
+        <input type="email" name="parentEmail" id="parentEmail" placeholder="Email Address" required><br><br>
+
+        <button type="submit" id="submit-second-form">Submit</button>
+    </div>
+
+    <script type="text/javascript">
+        // Initialize EmailJS
+        emailjs.init("YOUR_USER_ID");
+
+        // Handle first form submission
+        document.getElementById('first-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            // Collect form data
+            const formData = new FormData(this);
+            const data = Object.fromEntries(formData.entries());
+
+            // Send email with EmailJS
+            emailjs.send("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", data)
+                .then(function(response) {
+                    console.log("Email sent successfully", response);
+                    // Hide first form and show second form
+                    document.getElementById('first-form-container').style.display = "none";
+                    document.getElementById('second-form-container').style.display = "block";
+                })
+                .catch(function(error) {
+                    console.log("Error sending email", error);
+                });
+        });
+
+        // Handle second form submission (optional)
+        document.getElementById('submit-second-form').addEventListener('click', function(event) {
+            event.preventDefault();
+
+            // You can collect and process the second form data here if needed
+
+            alert("Parental Consent Form Submitted!");
+        });
+    </script>
 
 </body>
 </html>
+
+
+
+
+<script type="text/javascript">
+    // Initialize EmailJS
+    emailjs.init("NIpsHdMn7KEHwXGoo");
+
+    // Handle first form submission
+    document.getElementById('first-form').addEventListener('submit', function(event) {
+        event.preventDefault();
+
+        // Collect form data
+        const formData = new FormData(this);
+        const data = Object.fromEntries(formData.entries());
+
+        // Send email with EmailJS
+        emailjs.send("service_vc0wgjt", "template_7g24pb5", data)
+            .then(function(response) {
+                console.log("Email sent successfully", response);
+                // Hide first form and show second form
+                document.getElementById('first-form-container').style.display = "none";
+                document.getElementById('second-form-container').style.display = "block";
+            })
+            .catch(function(error) {
+                console.log("Error sending email", error);
+            });
+    });
+
+    // Handle second form submission (optional)
+    document.getElementById('submit-second-form').addEventListener('click', function(event) {
+        event.preventDefault();
+
+        // You can collect and process the second form data here if needed
+
+        alert("Parental Consent Form Submitted!");
+    });
+</script>
+
+
+
+<!-- Emex Javascript -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Css/contact.css">
+    <link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"referrerpolicy="no-referrer"/>
+      <script src="https://unpkg.com/scrollreveal"></script>
+      <!-- Email Js -->
+       <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+    </script>
+      <script type="text/javascript">
+      (function(){
+          emailjs.init({
+            publicKey: "NIpsHdMn7KEHwXGoo",
+          });
+      })();
+      </script>
+    <title>Emex Medical (Contact us)</title>
+</head>
+<body>
+  <header>
+    <nav class="bar-nav">
+     <ul class="side-bar">
+       <!-- HEADER LINKS -->
+       <li class="header-list" onclick="hideSidebar()">
+         <i class="fa-solid fa-xmark"></i> 
+       </li>
+       <li class="header-list">
+       
+       </li>
+        <li class="header-list">
+         <a class="header-link" href="index.html" >Home</a>
+       </li>
+       <li class="header-list">
+           <a class="header-link" href="about.html">About Us</a>
+         </li>
+       <li class="header-list">
+         <a class="header-link" href="product.html" >Products</a>
+       </li>
+       <li class="header-list">
+         <a class="header-link" href="team.html">Our Team</a>
+       </li>
+        <li class="header-list">
+         <a class="header-link" href="#"id="active">Contact Us</a>
+       </li>
+       <!-- END OF HEADER LINKS -->
+     </ul>
+     <ul class="nav-ul">
+       <!-- HEADER LINKS -->
+       <li class="header-list">
+         <img class="logo" src="./Images/Emex-logo2.png" alt="">
+       </li>
+        <li class="header-list" id="hideOnMobile">
+         <a class="header-link" href="index.html" >Home</a>
+       </li>
+       <li class="header-list" id="hideOnMobile">
+           <a class="header-link" href="about.html">About Us</a>
+         </li>
+       <li class="header-list" id="hideOnMobile">
+         <a class="header-link" href="product.html">Products</a>
+       </li>
+       <li class="header-list" id="hideOnMobile">
+         <a class="header-link" href="team.html">Our Team</a>
+       </li>
+        <li class="header-list" id="hideOnMobile">
+         <a class="header-link" href="#"id="active">Contact Us</a>
+       </li>
+         <li class="header-list" onclick="showSidebar()" id="menu-btn">
+           <i class="fa-solid fa-bars"></i>
+       </li>
+       <!-- END OF HEADER LINKS -->
+     </ul>
+    </nav>
+  </header>
+    
+
+    <section class="contact-section">
+      <div class="contact-container">
+        <h3 class="contact-head">Contact Us</h3><br><br>
+        <div class="contact-info">
+          <div class="shop-location">
+            <h4 class="our-office">Our Office Address</h4><br>
+            <ul class="locate-ul">
+              <li class="locate-list">
+                <i class="fa-solid fa-location-dot"></i> <span class="locay">Ogbo Ogwu Bridgehead Market, Onitsha <br>(God's Intervention Line, No. D91)Anambra, Nigeria.</span>
+              </li><br>
+              <li class="locate-list">
+                <i class="fa-solid fa-phone-volume"></i> <a class="contact-links" id="reduce2" href="tel:+2347047159651">+234 704 715 9651</a>
+              </li>
+              <li class="locate-list">
+                <i class="fa-solid fa-phone-volume"></i>  <a class="contact-links" id="reduce2" href="tel:+234812826 5650">+234 812 826 5650</a>
+              </li><br>
+              <li class="locate-list">
+                <i class="fa-solid fa-envelope"></i> <a class="contact-links" id="address2" href="mailto:emmymedicalenterprise@gmail.com">emmymedicalenterprise@gmail.com</a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="message-container">
+            <h4 class="our-office" id="mess">Send Us a Message</h4><br>
+            <form action="" method="">
+              <div class="first-set">
+                <label for=""></label>
+                <input type="text" name="" id="fName" placeholder="First Name" required>
+  
+                <label for=""></label>
+                <input type="text" name="" id="lName" placeholder="Last Name" required>
+              </div>
+              <div class="second-set">
+                <label for=""></label>
+                <input type="email" name="" id="mailAddress" placeholder="Email Address" required>
+  
+                <label for=""></label>
+                <input type="text" name="" id="subject" placeholder="Subject" required><br>
+              </div>
+              <label for="Message">Message</label>
+              <textarea name="" id="messageJs" rows="6" cols="50"  placeholder="Enter Your Message" required></textarea><br><br>
+  
+              <div class="btn-container">
+                <button type="submit" onclick="sendMail()">Submit</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+   
+
+<!--Internal Javascript-->
+     <script>
+       emailjs.send("service_vc0wgjt", "template_u489lyc", data)
+
+  // Email Js
+   function sendMail() {
+    let parms ={
+      name:  document.getElementById('fName').value,
+      email:  document.getElementById('mailAddress').value,
+      subject:  document.getElementById('subject').value,
+      message:  document.getElementById('messageJs').value,
+    }
+    emailjs.send("service_n91p2sr","template_7g24pb5",parms).then(alert("Email Sent!!"))
+   }
+     </script>
+</body>
+</html>
+
+var templateParams = {
+  first_name: document.getElementById('fName').value,
+  last_name: document.getElementById('lName').value,
+  email: document.getElementById('mailAdress').value,
+  subject: document.getElementById('subject').value,
+  message: document.getElementById('messageJs').value
+};

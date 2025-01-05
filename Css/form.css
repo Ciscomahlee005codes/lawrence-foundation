@@ -1099,6 +1099,13 @@ hr{
       }
 }
 @media (max-width:540px) {
+    .form-link{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 30px;
+    }
     .intro-text-1{
         font-size: 32px;
     }

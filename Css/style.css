@@ -556,6 +556,7 @@ html,body{
 }
 .tuned{
     font-family: "Josefin Sans", sans-serif; 
+    text-align: center;
 }
 /* Swiper */
 .swiper {

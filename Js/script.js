@@ -128,104 +128,71 @@ window.onscroll = calcScrollValue;
   //   }
   //   }
   // });
-  var swiper = new Swiper('.swiper', {
-    loop: true,
-      autoplay: {
-        delay: 5000,
-        disableOnInteraction: false,
-      },
-    slidesPerView: 1,   // Number of slides to show on small screens
-    spaceBetween: 10,   // Space between slides
-    navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
+ 
+  // Initialize the first Swiper (Previous Event Section)
+var swiper1 = new Swiper('.swiper1', {
+  loop: true,
+  autoplay: {
+    delay: 5000,
+    disableOnInteraction: false,
+  },
+  slidesPerView: 1,   // Show one slide at a time by default
+  spaceBetween: 10,   // Space between slides
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+  pagination: {
+    el: '.swiper-pagination',
+    clickable: true,
+  },
+  breakpoints: {
+    320: {
+      slidesPerView: 1,  // Show 1 slide on small screens
+      spaceBetween: 28,
     },
-    pagination: {
-      el: '.swiper-pagination',
-      clickable: true,
+    640: {
+      slidesPerView: 2,  // Show 2 slides at a time on medium screens
+      spaceBetween: 20,
     },
-    breakpoints: {
-      320: {
-        slidesPerView: 1,  // Show 2 products at a time on tablets
-        spaceBetween: 28,
-      },
-      360: {
-        slidesPerView: 1,  // Show 2 products at a time on tablets
-        spaceBetween: 28,
-      },
-      375: {
-        slidesPerView: 1,  // Show 2 products at a time on tablets
-        spaceBetween: 28,
-      },
-      390: {
-        slidesPerView: 1,  // Show 2 products at a time on tablets
-        spaceBetween: 28,
-      },
-      393: {
-        slidesPerView: 1,  // Show 2 products at a time on tablets
-        spaceBetween: 28,
-      },
-      412: {
-        slidesPerView: 1,  // Show 2 products at a time on tablets
-        spaceBetween: 28,
-      },
-      414: {
-        slidesPerView: 1,  // Show 2 products at a time on tablets
-        spaceBetween: 28,
-      },
-      425: {
-        slidesPerView: 1,  // Show 2 products at a time on tablets
-        spaceBetween: 28,
-      },
-      428: {
-        slidesPerView: 1,  // Show 2 products at a time on tablets
-        spaceBetween: 28,
-      },
-      430: {
-        slidesPerView: 1,  // Show 2 products at a time on tablets
-        spaceBetween: 28,
-      },
-      // When the screen is >= 640px wide
-      640: {
-        slidesPerView: 2,  // Show 2 products at a time on tablets
-        spaceBetween: 20,
-      },
-      768: {
-      slidesPerView: 2, // Two slides per view at 768px
-      spaceBetween: 28.5, // Adjust spacing for 768px to avoid overlap
+    1024: {
+      slidesPerView: 3,  // Show 3 slides at a time on large screens
+      spaceBetween: 30,
     },
-      800: {
-      slidesPerView: 2, // Two slides per view at 800px
-      spaceBetween: 28.5, // Adjust spacing for 800px to avoid overlap
+  }
+});
+
+// Initialize the second Swiper (Culture Section)
+var swiper2 = new Swiper('.swiper', {
+  loop: true,
+  autoplay: {
+    delay: 5000,
+    disableOnInteraction: false,
+  },
+  slidesPerView: 1,   // Show one slide at a time by default
+  spaceBetween: 10,   // Space between slides
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+  pagination: {
+    el: '.swiper-pagination',
+    clickable: true,
+  },
+  breakpoints: {
+    320: {
+      slidesPerView: 1,  // Show 1 slide on small screens
+      spaceBetween: 28,
     },
-      820: {
-      slidesPerView: 2, // Two slides per view at 820px
-      spaceBetween: 28.5, // Adjust spacing for 820px to avoid overlap
+    640: {
+      slidesPerView: 2,  // Show 2 slides at a time on medium screens
+      spaceBetween: 20,
     },
-      834: {
-      slidesPerView: 2, // Two slides per view at 834px
-      spaceBetween: 28.5, // Adjust spacing for 834px to avoid overlap
+    1024: {
+      slidesPerView: 3,  // Show 3 slides at a time on large screens
+      spaceBetween: 30,
     },
-      853: {
-      slidesPerView: 2, // Two slides per view at 853px
-      spaceBetween: 28.5, // Adjust spacing for 884px to avoid overlap
-    },
-      884: {
-      slidesPerView: 2, // Two slides per view at 884px
-      spaceBetween: 28.5, // Adjust spacing for 884px to avoid overlap
-    },
-      912: {
-      slidesPerView: 2, // Two slides per view at 912px
-      spaceBetween: 28.5, // Adjust spacing for 912px to avoid overlap
-    },// When the screen is >= 1024px wide
-      1024: {
-        slidesPerView: 3,  // Show 3 products at a time on desktops
-        spaceBetween: 30,
-      },
-      // When the screen is >= 1280px wide
-      1280: {
-        slidesPerView: 3,  // Show 4 products at a time on large screens
-        spaceBetween: 40,
-      },
-    }
-  });
+  }
+});
+
+

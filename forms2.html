@@ -83,19 +83,26 @@
                  
                 </li>
                 <li class="header-list" id="dropdown">
-                   <a class="header-link" id="down-hover" href="upcoming.html" >News & Events</a><i class="fa-solid fa-chevron-down"></i>
-                   <ul class="sub-menu" id="adjust-ul">
-                    <li id="dropdown">
-                      <a href="upcoming.html"><span>Our Programs</span></a><i class="fa-solid fa-chevron-down" id="left-btn"></i>
-                      <ul class="sub-menu sub-menu-left" >
-                         <li><a href="upcoming.html"><span>Ongoing Programs</span></a></li>
-                         <li><a href="upcoming.html"><span>Upcoming Programs</span></a></li> 
-                      </ul>
-                   </li>
-                      <li id="dropdown"><a href="blog.html"><span>Blog</span></a></li>
-                      <li id="dropdown"><a href="culture.html"><span>Kebeisi Radio Program</span></a></li>
-                   </ul>
-                </li>
+                  <a class="header-link" id="down-hover" href="upcoming.html" >News & Events</a><i class="fa-solid fa-chevron-down"></i>
+                  <ul class="sub-menu" id="adjust-ul">
+                   <li id="dropdown">
+                     <a href="upcoming.html"><span>Our Programs</span></a><i class="fa-solid fa-chevron-down" id="left-btn"></i>
+                     <ul class="sub-menu sub-menu-left" >
+                        <li><a href="upcoming.html"><span>Ongoing Programs</span></a></li>
+                        <li><a href="upcoming.html"><span>Upcoming Programs</span></a></li> 
+                     </ul>
+                  </li>
+                     <li id="dropdown"><a href="blog.html"><span>Blog</span></a></li>
+                     <li id="dropdown">
+                       <a href="upcoming.html"><span>Radio Shows</span></a><i class="fa-solid fa-chevron-down" id="left-btn"></i>
+                       <ul class="sub-menu sub-menu-left" >
+                           <li id="dropdown"><a href="culture.html"><span>Kebeisi Radio Program</span></a></li>
+                          <li><a href="mentalDialogue.html"><span>Mental Dialogue Program</span></a></li> 
+                       </ul>
+                    </li>
+                    
+                  </ul>
+               </li>
                 <li class="header-list"><a class="header-link" id="down-hover" href="contact.html">Contact Us</a></li>
                 <li class="header-list" id="dropdown">
                   <a class="header-link" id="active-link" href="donation.html" >Donate</a><i class="fa-solid fa-chevron-down"></i>
@@ -186,7 +193,57 @@
     
           <label for="parentJob">Occupation/Job Title</label>
           <input type="text" name="parentJob" id="parentJob" placeholder="Occupation/Job Title" required><br><br>
-    
+
+          <h4 class="terms-head">Terms & Consent Agreement</h4><br>
+          <p class="terms-text">
+           (<strong>Note:</strong> Parents/Guardian are required to sign the "Consent Agreement" for all beneficiaries under the age of 18.)
+          </p>
+          <p class="term-logo">Sponsored by  Lawrence Memorial Humanitarian Foundation</p><br><br><hr><br><br>
+          <ol class="term-ul">
+            <li class="term-list">
+              L.A.M.E.H.F is going to cater only for basic tuition fee from schools. Parents take care of the uniforms and textbooks
+            </li><br>
+            <li class="term-list">
+              Parents are consenting to the full support of the kids and awareness of the process involved in the scholarship. They consent to fulfilling their parental responsibilities of making sure that the child will be respectful in school, take home work and school projects seriously, and be on their best performances; otherwise, a beneficiary will be withdrawn afterward after 2 consecutive failures in a year, 3 years during the scholarship period, or 2 warnings from school due to misdemeanor.
+            </li><br>
+
+            <li class="term-list">
+              In case the parents/guardians withdraws from their obligations and responsibilities of taking care of their children, L.A.M.E.H.F is fully liable to withdraw the child or ward.
+            </li><br>
+
+            <li class="term-list">
+              This consent agreement is binding on the parents/guardian until a beneficiary ends their relationship or scholarship with L.A.M.E.H.F.
+            </li><br>
+          </ol><br>
+          <h4 class="permission-head">
+            Permission to Use Photos on the Internet
+          </h4><br>
+          <p class="terms-text">
+            ( Before we display your child's photo on our website or social media pages, we must have your permission)
+           </p><br>
+
+             <div class="condition-box">
+              <input type="checkbox" name="checkBox" id="checkBox">
+             <label for="consent" class="checkBox">Yes, you may use my child's photo on your website and social media pages.</label><br><br>
+
+             <input type="checkbox" name="checkBox2" id="checkBox2">
+             <label for="consent" class="checkBox">No, you may NOT use my child's photo on your website and social media pages.</label>
+             </div>
+            <br><br>
+
+            <div class="agreement-text">I/We
+              <input type="text" name="agreement" id="agreement"> have read the Terms and Consent Agreement on this webpage and agree to comply with the terms and conditions outlined. <br>
+              I/We hereby grant permission for the child named on this form to participate in the scholarship with Lawrence Memorial Humanitarian Foundation
+            </div><br>
+            
+            <h4 class="note-head">Please Note:</h4><br>
+            <ol class="note-ul">
+              <li class="note-list">Once this form is signed and sent to our email or office, the scholarship will be processed immediately, and the student will be added to the list of beneficiaries.</li><br>
+
+              <li class="note-list">
+                Tuition/School fees will be paid directly to the institution of the beneficiary.
+              </li>
+            </ol>
         <button type="submit" id="submit-second-form" onclick="sendMail2(event)">Submit</button>
          </form>
     </div>
@@ -297,9 +354,10 @@
    <script>
     // Email Js
 // Parent Consent 
- function sendMail2(event) {
-  event.preventDefault();  // Prevent the form from reloading the page
-  
+function sendMail2(event) {
+  event.preventDefault();  // Prevent form submission
+
+  // Collect form data
   let parms2 = {
     studentFirstName:  document.getElementById('studentFirstName').value,
     studentMiddleName:  document.getElementById('studentMiddleName').value,
@@ -316,17 +374,22 @@
     guardianEmail2:  document.getElementById('parentEmail2').value,
     guardianPhone2:  document.getElementById('parentPhone2').value,
     parentJob1:  document.getElementById('parentJob').value,
-  }
+    checkBoxConsent:  document.getElementById('checkBox').checked,  // Assuming you want to collect checkbox status
+    agreementText:  document.getElementById('agreement').value
+  };
 
-  // Send the email using EmailJS service
-  emailjs.send("service_vc0wgjt", "template_7g24pb5", parms2)
-    .then(response => {
-      alert("Email Sent!!");
+  // Send the form data using EmailJS
+  emailjs.send("service_0qleh7p", "template_7g24pb5", parms2)
+    .then(function(response) {
+      console.log("Email sent successfully:", response);
+      alert("Your information has been submitted successfully!");
     })
-    .catch(error => {
-      alert("Email Sending Failed: " + error.text);
+    .catch(function(error) {
+      console.log("Error sending email:", error);
+      alert("There was an error sending your email. Please try again later.");
     });
 }
+
 
  function showParentForm() {
        let studentForm = document.getElementById('first-form');

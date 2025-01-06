@@ -585,10 +585,9 @@ html,body{
 .culture-section{
     padding: 35px;
 }
-.culture-container{
-    display: grid;
-    grid-template-columns: auto auto;
-    gap: 12rem;
+.swiper-wrapper2{
+     display: grid;
+     grid-template-columns: auto auto;
 }
 .culture-head{
     text-align: center;
@@ -597,9 +596,33 @@ html,body{
     font-size: 32px;
 }
 .culture-img{
-    width: 150%;
+    width: 80%;
     height: 300px;
 }
+.culture-link{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    font-family: "Josefin Sans", sans-serif;
+    background-color: #028d8d;
+    color: aliceblue;
+    padding: 10px 15px;
+}
+.culture-link:hover{
+    transition: all 0.4s ease;
+    background-color: #008d8c;
+    color: #000000;
+}
+.blog-box2 {
+    /* flex: 2; */
+    display: flex;
+    flex-direction: column;
+    background: #ffffff;
+    width: 80%;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
 /* Footer Section */
 footer{
     background-image: url(..//Image/bg_4.jpg);

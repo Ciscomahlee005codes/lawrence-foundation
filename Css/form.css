@@ -512,6 +512,47 @@ textarea{
     background-color: #0c9460;
     transition: all 0.3s ease;
 }
+.terms-head{
+    font-family: "Poppins", sans-serif;
+    font-size: 20px;
+}
+.terms-text, .term-logo{
+    font-family: "Lato", sans-serif;
+    text-align: center;
+}
+.term-list{
+    list-style: disc;
+}
+.permission-head{
+    font-family: "Poppins", sans-serif;
+    font-size: 20px;
+}
+.checkBox{
+    font-family: "Lato", sans-serif;
+}
+#checkBox, #checkBox2{
+    width: 5rem;
+}
+.condition-box{
+    display: flex;
+}
+.agreement-text{
+    font-family: "Lato", sans-serif;
+}
+#agreement{
+    padding: 10px 20px;
+}
+.note-head{
+    font-weight: 800;
+    font-family: "Lato", sans-serif;
+}
+.note-list{
+    list-style: decimal;
+    font-family: "Lato", sans-serif;
+}
+.reference{
+    font-family: "Lato", sans-serif;
+}
 /* Footer Section */
 footer{
     background-image: url(..//Image/bg_4.jpg);

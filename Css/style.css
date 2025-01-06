@@ -1508,6 +1508,10 @@ hr{
         gap: 50px;
         padding-top: 5rem;
     }
+    .swiper-wrapper2{
+        display: grid;
+        grid-template-columns: auto;
+   }
     .socials{
         display: flex;
         gap: 10px;

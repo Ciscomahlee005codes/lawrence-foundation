@@ -361,90 +361,95 @@
 
    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script src="./Js/form.js"></script>
-   <script>
-    // Email Js
-    function sendMail(event) {
-  event.preventDefault();  // Prevent the form from reloading the page
+    <script>
+      // Email Js
+      function sendMail(event) {
+          event.preventDefault();  // Prevent the form from reloading the page
   
-  let parms ={
-    firstName:  document.getElementById('firstName').value,
-    middleName:  document.getElementById('middleName').value,
-    lastName:  document.getElementById('lastName').value,
-    dateOfBith:  document.getElementById('dob').value,
-    sexGender:  document.getElementById('gender').value,
-    residential:  document.getElementById('resAddress').value,
-    nationality:  document.getElementById('nation').value,
-    stateOfOrigin:  document.getElementById('state').value,
-    lga:  document.getElementById('localGovernment').value,
-    email:  document.getElementById('emailAdd').value,
-    phoneNumber:  document.getElementById('phone').value,
-    education:  document.getElementById('educationBg').value,
-    dadName:  document.getElementById('fatherName').value,
-    mumName:  document.getElementById('motherName').value,
-    guardianName:  document.getElementById('guardianName').value,
-    guardianAddress:  document.getElementById('guardianResAddress').value,
-    guardianEmail:  document.getElementById('guardianEmail').value,
-    guardianPhone:  document.getElementById('guardianPhone').value,
-    referenceName1:  document.getElementById('ref1Name').value,
-    referenceEmail1:  document.getElementById('ref1Email').value,
-    referencePhone1:  document.getElementById('ref1Phone').value,
-    referenceJob1:  document.getElementById('ref1Job').value,
-    referenceRemark1:  document.getElementById('ref1Remark').value,
-    referenceName2:  document.getElementById('ref2Name').value,
-    referenceEmail2:  document.getElementById('ref2Email').value,
-    referencePhone2:  document.getElementById('ref2Phone').value,
-    referenceJob2:  document.getElementById('ref2Job').value,
-    referenceRemark2:  document.getElementById('ref2Remark').value,
-    referenceName3:  document.getElementById('ref3Name').value,
-    referenceEmail3:  document.getElementById('ref3Email').value,
-    referencePhone3:  document.getElementById('ref3Phone').value,
-    referenceJob3:  document.getElementById('ref3Job').value,
-    referenceRemark3:  document.getElementById('ref3Remark').value,
-  }
+          let parms = {
+              firstName:  document.getElementById('firstName').value,
+              middleName:  document.getElementById('middleName').value,
+              lastName:  document.getElementById('lastName').value,
+              dateOfBith:  document.getElementById('dob').value,
+              sexGender:  document.getElementById('gender').value,
+              residential:  document.getElementById('resAddress').value,
+              nationality:  document.getElementById('nation').value,
+              stateOfOrigin:  document.getElementById('state').value,
+              lga:  document.getElementById('localGovernment').value,
+              email:  document.getElementById('emailAdd').value,
+              phoneNumber:  document.getElementById('phone').value,
+              education:  document.getElementById('educationBg').value,
+              dadName:  document.getElementById('fatherName').value,
+              mumName:  document.getElementById('motherName').value,
+              guardianName:  document.getElementById('guardianName').value,
+              guardianAddress:  document.getElementById('guardianResAddress').value,
+              guardianEmail:  document.getElementById('guardianEmail').value,
+              guardianPhone:  document.getElementById('guardianPhone').value,
+              referenceName1:  document.getElementById('ref1Name').value,
+              referenceEmail1:  document.getElementById('ref1Email').value,
+              referencePhone1:  document.getElementById('ref1Phone').value,
+              referenceJob1:  document.getElementById('ref1Job').value,
+              referenceRemark1:  document.getElementById('ref1Remark').value,
+              referenceName2:  document.getElementById('ref2Name').value,
+              referenceEmail2:  document.getElementById('ref2Email').value,
+              referencePhone2:  document.getElementById('ref2Phone').value,
+              referenceJob2:  document.getElementById('ref2Job').value,
+              referenceRemark2:  document.getElementById('ref2Remark').value,
+              referenceName3:  document.getElementById('ref3Name').value,
+              referenceEmail3:  document.getElementById('ref3Email').value,
+              referencePhone3:  document.getElementById('ref3Phone').value,
+              referenceJob3:  document.getElementById('ref3Job').value,
+              referenceRemark3:  document.getElementById('ref3Remark').value,
+          }
   
-  // Send the email using EmailJS service
-  emailjs.send("service_0qleh7p", "template_t6cw1eb", parms)
-    .then(response => {
-      alert("Email Sent!!");
-    })
-    .catch(error => {
-      alert("Email Sending Failed: " + error.text);
-    });
-}
-
-
- function showParentForm() {
-       let studentForm = document.getElementById('first-form');
-      let parentForm = document.getElementById('second-form-container');
-
-      let parentBtn = document.getElementById('parent-btn')
-      parentBtn.style.backgroundColor ="#008d8c";
-      parentBtn.style.color="white"
-
-      let studentBtn = document.getElementById('student-btn')
-      studentBtn.style.backgroundColor ="transparent";
-      studentBtn.style.color="black"
-
-      studentForm.style.display ="none"
-      parentForm.style.display ="block"
-    }
-
-    function showStudentForm() {
-       let studentForm = document.getElementById('first-form');
-      let parentForm = document.getElementById('second-form-container');
-
-      let studentBtn = document.getElementById('student-btn')
-      studentBtn.style.backgroundColor ="#008d8c";
-      studentBtn.style.color="white"
-
-      let parentBtn = document.getElementById('parent-btn')
-      parentBtn.style.backgroundColor ="transparent";
-      parentBtn.style.color="black"
-
-      studentForm.style.display ="block"
-      parentForm.style.display ="none"
-    }
-   </script>
+          // Using environment variables for EmailJS service and template IDs
+          const serviceId = process.env.REACT_APP_EMAILJS_SERVICE_ID;
+          const templateId = process.env.REACT_APP_EMAILJS_TEMPLATE_ID;
+          const userId = process.env.REACT_APP_EMAILJS_USER_ID;
+  
+          // Send the email using EmailJS service
+          emailjs.send(serviceId, templateId, parms, userId)
+              .then(response => {
+                  alert("Email Sent!!");
+              })
+              .catch(error => {
+                  alert("Email Sending Failed: " + error.text);
+              });
+      }
+  
+      function showParentForm() {
+          let studentForm = document.getElementById('first-form');
+          let parentForm = document.getElementById('second-form-container');
+  
+          let parentBtn = document.getElementById('parent-btn');
+          parentBtn.style.backgroundColor = "#008d8c";
+          parentBtn.style.color = "white";
+  
+          let studentBtn = document.getElementById('student-btn');
+          studentBtn.style.backgroundColor = "transparent";
+          studentBtn.style.color = "black";
+  
+          studentForm.style.display = "none";
+          parentForm.style.display = "block";
+      }
+  
+      function showStudentForm() {
+          let studentForm = document.getElementById('first-form');
+          let parentForm = document.getElementById('second-form-container');
+  
+          let studentBtn = document.getElementById('student-btn');
+          studentBtn.style.backgroundColor = "#008d8c";
+          studentBtn.style.color = "white";
+  
+          let parentBtn = document.getElementById('parent-btn');
+          parentBtn.style.backgroundColor = "transparent";
+          parentBtn.style.color = "black";
+  
+          studentForm.style.display = "block";
+          parentForm.style.display = "none";
+      }
+  </script>
+  
     
 </body>
 </html>

@@ -351,78 +351,83 @@
 
    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script src="./Js/form.js"></script>
-   <script>
-    // Email Js
-// Parent Consent 
-function sendMail2(event) {
-  event.preventDefault();  // Prevent form submission
-
-  // Collect form data
-  let parms2 = {
-    studentFirstName:  document.getElementById('studentFirstName').value,
-    studentMiddleName:  document.getElementById('studentMiddleName').value,
-    studentLastName:  document.getElementById('studentLastName').value,
-    studentDOB:  document.getElementById('studentDOB').value,
-    sexGender2:  document.getElementById('studentGender').value,
-    residential2:  document.getElementById('studentResAddress').value,
-    email2:  document.getElementById('studentEmail').value,
-    phoneNumber2:  document.getElementById('studentPhone').value,
-    dadName2:  document.getElementById('fatherName2').value,
-    mumName2:  document.getElementById('motherName2').value,
-    guardianName2:  document.getElementById('guardianName2').value,
-    guardianAddress2:  document.getElementById('parentResAddress2').value,
-    guardianEmail2:  document.getElementById('parentEmail2').value,
-    guardianPhone2:  document.getElementById('parentPhone2').value,
-    parentJob1:  document.getElementById('parentJob').value,
-    checkBoxConsent:  document.getElementById('checkBox').checked,  // Assuming you want to collect checkbox status
-    agreementText:  document.getElementById('agreement').value
-  };
-
-  // Send the form data using EmailJS
-  emailjs.send("service_0qleh7p", "template_7g24pb5", parms2)
-    .then(function(response) {
-      console.log("Email sent successfully:", response);
-      alert("Your information has been submitted successfully!");
-    })
-    .catch(function(error) {
-      console.log("Error sending email:", error);
-      alert("There was an error sending your email. Please try again later.");
-    });
-}
-
-
- function showParentForm() {
-       let studentForm = document.getElementById('first-form');
-      let parentForm = document.getElementById('second-form-container');
-
-      let parentBtn = document.getElementById('parent-btn')
-      parentBtn.style.backgroundColor ="#008d8c";
-      parentBtn.style.color="white"
-
-      let studentBtn = document.getElementById('student-btn')
-      studentBtn.style.backgroundColor ="transparent";
-      studentBtn.style.color="black"
-
-      studentForm.style.display ="none"
-      parentForm.style.display ="block"
-    }
-
-    function showStudentForm() {
-       let studentForm = document.getElementById('first-form');
-      let parentForm = document.getElementById('second-form-container');
-
-      let studentBtn = document.getElementById('student-btn')
-      studentBtn.style.backgroundColor ="#008d8c";
-      studentBtn.style.color="white"
-
-      let parentBtn = document.getElementById('parent-btn')
-      parentBtn.style.backgroundColor ="transparent";
-      parentBtn.style.color="black"
-
-      studentForm.style.display ="block"
-      parentForm.style.display ="none"
-    }
-   </script>
+   
+    <script>
+      // Email Js - Parent Consent Form
+      function sendMail2(event) {
+          event.preventDefault();  // Prevent form submission
+  
+          // Collect form data
+          let parms2 = {
+              studentFirstName: document.getElementById('studentFirstName').value,
+              studentMiddleName: document.getElementById('studentMiddleName').value,
+              studentLastName: document.getElementById('studentLastName').value,
+              studentDOB: document.getElementById('studentDOB').value,
+              sexGender2: document.getElementById('studentGender').value,
+              residential2: document.getElementById('studentResAddress').value,
+              email2: document.getElementById('studentEmail').value,
+              phoneNumber2: document.getElementById('studentPhone').value,
+              dadName2: document.getElementById('fatherName2').value,
+              mumName2: document.getElementById('motherName2').value,
+              guardianName2: document.getElementById('guardianName2').value,
+              guardianAddress2: document.getElementById('parentResAddress2').value,
+              guardianEmail2: document.getElementById('parentEmail2').value,
+              guardianPhone2: document.getElementById('parentPhone2').value,
+              parentJob1: document.getElementById('parentJob').value,
+              checkBoxConsent: document.getElementById('checkBox').checked,  // Assuming you want to collect checkbox status
+              agreementText: document.getElementById('agreement').value
+          };
+  
+          // Use environment variables for the EmailJS service and template IDs
+          const serviceId = process.env.REACT_APP_EMAILJS_SERVICE_ID;
+          const templateId = process.env.REACT_APP_EMAILJS_TEMPLATE_ID;
+          const userId = process.env.REACT_APP_EMAILJS_USER_ID;
+  
+          // Send the form data using EmailJS
+          emailjs.send(serviceId, templateId, parms2, userId)
+              .then(function(response) {
+                  console.log("Email sent successfully:", response);
+                  alert("Your information has been submitted successfully!");
+              })
+              .catch(function(error) {
+                  console.log("Error sending email:", error);
+                  alert("There was an error sending your email. Please try again later.");
+              });
+      }
+  
+      function showParentForm() {
+          let studentForm = document.getElementById('first-form');
+          let parentForm = document.getElementById('second-form-container');
+  
+          let parentBtn = document.getElementById('parent-btn');
+          parentBtn.style.backgroundColor = "#008d8c";
+          parentBtn.style.color = "white";
+  
+          let studentBtn = document.getElementById('student-btn');
+          studentBtn.style.backgroundColor = "transparent";
+          studentBtn.style.color = "black";
+  
+          studentForm.style.display = "none";
+          parentForm.style.display = "block";
+      }
+  
+      function showStudentForm() {
+          let studentForm = document.getElementById('first-form');
+          let parentForm = document.getElementById('second-form-container');
+  
+          let studentBtn = document.getElementById('student-btn');
+          studentBtn.style.backgroundColor = "#008d8c";
+          studentBtn.style.color = "white";
+  
+          let parentBtn = document.getElementById('parent-btn');
+          parentBtn.style.backgroundColor = "transparent";
+          parentBtn.style.color = "black";
+  
+          studentForm.style.display = "block";
+          parentForm.style.display = "none";
+      }
+  </script>
+  
     
 </body>
 </html>

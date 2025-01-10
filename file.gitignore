@@ -1,2 +1,2 @@
 # Ignore the .env file containing sensitive data
-file.env
+.env

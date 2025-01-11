@@ -19,55 +19,56 @@
         </div><br><br>
 
         <form id="donationForm" method="post">
-            <label for="name">First Name</label>
-            <input type="text" name="name" id="name" placeholder="First Name">
-            <div class="error-message" id="nameError"></div><br><br>
-
-            <label for="lastName">Last Name</label>
-            <input type="text" name="lastName" id="lastName" placeholder="Last Name">
-            <div class="error-message" id="lastNameError"></div><br><br>
-
-            <label for="email">Email Address</label>
-            <input type="email" name="email" id="email" placeholder="Email Address">
-            <div class="error-message" id="emailError"></div><br><br>
-
-            <label for="phone">Phone Number</label>
-            <input type="tel" name="phone" id="phone" placeholder="Phone Number">
-            <div class="error-message" id="phoneError"></div><br><br>
-
-            <label for="donation">Donation Type</label>
-            <select name="donation" id="donation" required>
-                <option value="padThegirl">Pad The Girl Child Program</option>
-                <option value="scholarship">Student Scholarship Program</option>
-                <option value="familysupport">Family Support Program</option>
-                <option value="foodbank">Food Pantry Program</option>
-                <option value="advocacy">Advocacy Program</option>
-                <option value="medOutreach">Free Medical Outreach Program</option>
-                <option value="quiz">Online Quiz Competition</option>
-                <option value="healthAwareness">Health Awareness Program</option>
-            </select>
-            <div class="error-message" id="donationError"></div><br><br>
-
-            <label for="amount">Donation Amount</label>
-            <input type="number" name="amount" id="amount" placeholder="Amount to Donate">
-            <div class="error-message" id="amountError"></div><br><br>
-
-            <h4 class="our-office" id="account-details">Our Account Details</h4>
-            <ul class="contact-ul">
-                <li class="contact-list"><span class="contact-bold">Account Number:</span>1013346765</li>
-                <li class="contact-list"><span class="contact-bold">Account Name:</span>Lawrence Memorial Humanitarian Foundation</li>
-                <li class="contact-list"><span class="contact-bold">Bank:</span>Keystone</li><br><br>
-                <li class="contact-list"><span class="contact-bold">Account Number:</span>665550631</li>
-                <li class="contact-list"><span class="contact-bold">Account Name:</span>Lawrence Memorial Humanitarian Foundation</li>
-                <li class="contact-list"><span class="contact-bold">Bank:</span>Chase</li>
-            </ul><br>
-            <p class="form-text">We do not share your information with any third party.
-              You'll be redirected for payment processing after submitting this form. Please ensure you have a valid email address and phone number to receive payment instructions.</p><br>
-            <input type="checkbox" name="terms" id="terms" required><br><br>
-            
-            <!-- Use a button instead of an <a> tag -->
-            <button type="button" class="submit-btn" id="myButton" onclick="validateForm()">Submit</button><br>
-        </form>
+          <label for="name">First Name</label>
+          <input type="text" name="name" id="name" placeholder="First Name">
+          <div class="error-message" id="nameError"></div><br><br>
+      
+          <label for="lastName">Last Name</label>
+          <input type="text" name="lastName" id="lastName" placeholder="Last Name">
+          <div class="error-message" id="lastNameError"></div><br><br>
+      
+          <label for="email">Email Address</label>
+          <input type="email" name="email" id="email" placeholder="Email Address">
+          <div class="error-message" id="emailError"></div><br><br>
+      
+          <label for="phone">Phone Number</label>
+          <input type="tel" name="phone" id="phone" placeholder="Phone Number">
+          <div class="error-message" id="phoneError"></div><br><br>
+      
+          <label for="donation">Donation Type</label>
+          <select name="donation" id="donation" required>
+              <option value="padThegirl">Pad The Girl Child Program</option>
+              <option value="scholarship">Student Scholarship Program</option>
+              <option value="familysupport">Family Support Program</option>
+              <option value="foodbank">Food Pantry Program</option>
+              <option value="advocacy">Advocacy Program</option>
+              <option value="medOutreach">Free Medical Outreach Program</option>
+              <option value="quiz">Online Quiz Competition</option>
+              <option value="healthAwareness">Health Awareness Program</option>
+          </select>
+          <div class="error-message" id="donationError"></div><br><br>
+      
+          <label for="amount">Donation Amount</label>
+          <input type="number" name="amount" id="amount" placeholder="Amount to Donate">
+          <div class="error-message" id="amountError"></div><br><br>
+      
+          <h4 class="our-office" id="account-details">Our Account Details</h4>
+          <ul class="contact-ul">
+              <li class="contact-list"><span class="contact-bold">Account Number:</span>1013346765</li>
+              <li class="contact-list"><span class="contact-bold">Account Name:</span>Lawrence Memorial Humanitarian Foundation</li>
+              <li class="contact-list"><span class="contact-bold">Bank:</span>Keystone</li><br><br>
+              <li class="contact-list"><span class="contact-bold">Account Number:</span>665550631</li>
+              <li class="contact-list"><span class="contact-bold">Account Name:</span>Lawrence Memorial Humanitarian Foundation</li>
+              <li class="contact-list"><span class="contact-bold">Bank:</span>Chase</li>
+          </ul><br>
+      
+          <p class="form-text">We do not share your information with any third party. You'll be redirected for payment processing after submitting this form. Please ensure you have a valid email address and phone number to receive payment instructions.</p><br>
+          <input type="checkbox" name="terms" id="terms" required><br><br>
+          
+          <!-- Use a button instead of an <a> tag -->
+          <button type="button" class="submit-btn" id="myButton" onclick="validateForm()">Submit</button><br>
+      </form>
+      
     </div>
 
     <!-- POP UP BEGINS -->
@@ -184,5 +185,53 @@
 
    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script src="./Js/donation.js"></script>
+    <script>
+      // Initialize EmailJS (with your public key)
+      (function(){
+        emailjs.init("eRtIeJg8MBddev4u0");  // Replace with your public key
+      })();
+    
+      function validateForm() {
+        // Grab form values
+        const firstName = document.getElementById('name').value;
+        const lastName = document.getElementById('lastName').value;
+        const email = document.getElementById('email').value;
+        const phone = document.getElementById('phone').value;
+        const donation = document.getElementById('donation').value;
+        const amount = document.getElementById('amount').value;
+        
+        // Validate form fields (you can add your own validation)
+        if (!firstName || !lastName || !email || !phone || !donation || !amount) {
+          alert("Please fill out all required fields.");
+          return;
+        }
+    
+        // Prepare parameters to send to EmailJS template
+        let parms = {
+          firstName: firstName,
+          lastName: lastName,
+          email: email,
+          phone: phone,
+          donation: donation,
+          amount: amount
+        };
+    
+        // Define the template ID and service ID
+        const serviceId = "service_s42xgmp";  // Replace with your EmailJS service ID
+        const templateId = "template_b1phxns";  // Replace with your template ID
+    
+        // Send the email using EmailJS service
+        emailjs.send(serviceId, templateId, parms)
+          .then(response => {
+            alert("Thank you for your donation! We will process your payment shortly.");
+            // Optionally, you can reset the form here
+            document.getElementById("donationForm").reset();
+          })
+          .catch(error => {
+            alert("Error: " + error.text);
+          });
+      }
+    </script>
+    
 </body>
 </html>

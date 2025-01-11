@@ -39,7 +39,7 @@ html,body{
     left: 0;
     top: 0;
     width: 100%;
-    background-color:rgb(141, 0, 99);
+    background-color: #008d8c;
     padding: 15px;
     z-index: 10;
 }

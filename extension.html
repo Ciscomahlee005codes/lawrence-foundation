@@ -333,3 +333,71 @@ var templateParams = {
 };
 
 "service_vc0wgjt", "template_7g24pb5", parms2
+
+
+
+
+<script>
+  // Initialize EmailJS (with your public key)
+  (function() {
+    emailjs.init("eRtIeJg8MBddev4u0");  // Replace with your actual public key
+  })();
+
+  // This function is triggered when the form is submitted
+  function validateForm(event) {
+    event.preventDefault();  // Prevent form submission
+
+    // Grab form values
+    const firstName = document.getElementById('name').value;
+    const lastName = document.getElementById('lastName').value;
+    const email = document.getElementById('email').value;
+    const phone = document.getElementById('phone').value;
+    const donation = document.getElementById('donation').value;
+    const amount = document.getElementById('amount').value;
+
+    // Validate form fields (you can add more validation here)
+    if (!firstName || !lastName || !email || !phone || !donation || !amount) {
+      displayMessage("Please fill out all required fields.", "error");
+      return;
+    }
+
+    // Prepare parameters to send to EmailJS template
+    let params = {
+      firstName: firstName,
+      lastName: lastName,
+      email: email,
+      phone: phone,
+      donation: donation,
+      amount: amount
+    };
+
+    // Disable the submit button to prevent multiple submissions
+    document.getElementById("myButton").disabled = true;
+
+    // Define the template ID and service ID
+    const serviceId = "service_s42xgmp";  // Replace with your EmailJS service ID
+    const templateId = "template_b1phxns";  // Replace with your template ID
+
+    // Send the email using EmailJS service
+    emailjs.send(serviceId, templateId, params)
+      .then(response => {
+        // Show success message and reset the form
+        displayMessage("Thank you for your donation! We will process your payment shortly.", "success");
+        document.getElementById("donationForm").reset();
+        document.getElementById("myButton").disabled = false;
+      })
+      .catch(error => {
+        // Handle errors and display them
+        displayMessage("Error: " + error.text, "error");
+        document.getElementById("myButton").disabled = false;
+      });
+  }
+
+  // Helper function to display success or error messages
+  function displayMessage(message, type) {
+    const messageDiv = document.getElementById('message');
+    messageDiv.textContent = message;
+    messageDiv.style.display = 'block';
+    messageDiv.style.color = type === 'success' ? 'green' : 'red';
+  }
+</script>

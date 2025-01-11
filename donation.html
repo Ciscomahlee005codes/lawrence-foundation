@@ -66,7 +66,7 @@
           <input type="checkbox" name="terms" id="terms" required><br><br>
           
           <!-- Use a button instead of an <a> tag -->
-          <button type="button" class="submit-btn" id="myButton" onclick="validateForm()">Submit</button><br>
+          <button type="button" class="submit-btn" id="myButton" onclick="validateForm(event)">Submit</button><br>
       </form>
       
     </div>
@@ -191,7 +191,7 @@
         emailjs.init("eRtIeJg8MBddev4u0");  // Replace with your public key
       })();
     
-      function validateForm() {
+      function validateForm(event) {
         // Grab form values
         const firstName = document.getElementById('name').value;
         const lastName = document.getElementById('lastName').value;

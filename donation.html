@@ -60,7 +60,7 @@
           <div class="error-message" id="donationError"></div><br><br>
       
           <label for="amount">Donation Amount</label>
-          <input type="number" name="amount" id="amount" placeholder="Amount to Donate">
+          <input type="text" name="amount" id="amount" placeholder="Amount to Donate">
           <div class="error-message" id="amountError"></div><br><br>
       
           <h4 class="our-office" id="account-details">Our Account Details</h4>
@@ -231,7 +231,7 @@
 
                 // Prepare the mailto link to open email client and send to lamehf2020@gmail.com
                 let subject = "Donation Receipt";
-                let body = `Hello,\n\nA donation has been made with the following details:\n\nName: ${firstName} ${lastName}\nEmail: ${email}\nPhone: ${phone}\nDonation Type: ${donation}\nAmount: ${amount}\n\nThank you for your contribution!`;
+                 let body = `Hello,\n\nA donation has been made with the following details:\n\nName: ${firstName} ${lastName}\nEmail: ${email}\nPhone: ${phone}\nDonation Type: ${donation}\nAmount: ${amount}\n\nPlease share the receipt of donation.\n\nThank you for your contribution!`;
 
                 // Open the email client with pre-filled subject and body, directing to lamehf2020@gmail.com
                 window.location.href = `mailto:lamehf2020@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;

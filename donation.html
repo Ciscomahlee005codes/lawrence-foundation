@@ -77,7 +77,7 @@
           <input type="checkbox" name="terms" id="terms" required><br><br>
           
           <!-- Use a button instead of an <a> tag -->
-          <button type="button" class="submit-btn" id="myButton" onclick="sendMail(event)">Submit</button><br>
+          <button type="button" class="submit-btn" onclick="sendMail()">Submit</button><br>
       </form>
       
     </div>
@@ -198,7 +198,7 @@
     <script src="./Js/donation.js"></script>
      
    <script>
-    function sendMail(event) {
+    function sendMail() {
     event.preventDefault();  // Prevent the form from reloading the page
 
     // Retrieve values from form fields

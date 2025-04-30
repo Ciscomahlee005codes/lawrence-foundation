@@ -313,24 +313,47 @@
          </footer>
 
    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+   <script src="config.js"></script>
     <script src="./Js/contact.js"></script>
     <script>
-      // Email Js
-      function sendMail(event) {
-    event.preventDefault();  // Prevent the form from reloading the page
-    
-    
-    // Send the email using EmailJS service
-    emailjs.send("service_0qleh7p", "template_t6cw1eb", parms)
-      .then(response => {
-        alert("Email Sent!!");
-      })
-      .catch(error => {
-        alert("Email Sending Failed: " + error.text);
-      });
-  }
-  
-     </script>
+      // Initialize EmailJS with the user ID from config.js
+emailjs.init(window.USER_ID);
+
+// Function to send the email when the form is submitted
+function sendMail(event) {
+  event.preventDefault();  // Prevent the form from reloading the page
+
+  // Collect form data
+  const fName = document.getElementById("fName").value;
+  const lName = document.getElementById("lName").value;
+  const mailAddress = document.getElementById("mailAddress").value;
+  const subject = document.getElementById("subject").value;
+  const message = document.getElementById("messageJs").value;
+
+  // Prepare parameters object for EmailJS
+  const parms = {
+    from_name: `${fName} ${lName}`,
+    from_email: mailAddress,
+    subject: subject,
+    message: message
+  };
+
+  // Send the email using the keys from config.js
+  emailjs.send(window.SERVICE_ID, window.TEMPLATE_ID, parms)
+    .then(response => {
+      alert("Email Sent Successfully!");
+      // Optionally reset the form after sending the email
+      document.getElementById("messageForm").reset();
+    })
+    .catch(error => {
+      alert("Email Sending Failed: " + error.text);
+    });
+}
+
+// Add event listener to the form for submission
+document.getElementById("messageForm").addEventListener("submit", sendMail);
+
+    </script>
 
 
 </body>

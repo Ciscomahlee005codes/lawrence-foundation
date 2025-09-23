@@ -957,6 +957,23 @@ hr{
         color: rgb(0, 0, 0) ;
         transition: 700ms ease;
     }
+     .impact-link3{
+        font-size: 20px;
+        color: azure;
+        font-family: "Josefin Sans", sans-serif;
+        text-decoration: none;
+        border: 2px whitesmoke solid;
+        padding: 15px;
+        width: 50%;
+        /* margin-left: 4.5rem; */
+        background-color: #008d8c;   
+    }
+    .impact-link3:hover{
+        background-color: gainsboro;
+        border: 2px rgb(17, 17, 17) solid;
+        color: rgb(0, 0, 0) ;
+        transition: 700ms ease;
+    }
     .activity-card-container{
         display: grid;
         grid-template-columns:auto auto;
@@ -1403,6 +1420,26 @@ hr{
         transition: 700ms ease;
     }
 
+     .impact-link3{
+        font-size: 20px;
+        color: azure;
+        font-family: "Josefin Sans", sans-serif;
+        text-decoration: none;
+        border: 2px whitesmoke solid;
+        padding: 15px;
+        width: 35%;
+        margin: auto;
+        /* margin-left: 4.5rem; */
+        margin-bottom: 30px;
+        background-color: #008d8c;   
+    }
+    .impact-link3:hover{
+        background-color: gainsboro;
+        border: 2px rgb(17, 17, 17) solid;
+        color: rgb(0, 0, 0) ;
+        transition: 700ms ease;
+    }
+
 }
 @media (max-width:820px) {
     .count-num{
@@ -1529,6 +1566,25 @@ hr{
         background-color: #008d8c;   
     }
     .impact-link:hover{
+        background-color: gainsboro;
+        border: 2px rgb(17, 17, 17) solid;
+        color: rgb(0, 0, 0) ;
+        transition: 700ms ease;
+    }
+
+     .impact-link3{
+        font-size: 20px;
+        color: azure;
+        font-family: "Josefin Sans", sans-serif;
+        text-decoration: none;
+        border: 2px whitesmoke solid;
+        padding: 15px;
+        width: 50%;
+        margin: auto;
+        /* margin-left: 4.5rem; */
+        background-color: #008d8c;   
+    }
+    .impact-link3:hover{
         background-color: gainsboro;
         border: 2px rgb(17, 17, 17) solid;
         color: rgb(0, 0, 0) ;
@@ -1682,6 +1738,26 @@ hr{
         background-color: #008d8c;   
     }
     .impact-link:hover{
+        background-color: gainsboro;
+        border: 2px rgb(17, 17, 17) solid;
+        color: rgb(0, 0, 0) ;
+        transition: 700ms ease;
+    }
+
+    .impact-link3{
+        font-size: 20px;
+        color: azure;
+        font-family: "Josefin Sans", sans-serif;
+        text-decoration: none;
+        border: 2px whitesmoke solid;
+        padding: 15px;
+        width: 75%;
+        margin: auto;
+        /* margin-left: 4.5rem; */
+        margin-bottom: 30px;
+        background-color: #008d8c;   
+    }
+    .impact-link3:hover{
         background-color: gainsboro;
         border: 2px rgb(17, 17, 17) solid;
         color: rgb(0, 0, 0) ;

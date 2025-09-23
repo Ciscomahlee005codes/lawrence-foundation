@@ -366,11 +366,39 @@ html,body{
     color: rgb(0, 0, 0) ;
     transition: 700ms ease;
 }
+
+.impact-link3{
+    font-size: 20px;
+    color: azure;
+    font-family: "Josefin Sans", sans-serif;
+    text-decoration: none;
+    border: 2px whitesmoke solid;
+    padding: 15px;
+    width: 15%;
+    margin: auto;
+    display: grid;
+    margin-bottom: 30px;
+    place-content: center;
+    /* margin-left: 4.5rem; */
+    background-color: #008d8c;   
+}
+.impact-link3:hover{
+    background-color: gainsboro;
+    border: 2px rgb(17, 17, 17) solid;
+    color: rgb(0, 0, 0) ;
+    transition: 700ms ease;
+}
 /* Announcement Section */
 .ongoing{
     font-family: "Josefin Sans", sans-serif;
     letter-spacing: 2px;
     font-size: 22px;
+    text-align: center;
+}
+.ongoing2{
+    font-family: "Josefin Sans", sans-serif;
+    letter-spacing: 2px;
+    font-size: 28px;
     text-align: center;
 }
 .impact-link2{
@@ -536,6 +564,9 @@ html,body{
 }
 .blog-img3{
     width: 60%;;
+}
+.blog-img4{
+    width: 50%;;
 }
 .swiper-slide-3, .blog-box-3{
     display: flex;

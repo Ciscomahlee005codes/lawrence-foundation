@@ -370,7 +370,34 @@ html,body{
     position: relative;
     left: -0.25rem;
 }
-
+/* Activity Section */
+.activity-head{
+    font-family: "Josefin Sans", sans-serif;
+    letter-spacing: 2px;
+    font-size: 32px;
+}
+.activty-text{
+    font-family: "Roboto", sans-serif;
+}
+.activity-card-container{
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    gap: 20px;
+}
+.activity-card{
+    background-color: #191970;
+    box-shadow: 3px 10px 15px rgba(0, 0, 0, 0.3);
+    padding: 40px;
+}
+.activity-card-head{
+    color: aliceblue;
+    font-family: "Lato", sans-serif;
+    font-size: 28px;
+}
+.activity-card-text{
+    font-family: "Roboto", sans-serif;
+    color: gainsboro;
+}
 /* Team Container */
 .team-section{
     background-color: rgb(229, 204, 173);

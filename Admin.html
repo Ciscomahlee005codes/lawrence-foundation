@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Admin – Post Event</title>
+
+  <style>
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: "Segoe UI", sans-serif;
+      background: #eef3f5;
+      display: flex;
+      flex-direction: column;
+    }
+
+    header {
+      background: #008d8c;
+      color: white;
+      padding: 16px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    header a {
+      color: white;
+      text-decoration: none;
+      background: rgba(255,255,255,0.2);
+      padding: 6px 12px;
+      border-radius: 8px;
+    }
+
+    main {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
+
+    form {
+      background: white;
+      padding: 30px;
+      width: 100%;
+      max-width: 420px;
+      border-radius: 14px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+    }
+
+    h2 {
+      text-align: center;
+      color: #008d8c;
+      margin-bottom: 20px;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 14px;
+      margin-bottom: 16px;
+      border-radius: 10px;
+      border: 1px solid #ccc;
+      font-size: 14px;
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 90px;
+    }
+
+    button {
+      width: 100%;
+      padding: 14px;
+      border: none;
+      border-radius: 12px;
+      background: linear-gradient(135deg, #38bdf8, #2563eb);
+      color: white;
+      font-size: 15px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    .status {
+      margin-top: 15px;
+      text-align: center;
+      padding: 10px;
+      border-radius: 8px;
+      display: none;
+    }
+
+    .success {
+      background: #e6f7ea;
+      color: #1f8a3f;
+    }
+
+    .error {
+      background: #ffe6e6;
+      color: #c21b1b;
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <strong>Admin Panel</strong>
+  <a href="index.html">← Back to Home</a>
+</header>
+
+<main>
+  <form id="eventForm">
+    <h2>Post New Event</h2>
+
+    <input type="text" id="title" placeholder="Event Title" required />
+    <textarea id="desc" placeholder="Description (optional)"></textarea>
+    <input type="file" id="image" accept="image/*" required />
+
+    <button type="submit">Post Event</button>
+    <div id="status" class="status"></div>
+  </form>
+</main>
+
+<script type="module">
+  import { supabase } from "./supabase.js";
+
+  const form = document.getElementById("eventForm");
+  const status = document.getElementById("status");
+
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    const title = document.getElementById("title").value.trim();
+    const description = document.getElementById("desc").value.trim();
+    const file = document.getElementById("image").files[0];
+
+    if (!title || !file) {
+      showStatus("Title and image are required ❌", "error");
+      return;
+    }
+
+    try {
+      showStatus("Uploading event...", "");
+
+      const fileName = `${Date.now()}-${file.name}`;
+
+      const { error: uploadError } = await supabase
+        .storage
+        .from("events")
+        .upload(fileName, file);
+
+      if (uploadError) {
+        console.error(uploadError);
+        throw new Error(uploadError.message);
+      }
+
+      const { data: imageData } = supabase
+        .storage
+        .from("events")
+        .getPublicUrl(fileName);
+
+      const { error: insertError } = await supabase
+        .from("events")
+        .insert([
+          {
+            title,
+            description,
+            image: imageData.publicUrl
+          }
+        ]);
+
+      if (insertError) {
+        console.error(insertError);
+        throw new Error(insertError.message);
+      }
+
+      showStatus("Event posted successfully ✅", "success");
+      form.reset();
+
+    } catch (err) {
+      showStatus(err.message, "error");
+    }
+  });
+
+  function showStatus(message, type) {
+    status.textContent = message;
+    status.className = `status ${type}`;
+    status.style.display = "block";
+  }
+</script>
+
+
+</body>
+</html>

@@ -11,6 +11,81 @@
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
     <!-- Scroll Reveal -->
     <script src="https://unpkg.com/scrollreveal"></script>
+     <style>
+    body {
+      margin: 0;
+      font-family: "Segoe UI", sans-serif;
+      background: #f5f7fa;
+      display: flex;
+      flex-direction: column;
+      /* align-items: center; */
+    }
+
+    h1 {
+      padding: 30px 10px 10px;
+      color: #008d8c;
+    }
+
+    .carousel2 {
+      width: 100%;
+      /* max-width: 620px; */
+      background: white;
+      border-radius: 16px;
+      box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+      overflow: hidden;
+      margin-top: 20px;
+    }
+
+   .caro-img{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+   }
+
+    .content {
+      padding: 16px;
+      text-align: center;
+    }
+
+    .content h3 {
+      margin: 0 0 10px;
+      color: #333;
+    }
+
+    .content p {
+      font-size: 14px;
+      color: #666;
+    }
+
+    .controls {
+      display: flex;
+      justify-content: space-between;
+      padding: 15px;
+      gap: 10px;
+    }
+
+    .controls button {
+      flex: 1;
+      padding: 12px;
+      border: none;
+      border-radius: 10px;
+      background: linear-gradient(135deg, #38bdf8, #2563eb);
+      color: white;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    .controls button:disabled {
+      background: #cbd5e1;
+      cursor: not-allowed;
+    }
+
+    .status {
+      margin-top: 20px;
+      color: #888;
+    }
+  </style>
 </head>
 <body>
    <header class="header">
@@ -194,17 +269,22 @@
       <div class="announce-container">
         <h2 class="ongoing2" style="color: #028d8d;"> Our Latest Event</h2><br>
         <div class="swiper-slide-3">
-          <div class="blog-box-3">
-            <img class="blog-img4" src="./Image/November.PNG" alt="">
-            <div class="blog-box-text"><span class="text-bold">WELCOME TO NOVEMBER</span>
-            <br>
-              A brand new month to touch lives, inspire hope, and spread love. May this month bring peace, progress, 
-              and possibilities to everyone connected with LAMEHF.<br><br>
-              Happy New Month from all of us at Lawrence Memorial Humanitarian Foundation.<br>
-          </div>
-            <a href="upcoming.html" class="impact-link2">View More</a><br>
+          
+<div class="carousel2" id="carousel" style="display:none;">
+  <img class="blog-img4 caro-img" id="eventImage" />
+  <div class="content">
+    <h3 id="eventTitle"></h3>
+    <p id="eventDesc"></p>
+  </div>
 
-          </div>
+  <div class="controls">
+    <button id="prevBtn">⬅ Previous</button>
+    <button id="nextBtn">Next ➡</button>
+  </div>
+</div>
+
+<p class="status" id="status">Loading events...</p><br>
+           <a href="upcoming.html" class="impact-link2">View More</a><br>
         </div>
       </div>
      </section><br><br>
@@ -516,5 +596,57 @@
 
    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script src="./Js/script.js"></script>
+    <script type="module">
+  import { supabase } from "./supabase.js";
+
+  const image = document.getElementById("eventImage");
+  const title = document.getElementById("eventTitle");
+  const desc = document.getElementById("eventDesc");
+  const prevBtn = document.getElementById("prevBtn");
+  const nextBtn = document.getElementById("nextBtn");
+  const carousel = document.getElementById("carousel");
+  const status = document.getElementById("status");
+
+  let events = [];
+  let currentIndex = 0;
+
+  const { data, error } = await supabase
+    .from("events")
+    .select("*")
+    .order("created_at", { ascending: false });
+
+  if (error || !data.length) {
+    status.textContent = "No events available ❌";
+  } else {
+    events = data;
+    carousel.style.display = "block";
+    status.style.display = "none";
+    renderEvent();
+  }
+
+  function renderEvent() {
+    const event = events[currentIndex];
+    image.src = event.image;
+    title.textContent = event.title;
+    desc.textContent = event.description || "";
+
+    prevBtn.disabled = currentIndex === events.length - 1;
+    nextBtn.disabled = currentIndex === 0;
+  }
+
+  prevBtn.addEventListener("click", () => {
+    if (currentIndex < events.length - 1) {
+      currentIndex++;
+      renderEvent();
+    }
+  });
+
+  nextBtn.addEventListener("click", () => {
+    if (currentIndex > 0) {
+      currentIndex--;
+      renderEvent();
+    }
+  });
+</script>
 </body>
 </html>

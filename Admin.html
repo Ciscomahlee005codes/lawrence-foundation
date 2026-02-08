@@ -114,7 +114,8 @@
 
     <input type="text" id="title" placeholder="Event Title" required />
     <textarea id="desc" placeholder="Description (optional)"></textarea>
-    <input type="file" id="image" accept="image/*" required />
+   <input type="file" id="media" accept="image/*,video/*" required/>
+
 
     <button type="submit">Post Event</button>
     <div id="status" class="status"></div>
@@ -132,53 +133,57 @@
 
     const title = document.getElementById("title").value.trim();
     const description = document.getElementById("desc").value.trim();
-    const file = document.getElementById("image").files[0];
+    const fileInput = document.getElementById("media");
+    const file = fileInput.files[0];
 
     if (!title || !file) {
-      showStatus("Title and image are required ❌", "error");
+      showStatus("Title and media are required ❌", "error");
       return;
     }
+
+    // Detect media type
+    const mediaType = file.type.startsWith("video") ? "video" : "image";
+    const fileName = `${Date.now()}-${file.name}`;
 
     try {
       showStatus("Uploading event...", "");
 
-      const fileName = `${Date.now()}-${file.name}`;
-
-      const { error: uploadError } = await supabase
-        .storage
+      /* 1️⃣ Upload to Supabase Storage */
+      const { error: uploadError } = await supabase.storage
         .from("events")
-        .upload(fileName, file);
+        .upload(fileName, file, {
+          cacheControl: "3600",
+          upsert: false,
+        });
 
-      if (uploadError) {
-        console.error(uploadError);
-        throw new Error(uploadError.message);
-      }
+      if (uploadError) throw uploadError;
 
-      const { data: imageData } = supabase
-        .storage
+      /* 2️⃣ Get public URL */
+      const { data } = supabase.storage
         .from("events")
         .getPublicUrl(fileName);
 
+      const mediaUrl = data.publicUrl;
+
+      /* 3️⃣ Save to database */
       const { error: insertError } = await supabase
         .from("events")
         .insert([
           {
             title,
             description,
-            image: imageData.publicUrl
-          }
+            media_url: mediaUrl,
+            media_type: mediaType,
+          },
         ]);
 
-      if (insertError) {
-        console.error(insertError);
-        throw new Error(insertError.message);
-      }
+      if (insertError) throw insertError;
 
       showStatus("Event posted successfully ✅", "success");
       form.reset();
-
     } catch (err) {
-      showStatus(err.message, "error");
+      console.error(err);
+      showStatus(err.message || "Something went wrong ❌", "error");
     }
   });
 
@@ -188,6 +193,7 @@
     status.style.display = "block";
   }
 </script>
+
 
 
 </body>

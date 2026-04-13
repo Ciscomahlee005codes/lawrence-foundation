@@ -98,6 +98,204 @@
       background: #ffe6e6;
       color: #c21b1b;
     }
+    .event-card {
+
+display:flex;
+gap:20px;
+background:white;
+padding:20px;
+margin-bottom:20px;
+border-radius:14px;
+box-shadow:0 10px 25px rgba(0,0,0,0.1);
+
+}
+
+.media-box img,
+.media-box video {
+
+width:180px;
+height:140px;
+object-fit:cover;
+border-radius:10px;
+
+}
+
+.info-box {
+
+flex:1;
+
+}
+
+.actions {
+
+margin-top:10px;
+
+}
+
+.actions button {
+
+padding:8px 16px;
+margin-right:10px;
+border:none;
+border-radius:8px;
+cursor:pointer;
+background:#2563eb;
+color:white;
+
+}
+
+.actions .danger {
+
+background:#dc2626;
+
+}
+.modal {
+
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,.5);
+
+display:none;
+justify-content:center;
+align-items:center;
+
+}
+
+.modal.show {
+
+display:flex;
+
+animation:fadeIn .25s ease;
+
+}
+
+.modal-box {
+
+background:white;
+padding:30px;
+border-radius:18px;
+width:95%;
+max-width:500px;
+
+animation:slideUp .25s ease;
+
+}
+
+.modal-actions {
+
+display:flex;
+gap:10px;
+
+margin-top:15px;
+
+}
+
+.modal-actions button {
+
+flex:1;
+padding:12px;
+border:none;
+border-radius:10px;
+
+}
+
+.cancel {
+
+background:#ddd;
+
+}
+
+#previewBox img,
+#previewBox video {
+
+width:100%;
+margin-top:15px;
+border-radius:12px;
+
+}
+
+.event-card {
+
+display:flex;
+gap:20px;
+padding:20px;
+background:white;
+border-radius:14px;
+
+margin-bottom:20px;
+
+transition:.3s ease;
+
+}
+
+.event-card.removing {
+
+opacity:0;
+transform:translateX(80px);
+
+}
+
+.media-box img,
+.media-box video {
+
+width:200px;
+height:140px;
+
+object-fit:cover;
+
+border-radius:10px;
+
+}
+
+@keyframes slideUp {
+
+from {
+
+transform:translateY(40px);
+opacity:0;
+
+}
+
+to {
+
+transform:translateY(0);
+opacity:1;
+
+}
+
+}
+
+@keyframes fadeIn {
+
+from {
+
+opacity:0;
+
+}
+to {
+opacity:1;
+}
+}
+.danger{
+background:#dc2626;
+}
+/* Responsive Design */
+@media(max-width:768px){
+
+.event-card{
+
+flex-direction:column;
+}
+.media-box img,
+.media-box video{
+width:100%;
+
+}
+
+}
   </style>
 </head>
 
@@ -121,80 +319,337 @@
     <div id="status" class="status"></div>
   </form>
 </main>
+<!-- ADD THIS BELOW YOUR FORM -->
+
+<section style="padding:20px; max-width:900px; margin:auto;">
+  <h2>Manage Events</h2>
+
+  <div id="eventList"></div>
+</section>
+
+<!-- Event Modal -->
+ <!-- EDIT MODAL -->
+
+<div id="editModal" class="modal">
+
+<div class="modal-box">
+
+<h2>Edit Event</h2>
+
+<input id="editTitle" placeholder="Title">
+
+<textarea id="editDesc"
+placeholder="Description"></textarea>
+
+<input id="editMedia"
+type="file"
+accept="image/*,video/*">
+
+<div id="previewBox"></div>
+
+<div class="modal-actions">
+
+<button id="saveEdit">
+Save Changes
+</button>
+
+<button onclick="closeModal()"
+class="cancel">
+Cancel
+</button>
+</div>
+</div>
+</div>
 
 <script type="module">
-  import { supabase } from "./supabase.js";
 
-  const form = document.getElementById("eventForm");
-  const status = document.getElementById("status");
+import { supabase } from "./supabase.js";
 
-  form.addEventListener("submit", async (e) => {
-    e.preventDefault();
+const form = document.getElementById("eventForm");
+const eventList = document.getElementById("eventList");
 
-    const title = document.getElementById("title").value.trim();
-    const description = document.getElementById("desc").value.trim();
-    const fileInput = document.getElementById("media");
-    const file = fileInput.files[0];
+const modal = document.getElementById("editModal");
 
-    if (!title || !file) {
-      showStatus("Title and media are required ❌", "error");
-      return;
-    }
+const editTitle =
+document.getElementById("editTitle");
 
-    // Detect media type
-    const mediaType = file.type.startsWith("video") ? "video" : "image";
-    const fileName = `${Date.now()}-${file.name}`;
+const editDesc =
+document.getElementById("editDesc");
 
-    try {
-      showStatus("Uploading event...", "");
+const editMedia =
+document.getElementById("editMedia");
 
-      /* 1️⃣ Upload to Supabase Storage */
-      const { error: uploadError } = await supabase.storage
-        .from("events")
-        .upload(fileName, file, {
-          cacheControl: "3600",
-          upsert: false,
-        });
+const previewBox =
+document.getElementById("previewBox");
 
-      if (uploadError) throw uploadError;
+const saveEdit =
+document.getElementById("saveEdit");
 
-      /* 2️⃣ Get public URL */
-      const { data } = supabase.storage
-        .from("events")
-        .getPublicUrl(fileName);
+let editingId = null;
 
-      const mediaUrl = data.publicUrl;
+loadEvents();
 
-      /* 3️⃣ Save to database */
-      const { error: insertError } = await supabase
-        .from("events")
-        .insert([
-          {
-            title,
-            description,
-            media_url: mediaUrl,
-            media_type: mediaType,
-          },
-        ]);
+/* ================= CREATE EVENT ================= */
 
-      if (insertError) throw insertError;
+form.addEventListener("submit", async e => {
 
-      showStatus("Event posted successfully ✅", "success");
-      form.reset();
-    } catch (err) {
-      console.error(err);
-      showStatus(err.message || "Something went wrong ❌", "error");
-    }
-  });
+e.preventDefault();
 
-  function showStatus(message, type) {
-    status.textContent = message;
-    status.className = `status ${type}`;
-    status.style.display = "block";
-  }
+const title =
+document.getElementById("title").value;
+
+const desc =
+document.getElementById("desc").value;
+
+const file =
+document.getElementById("media").files[0];
+
+if(!file) return alert("Media required");
+
+const name =
+Date.now()+"-"+file.name;
+
+await supabase.storage
+.from("events")
+.upload(name,file);
+
+const {data} =
+supabase.storage
+.from("events")
+.getPublicUrl(name);
+
+await supabase
+.from("events")
+.insert([{
+
+title,
+description:desc,
+media_url:data.publicUrl,
+media_type:file.type
+.startsWith("video")
+? "video":"image"
+
+}]);
+
+form.reset();
+
+loadEvents();
+
+});
+function detectMedia(event){
+
+if(!event.media_url) return "";
+
+if(event.media_type === "image")
+return `<img src="${event.media_url}" loading="lazy">`;
+
+if(event.media_type === "video")
+return `<video src="${event.media_url}" controls></video>`;
+
+/* fallback auto-detect */
+
+const url = event.media_url.toLowerCase();
+
+if(url.match(/\.(jpg|jpeg|png|gif|webp)$/))
+return `<img src="${event.media_url}" loading="lazy">`;
+
+return `<video src="${event.media_url}" controls></video>`;
+
+}
+/* ================= LOAD EVENTS ================= */
+
+async function loadEvents(){
+
+const { data, error } =
+await supabase
+.from("events")
+.select("*");
+
+if(error){
+
+console.error("Fetch error:", error.message);
+alert("Failed to fetch events");
+
+return;
+
+}
+
+if(!data || data.length === 0){
+
+eventList.innerHTML =
+"<p>No events found yet.</p>";
+
+return;
+
+}
+
+eventList.innerHTML =
+data.map(event => `
+
+<div class="event-card"
+id="event-${event.id}">
+
+<div class="media-box">
+
+${detectMedia(event)}
+
+</div>
+
+<div>
+
+<h3>${event.title}</h3>
+
+<p>${event.description || ""}</p>
+
+<button onclick="openEdit('${event.id}')">
+Edit
+</button>
+
+<button onclick="deleteEvent('${event.id}')"
+class="danger">
+Delete
+</button>
+
+</div>
+
+</div>
+
+`).join("");
+
+}
+
+/* ================= DELETE EVENT ================= */
+
+window.deleteEvent = async id=>{
+
+if(!confirm("Delete event permanently?"))
+return;
+
+const card =
+document.getElementById("event-"+id);
+
+card.classList.add("removing");
+
+setTimeout(async()=>{
+
+await supabase
+.from("events")
+.delete()
+.eq("id",id);
+
+card.remove();
+
+},300);
+
+};
+
+/* ================= OPEN MODAL ================= */
+
+window.openEdit = async id=>{
+
+editingId=id;
+
+const {data}=await supabase
+.from("events")
+.select("*")
+.eq("id",id)
+.single();
+
+editTitle.value=data.title;
+
+editDesc.value=data.description;
+
+previewBox.innerHTML=
+data.media_type==="image"
+
+? `<img src="${data.media_url}">`
+
+: `<video src="${data.media_url}" controls></video>`;
+
+modal.classList.add("show");
+
+};
+
+/* ================= CLOSE MODAL ================= */
+
+window.closeModal=()=>{
+
+modal.classList.remove("show");
+
+};
+
+/* ================= PREVIEW BEFORE SAVE ================= */
+
+editMedia.addEventListener("change",e=>{
+
+const file=e.target.files[0];
+
+if(!file) return;
+
+previewBox.innerHTML=
+
+file.type.startsWith("video")
+
+? `<video src="${URL.createObjectURL(file)}" controls></video>`
+
+: `<img src="${URL.createObjectURL(file)}">`;
+
+});
+
+/* ================= SAVE EDIT ================= */
+
+saveEdit.onclick=async()=>{
+
+let media_url=null;
+
+let media_type=null;
+
+const file=editMedia.files[0];
+
+if(file){
+
+const name=
+Date.now()+"-"+file.name;
+
+await supabase.storage
+.from("events")
+.upload(name,file);
+
+const {data}=
+supabase.storage
+.from("events")
+.getPublicUrl(name);
+
+media_url=data.publicUrl;
+
+media_type=
+file.type.startsWith("video")
+? "video":"image";
+
+}
+
+await supabase
+.from("events")
+.update({
+
+title:editTitle.value,
+description:editDesc.value,
+
+...(media_url && {
+media_url,
+media_type
+})
+
+})
+.eq("id",editingId);
+
+closeModal();
+
+loadEvents();
+
+};
+
 </script>
-
-
 
 </body>
 </html>
